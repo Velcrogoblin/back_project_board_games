@@ -1,11 +1,11 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  sequelize.define("mechanic", {
-    mechanic_id: {
+  sequelize.define("Designer", {
+    designer_id: {
       type: DataTypes.INTEGER,
+      primaryKey: true,
       autoIncrement: true,
-      primaryKey: true
     },
     name: {
       type: DataTypes.STRING,
@@ -14,7 +14,6 @@ module.exports = (sequelize) => {
     active: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
-      allowNull: false,
-    }
+    },
   });
 };
