@@ -38,3 +38,5 @@ server.use((err, req, res, next) => {
   console.error(err);
   res.status(status).send(message);
 });
+
+module.exports = server;
