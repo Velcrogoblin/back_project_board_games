@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  sequelize.define("language", {
+  sequelize.define("Language", {
     id_language: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
