@@ -1,4 +1,4 @@
-const { Game } = require ("../db");
+const { Game, Op } = require ("../db");
 
 const GET_GAMES_BY_NAME = async (req, res) => {
     try {
@@ -21,4 +21,6 @@ const GET_GAMES_BY_NAME = async (req, res) => {
     }
 }
 
-module.exports = GET_GAMES_BY_NAME;
+module.exports = {
+    GET_GAMES_BY_NAME
+};

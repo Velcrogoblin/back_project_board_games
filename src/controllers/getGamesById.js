@@ -6,7 +6,7 @@ const GET_GAMES_BY_ID = async (req, res) => {
 
         let gameById = await Game.findByPk(id);
 
-        if (gameById.length === 0) {
+        if (!gameById) {
             return res.status(404).json({message: `No games were found with id ${id}`});
         }
         return res.status(200).json(gameById);
@@ -15,4 +15,6 @@ const GET_GAMES_BY_ID = async (req, res) => {
     }
 }
 
-module.exports = GET_GAMES_BY_ID;
+module.exports = {
+    GET_GAMES_BY_ID
+};
