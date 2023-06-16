@@ -1,4 +1,4 @@
-const { Game } = require ("../db");
+const { Game, Designer, Editorial, Language, Category, Mechanic, Thematic, Author } = require ("../db.js");
 
 const GET_GAMES_BY_ID = async (req, res) => {
     try {
