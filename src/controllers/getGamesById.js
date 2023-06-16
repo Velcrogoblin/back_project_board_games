@@ -4,7 +4,8 @@ const GET_GAMES_BY_ID = async (req, res) => {
     try {
         const { id } = req.params;
 
-        let gameById = await Game.findByPk(id);
+        let gameById = await Game.findByPk(id, {
+            include: [{model: Author}, {model: Category}, {model: Designer}, {model: Editorial}, {model: Language}, {model: Mechanic}, {model: Thematic}]});
 
         if (!gameById) {
             return res.status(404).json({message: `No games were found with id ${id}`});
