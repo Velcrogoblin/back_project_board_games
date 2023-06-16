@@ -1,4 +1,4 @@
-const { Game, Op } = require ("../db");
+const { Game, Designer, Editorial, Language, Category, Mechanic, Thematic, Author, Op } = require ("../db.js");
 
 const GET_GAMES_BY_NAME = async (req, res) => {
     try {
@@ -10,6 +10,7 @@ const GET_GAMES_BY_NAME = async (req, res) => {
                     [Op.iLike]: "%" + name + "%",
                 },
             },
+            include: [{model: Author}, {model: Category}, {model: Designer}, {model: Editorial}, {model: Language}, {model: Mechanic}, {model: Thematic}]
         });
 
         if (gameByName.length === 0) {
