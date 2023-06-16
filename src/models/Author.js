@@ -1,25 +1,23 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  sequelize.define("state", {
-    id_state: {
+  sequelize.define("author", {
+    author_id: {
       type: DataTypes.INTEGER,
-      autoIncrement: true,
       primaryKey: true,
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    notes: {
+    nationality: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-
     active: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
-      allowNull: false,
     },
-  });
+  }, {timestamps: false});
 };
