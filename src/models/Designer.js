@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  sequelize.define("Designer", {
+  sequelize.define("designer", {
     designer_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -14,6 +14,7 @@ module.exports = (sequelize) => {
     active: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
+      allowNull: false,
     },
-  });
+  }, {timestamps: false});
 };

@@ -2,16 +2,13 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define("editorial", {
-    id_editorial: {
+    editorial_id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    notes: {
+    
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -21,5 +18,5 @@ module.exports = (sequelize) => {
       defaultValue: true,
       allowNull: false,
     },
-  });
+  }, {timestamps: false});
 };

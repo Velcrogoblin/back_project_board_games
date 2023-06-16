@@ -7,14 +7,16 @@ module.exports = (sequelize) => {
       autoIncrement: true,
       primaryKey: true
     },
+
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+
     active: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
       allowNull: false,
     }
-  });
+  }, {timestamps: false});
 };
