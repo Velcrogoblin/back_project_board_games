@@ -5,9 +5,9 @@ module.exports = (sequelize) => {
   sequelize.define(
     "Game",
     {
-      id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+      game_id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
       },
 
@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
       },
 
       price: {
-        type: DataTypes.NUMERIC,
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
       },
 
@@ -31,8 +31,13 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
 
-      players: {
-        type: DataTypes.ARRAY(DataTypes.INTEGER),
+      players_min: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+
+      players_max: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
 
@@ -59,7 +64,7 @@ module.exports = (sequelize) => {
       },
 
       weight: {
-        type: DataTypes.NUMERIC,
+        type: DataTypes.DECIMAL(4, 2),
         allowNull: false,
       },
 

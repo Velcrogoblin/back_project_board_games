@@ -7,11 +7,8 @@ module.exports = (sequelize) => {
       autoIncrement: true,
       primaryKey: true,
     },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    notes: {
+    
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -21,5 +18,5 @@ module.exports = (sequelize) => {
       defaultValue: true,
       allowNull: false,
     },
-  });
+  }, {timestamps: false});
 };
