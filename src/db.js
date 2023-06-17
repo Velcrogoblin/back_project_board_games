@@ -56,11 +56,9 @@ Category.belongsToMany(Game, { through: "GameCategory", timestamps: false });
 
 Game.belongsTo(Thematic);
 Thematic.hasMany(Game);
-Game.belongsTo(Thematic);
 
 Game.belongsTo(Mechanic);
 Mechanic.hasMany(Game);
-Game.belongsTo(Mechanic);
 
 Game.belongsToMany(Designer, { through: "GameDesigner", timestamps: false });
 Designer.belongsToMany(Game, { through: "GameDesigner", timestamps: false });
