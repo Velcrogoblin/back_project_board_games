@@ -6,7 +6,6 @@ const POST_THEMATICS = async (req, res) => {
     if (!name || name.length === 0) {
       return res.status(400).json({ message: "Missing data." });
     }
-    // console.log(name);
 
     const existingThematic = await Thematic.findOne({
       where: {
@@ -16,18 +15,13 @@ const POST_THEMATICS = async (req, res) => {
       },
     });
     if (existingThematic) {
-      return res
-        .status(500)
-        .json({ message: "Does not exist in the database." });
+      return res.status(500).json({ message: "It already exists." });
     }
-    // console.log(existingThematic);
 
-    const thematicCreated = await Thematic.create({ name });
-    console.log(thematicCreated);
-    await thematicCreated.addThematics(existingThematic);
+    await Thematic.create({ name });
     return res
       .status(201)
-      .json({ message: "Thematic was successfully created." });
+      .json({ message: "It was successfully created." });
   } catch ({ message }) {
     return res.status(500).json({ message });
   }
