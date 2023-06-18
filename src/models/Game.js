@@ -1,75 +1,80 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 
+// Nationalities y states se van, agregar categories
 module.exports = (sequelize) => {
-  sequelize.define('game', {
-    game_id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-    },
+  sequelize.define(
+    "Game",
+    {
+      game_id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
 
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    
-    released: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
 
-    price: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: false,
-    },
+      released: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
 
-    age: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+      price: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false,
+      },
 
-    players_min: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+      age: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
 
-    players_max: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+      players_min: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
 
-    rating: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER),
-      allowNull: true,
-    },
+      players_max: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
 
-    stock: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0,
-    },
+      rating: {
+        type: DataTypes.ARRAY(DataTypes.INTEGER),
+        allowNull: true,
+      },
 
-    active: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true,
-    },
+      stock: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+      },
 
-    image: {
-      type: DataTypes.JSON,
-      allowNull: true,
-    },
+      active: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      },
 
-    weight: {
-      type: DataTypes.DECIMAL(4,2),
-      allowNull: false,
-    },
+      image: {
+        type: DataTypes.JSON,
+        allowNull: true,
+      },
 
-    playing_time: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      weight: {
+        type: DataTypes.DECIMAL(4, 2),
+        allowNull: false,
+      },
+
+      playing_time: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+    },
+    {
+      timestamps: false,
     }
-
-  }, {
-    timestamps: false});
+  );
 };
