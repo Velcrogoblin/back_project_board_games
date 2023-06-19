@@ -1,22 +1,28 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-    sequelize.define("thematic", {
-        thematic_id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
-        },
+  sequelize.define(
+    "Thematic",
+    {
+      thematic_id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
 
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
 
-        active: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: true,
-            allowNull: false,
-        }
-    }, {timestamps: false});
+      active: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+        allowNull: false,
+      },
+    },
+    {
+      timestamps: false,
+    }
+  );
 };
