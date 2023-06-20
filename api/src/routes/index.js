@@ -9,8 +9,8 @@ const mechanicsRoute = require("./mechanicRoute.js");
 
 const router = Router();
 
-router.use("/Editorials", EditorialRoutes);
-router.use("/Languages", LanguageRoutes);
+router.use("/editorials", EditorialRoutes);
+router.use("/languages", LanguageRoutes);
 router.use("/games", gameRoutes);
 router.use("/categories", categoriesRoutes);
 router.use("/thematics", thematicRoute);

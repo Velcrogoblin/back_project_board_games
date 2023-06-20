@@ -1,10 +1,10 @@
 const { Router } = require("express");
-
-const getAllThematics = require("../controllers/getAllThematics");
-const postThematic = require("../controllers/postThematic");
+const {getAllThematics, postThematic} = require("../controllers/controllerThemathics");
 
 const router = Router();
 
-router.get("/", getAllThematics).post("/", postThematic);
+router
+.get("/", getAllThematics)
+.post("/", postThematic);
 
 module.exports = router;

@@ -1,11 +1,9 @@
 const { Router } = require("express");
-const getAllEditorials = require("../controllers/getAllEditorials");
-const createEditorial = require("../controllers/createEditorial");
+const {getAllEditorials, postEditorial} = require("../controllers/controllerEditorial");
 const router = Router();
-
 
 router
 .get("/", getAllEditorials)
-.post("/", createEditorial);
+.post("/", postEditorial);
 
 module.exports = router;
