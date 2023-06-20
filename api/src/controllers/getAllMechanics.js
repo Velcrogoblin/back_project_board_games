@@ -1,17 +1,13 @@
-const { Mechanic, Game } = require("../db");
+const Mechanic = require("../db");
 
 const getAllMechanics = async (req, res) => {
   try {
-    const existingMechanics = await Mechanic.findAll({
-      include: [{ model: Game }],
-    });
-    if (!existingMechanics || existingMechanics.length === 0) {
-      return res.status(500).json({ message: "Does not exist mechanics yet." });
-    }
+    const existingMechanics = await Mechanic.findAll();
+    existingMechanics.length === 0 && res.status(500).json({ message: "No mechanics were found" });
 
     return res.status(200).json(existingMechanics);
-  } catch ({ message }) {
-    return res.status(500).json({ message });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
   }
 };
 
