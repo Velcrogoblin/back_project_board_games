@@ -1,6 +1,6 @@
 const { Thematic, Op } = require("../db");
 
-const POST_THEMATICS = async (req, res) => {
+const postThematic = async (req, res) => {
   try {
     const { name } = req.body;
     if (!name || name.length === 0) {
@@ -28,5 +28,5 @@ const POST_THEMATICS = async (req, res) => {
 };
 
 module.exports = {
-  POST_THEMATICS,
+  postThematic,
 };

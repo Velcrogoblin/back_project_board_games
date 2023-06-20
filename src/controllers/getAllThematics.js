@@ -1,6 +1,6 @@
 const { Thematic, Game } = require("../db");
 
-const GET_ALL_THEMATICS = async (req, res) => {
+const getAllThematics = async (req, res) => {
   try {
     const existingThematic = await Thematic.findAll({
       include: [{ model: Game }],
@@ -16,5 +16,5 @@ const GET_ALL_THEMATICS = async (req, res) => {
 };
 
 module.exports = {
-  GET_ALL_THEMATICS,
+  getAllThematics,
 };

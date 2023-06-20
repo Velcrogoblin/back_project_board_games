@@ -1,6 +1,6 @@
 const { Game, Designer, Editorial, Language, Category, Mechanic, Thematic, Author } = require ("../db.js");
 
-const GET_ALL_GAMES = async (req, res) => {
+const getAllGames = async (req, res) => {
     try {
         let games = await Game.findAll({
             include: [{model: Author}, {model: Category}, {model: Designer}, {model: Editorial}, {model: Language}, {model: Mechanic}, {model: Thematic}]});
@@ -14,5 +14,5 @@ const GET_ALL_GAMES = async (req, res) => {
 };
 
 module.exports = {
-    GET_ALL_GAMES
+    getAllGames
 };

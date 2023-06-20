@@ -1,6 +1,6 @@
 const { Game, Designer, Editorial, Language, Category, Mechanic, Thematic, Author, Op } = require ("../db.js");
 
-const GET_GAMES_BY_NAME = async (req, res) => {
+const getGamesByName = async (req, res) => {
     try {
         const { name } = req.query;
 
@@ -23,5 +23,5 @@ const GET_GAMES_BY_NAME = async (req, res) => {
 }
 
 module.exports = {
-    GET_GAMES_BY_NAME
+    getGamesByName
 };
