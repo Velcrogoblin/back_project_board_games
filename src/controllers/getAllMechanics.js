@@ -1,6 +1,6 @@
 const { Mechanic, Game } = require("../db");
 
-const GET_ALL_MECHANICS = async (req, res) => {
+const getAllMechanics = async (req, res) => {
   try {
     const existingMechanics = await Mechanic.findAll({
       include: [{ model: Game }],
@@ -16,5 +16,5 @@ const GET_ALL_MECHANICS = async (req, res) => {
 };
 
 module.exports = {
-  GET_ALL_MECHANICS,
+  getAllMechanics,
 };

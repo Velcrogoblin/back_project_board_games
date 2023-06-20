@@ -1,6 +1,6 @@
 const Mechanic = require("../models/Mechanic");
 
-const CREATE_MECHANIC = async (req, res) => {
+const createMechanic = async (req, res) => {
   const { name, description } = req.body;
 
   try {
@@ -16,5 +16,5 @@ const CREATE_MECHANIC = async (req, res) => {
 };
 
 module.exports = {
-  CREATE_MECHANIC,
+  createMechanic,
 };

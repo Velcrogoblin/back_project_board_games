@@ -7,7 +7,7 @@ const Language = require("../models/Language");
 const Mechanic = require("../models/Mechanic");
 const Thematic = require("../models/Thematic");
 
-const CREATE_GAME = async (req, res) => {
+const createGame = async (req, res) => {
   const {
     title,
     description,
@@ -65,5 +65,5 @@ const CREATE_GAME = async (req, res) => {
 };
 
 module.exports = {
-  CREATE_GAME,
+  createGame,
 };
