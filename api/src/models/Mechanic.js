@@ -10,9 +10,14 @@ module.exports = (sequelize) => {
         primaryKey: true,
       },
 
-      name: {
+      mechanic_name: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+
+      description : {
+        type: DataTypes.STRING,
+        allowNul: false
       },
 
       active: {

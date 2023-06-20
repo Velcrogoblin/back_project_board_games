@@ -1,4 +1,4 @@
-const { Category } = require("../db");
+const Category = require("../db");
 
 const getAllCategories = async (req, res) => {
   try {
