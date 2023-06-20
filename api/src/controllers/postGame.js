@@ -1,69 +1,84 @@
-const Game = require("../models/Game");
-const Author = require("../models/Author");
-const Category = require("../models/Category");
-const Designer = require("../models/Designer");
-const Editorial = require("../models/Editorial");
-const Language = require("../models/Language");
-const Mechanic = require("../models/Mechanic");
-const Thematic = require("../models/Thematic");
+const Game = require("../db");
+const Author = require("../db");
+const Category = require("../db");
+const Designer = require("../db");
+const Editorial = require("../db");
+const Language = require("../db");
+const Mechanic = require("../db");
+const Thematic = require("../db");
 
 const createGame = async (req, res) => {
   const {
-    title,
-    description,
-    year,
-    authorId,
-    categoryId,
-    designerId,
-    editorialId,
-    languageId,
-    mechanicIds,
-    thematicIds,
+   name,
+   released,
+   price,
+   age,
+   players_min,
+   players_max,
+   rating,
+   stock,
+   image,
+   weight,
+   playing_time,
+   author_name,
+   category_name,
+   designer_name,
+   editorial_name,
+   language_name,
+   mechanic_name,
+   thematic_name
   } = req.body;
 
   try {
-    const author = await Author.findByPk(authorId);
-    const category = await Category.findByPk(categoryId);
-    const designer = await Designer.findByPk(designerId);
-    const editorial = await Editorial.findByPk(editorialId);
-    const language = await Language.findByPk(languageId);
-    const mechanics = await Mechanic.findAll({ where: { id: mechanicIds } });
-    const thematics = await Thematic.findAll({ where: { id: thematicIds } });
+    const author = await Author.findOne({ where: { author_name } });
+    const category = await Category.findOne({ where: { category_name } });
+    const designer = await Designer.findOne({ where: { designer_name } });
+    const editorial = await Editorial.findOne({ where: { editorial_name } });
+    const language = await Language.findOne({ where: { language_name } });
+    const mechanics = await Mechanic.findOne({ where: { mechanic_name } });
+    const thematics = await Thematic.findOne({ where: { thematic_name } });
+    //const gameName = await Game.findOne({ where: { name } });
 
-    if (
-      !author ||
-      !category ||
-      !designer ||
-      !editorial ||
-      !language ||
-      mechanics.length !== mechanicIds.length ||
-      thematics.length !== thematicIds.length
-    ) {
-      return res.status(400).json({
-        message: "No matching game attributes found.",
-      });
-    }
+    // if (
+    //   !author ||
+    //   !category ||
+    //   !designer ||
+    //   !editorial ||
+    //   !language ||
+    //   mechanics.length !== mechanicIds.length ||
+    //   thematics.length !== thematicIds.length
+    // ) {
+    //   return res.status(400).json({
+    //     message: "No matching game attributes found.",
+    //   });
+    // }
 
     const newGame = await Game.create({
-      title,
-      description,
-      year,
+      name,
+    released,
+     price,
+    age,
+    players_min,
+    players_max,
+    rating,
+    stock,
+    image,
+    weight,
+     playing_time
     });
 
     await newGame.setAuthor(author);
-    await newGame.setCategory(category);
-    await newGame.setDesigner(designer);
+    await newGame.addCategories(category);
+    await newGame.addDesigners(designer);
     await newGame.setEditorial(editorial);
-    await newGame.setLanguage(language);
+    await newGame.addLanguages(language);
     await newGame.addMechanics(mechanics);
     await newGame.addThematics(thematics);
 
-    return res.status(200).json(newGame);
+    return res.status(201).json({ message: `Game ${name} created successfuly`});
   } catch (error) {
-    return res.status(500).json({ message: "Error creating game." });
+    return res.status(500).json({ message: error.message });
   }
 };
 
-module.exports = {
-  createGame,
-};
+module.exports = createGame;

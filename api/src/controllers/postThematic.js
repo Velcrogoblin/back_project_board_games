@@ -2,10 +2,9 @@ const { Thematic, Op } = require("../db");
 
 const postThematic = async (req, res) => {
   try {
-    const { name } = req.body;
-    if (!name || name.length === 0) {
-      return res.status(400).json({ message: "Missing data." });
-    }
+    const { name } = req.query;
+
+    !name && res.status(400).json({ message: "Thematic is required" });
 
     const existingThematic = await Thematic.findOne({
       where: {
@@ -14,19 +13,12 @@ const postThematic = async (req, res) => {
         },
       },
     });
-    if (existingThematic) {
-      return res.status(500).json({ message: "It already exists." });
-    }
-
-    await Thematic.create({ name });
-    return res
-      .status(201)
-      .json({ message: "It was successfully created." });
-  } catch ({ message }) {
-    return res.status(500).json({ message });
+    existingThematic ? res.status(406).json({ message: `Thematic ${name} already exists` })
+    : await Thematic.create({ name });
+    return res.status(201).json({ message: `Thematic ${name} created successfuly` });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
   }
 };
 
-module.exports = {
-  postThematic,
-};
+module.exports = postThematic;

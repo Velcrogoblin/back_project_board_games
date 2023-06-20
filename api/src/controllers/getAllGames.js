@@ -13,6 +13,4 @@ const getAllGames = async (req, res) => {
     }
 };
 
-module.exports = {
-    getAllGames
-};
+module.exports = getAllGames;
