@@ -1,7 +1,7 @@
 const { Category } = require("../db");
 
 const createCategory = async (req, res) => {
-  const { name } = req.body;
+  const { name, active = true } = req.body;
   try {
     if (!name) {
       return res.status(400).json({ message: "Name is required" });
@@ -11,7 +11,7 @@ const createCategory = async (req, res) => {
     if (category) {
       return res.status(400).json({ message: `There is already a category with the name ${name}` });
     } else {
-      await Category.create({ name });
+      await Category.create({ name, active });
       res.status(200).json({ message: "Category created" });
     }
   } catch ({ message }) {
