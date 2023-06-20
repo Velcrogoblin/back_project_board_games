@@ -1,6 +1,6 @@
 const { Router } = require("express");
 
-const { getAllMechanics } = require("../controllers/getAllMechanics");
+const getAllMechanics = require("../controllers/getAllMechanics");
 const postMechanic = require("../controllers/postMechanic");
 
 const router = Router();

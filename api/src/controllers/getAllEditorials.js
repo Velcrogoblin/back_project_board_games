@@ -12,6 +12,4 @@ const getAllEditorials = async (req, res) => {
   }
 };
 
-module.exports = {
-  getAllEditorials
-};
+module.exports = getAllEditorials;

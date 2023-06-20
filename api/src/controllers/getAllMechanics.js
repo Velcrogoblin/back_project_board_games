@@ -11,6 +11,4 @@ const getAllMechanics = async (req, res) => {
   }
 };
 
-module.exports = {
-  getAllMechanics,
-};
+module.exports = getAllMechanics;
