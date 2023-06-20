@@ -1,11 +1,10 @@
 const { Router } = require("express");
-const getAllLanguages = require ("../controllers/getAllLanguages");
-const createLanguage = require ("../controllers/createLanguage");
+const {getAllLanguages, postLanguage} = require ("../controllers/controllerLanguage");
 
 const router = Router();
 
 router
 .get("/", getAllLanguages)
-.post("/", createLanguage);
+.post("/", postLanguage);
 
 module.exports = router;
