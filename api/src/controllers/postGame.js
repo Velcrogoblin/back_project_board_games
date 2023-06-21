@@ -29,7 +29,17 @@ const createGame = async (req, res) => {
    thematic_name
   } = req.body;
 
-  try {
+  const existingGame = await Game.findOne({where: { name }});
+  
+  if (existingGame) {
+    return res.status(500).json({message: `${name} already exists.`});
+  }
+
+  if (
+    !name || !released || !price || !age || !players_min || !players_max || !rating || !stock || !image || !weight || !playing_time || !author_name || !category_name || !designer_name || !editorial_name || !language_name || !mechanic_name || !thematic_name) {
+    return res.status(400).json({message: "There is missing information."});
+  }
+
     const author = await Author.findOne({ where: { author_name } });
     const category = await Category.findOne({ where: { category_name } });
     const designer = await Designer.findOne({ where: { designer_name } });
@@ -37,22 +47,16 @@ const createGame = async (req, res) => {
     const language = await Language.findOne({ where: { language_name } });
     const mechanics = await Mechanic.findOne({ where: { mechanic_name } });
     const thematics = await Thematic.findOne({ where: { thematic_name } });
-    //const gameName = await Game.findOne({ where: { name } });
 
-    // if (
-    //   !author ||
-    //   !category ||
-    //   !designer ||
-    //   !editorial ||
-    //   !language ||
-    //   mechanics.length !== mechanicIds.length ||
-    //   thematics.length !== thematicIds.length
-    // ) {
-    //   return res.status(400).json({
-    //     message: "No matching game attributes found.",
-    //   });
-    // }
-
+    if (!author) {return res.status(400).json({message: `${author_name} does not exist`})};
+    if (!category) {return res.status(400).json({message: `${category_name} does not exist`})};
+    if (!designer) {return res.status(400).json({message: `${designer_name} does not exist`})};
+    if (!editorial) {return res.status(400).json({message: `${editorial_name} does not exist`})};
+    if (!language) {return res.status(400).json({message: `${language_name} does not exist`})};
+    if (!mechanics) {return res.status(400).json({message: `${mechanic_name} does not exist`})};
+    if (!thematics) {return res.status(400).json({message: `${thematic_name} does not exist`})};
+    
+  try {
     const newGame = await Game.create({
     name,
     released,
