@@ -5,7 +5,9 @@ const getAllGames = async (req, res) => {
         let games = await Game.findAll({
             include: [{model: Author}, {model: Category}, {model: Designer}, {model: Editorial}, {model: Language}, {model: Mechanic}, {model: Thematic}]});
 
-        games.length === 0 && res.status(404).json({message: "No games were found"});
+        if (games.length === 0) {
+            return res.status(404).json({message: "No games were found"});
+        };
         
         return res.status(200).json(games);
     } catch (error) {
