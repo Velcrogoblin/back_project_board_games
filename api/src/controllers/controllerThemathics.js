@@ -29,7 +29,9 @@ const getAllThematics = async (req, res) => {
     try {
       const existingThematic = await Thematic.findAll();
      
-      existingThematic.length === 0 && res.status(404).json({ message: "No thematics found" });
+      if (existingThematic.length === 0) {
+        return res.status(404).json({ message: "No thematics found" });
+      }
       
       return res.status(200).json(existingThematic);
     } catch (error) {
