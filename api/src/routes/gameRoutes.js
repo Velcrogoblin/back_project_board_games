@@ -1,9 +1,12 @@
 const { Router } = require("express");
 
-const getAllGames = require("../controllers/getAllGames");
-const getGamesById = require("../controllers/getGamesById");
-const getGamesByName = require("../controllers/getGamesByName");
-const createGame = require("../controllers/postGame");
+const {
+  getAllGames,
+  getGamesById,
+  getGamesByName,
+  createGame,
+} = require("../controllers/gameController");
+
 const router = Router();
 
 router

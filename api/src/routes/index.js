@@ -18,4 +18,5 @@ router.use("/thematics", thematicRoute);
 router.use("/mechanics", mechanicsRoute);
 router.use("/authors", authorRoutes);
 router.use("/designers", designerRoutes);
+
 module.exports = router;
