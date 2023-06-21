@@ -9,7 +9,7 @@ const postCategory = async (req, res) => {
 
     if (category){
       res.status(400).json({ message: `There is already a category with the name ${category_name}` })
-    } else{
+    } else {
       await Category.create({ category_name: category_name })
       res.status(200).json({ message: "Category created successfuly" });
     }
