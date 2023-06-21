@@ -1,11 +1,11 @@
-const Game = require("../db");
-const Author = require("../db");
-const Category = require("../db");
-const Designer = require("../db");
-const Editorial = require("../db");
-const Language = require("../db");
-const Mechanic = require("../db");
-const Thematic = require("../db");
+const {Game} = require("../db");
+const {Author} = require("../db");
+const {Category} = require("../db");
+const {Designer} = require("../db");
+const {Editorial} = require("../db");
+const {Language} = require("../db");
+const {Mechanic} = require("../db");
+const {Thematic} = require("../db");
 
 const createGame = async (req, res) => {
   const {
@@ -72,8 +72,8 @@ const createGame = async (req, res) => {
     await newGame.addDesigners(designer);
     await newGame.setEditorial(editorial);
     await newGame.addLanguages(language);
-    await newGame.addMechanics(mechanics);
-    await newGame.addThematics(thematics);
+    await newGame.setMechanic(mechanics);
+    await newGame.setThematic(thematics);
 
     return res.status(201).json({ message: `Game ${name} created successfuly`});
   } catch (error) {
