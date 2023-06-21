@@ -54,9 +54,9 @@ const createGame = async (req, res) => {
     // }
 
     const newGame = await Game.create({
-      name,
+    name,
     released,
-     price,
+    price,
     age,
     players_min,
     players_max,
@@ -64,7 +64,7 @@ const createGame = async (req, res) => {
     stock,
     image,
     weight,
-     playing_time
+    playing_time
     });
 
     await newGame.setAuthor(author);
