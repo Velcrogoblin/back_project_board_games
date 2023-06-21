@@ -29,15 +29,15 @@ const createGame = async (req, res) => {
    thematic_name
   } = req.body;
 
-  const existingGame = await Game.findOne({where: { name }});
-  
-  if (existingGame) {
-    return res.status(406).json({message: `${name} already exists.`});
-  }
-
   if (
     !name || !released || !price || !age || !players_min || !players_max || !rating || !stock || !image || !weight || !playing_time || !author_name || !category_name || !designer_name || !editorial_name || !language_name || !mechanic_name || !thematic_name) {
     return res.status(406).json({message: "There is missing information."});
+  }
+
+  const existingGame = await Game.findOne({where: { name: name }});
+  
+  if (existingGame) {
+    return res.status(406).json({message: `${name} already exists.`});
   }
 
     const author = await Author.findOne({ where: { author_name } });
