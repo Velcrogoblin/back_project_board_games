@@ -5,14 +5,16 @@ const postEditorial = async (req, res) => {
  
    const existingEditorial = await Editorial.findOne({where: { editorial_name: editorial_name }});
  
-   !editorial_name && res.status(400).json({message: "Name is required"});
+   if (!editorial_name) {
+    return res.status(400).json({message: "Name is required"});
+   }
 
    if(existingEditorial){
     return res.status(406).json({ message: `Editorial with name ${editorial_name} already exists` });
    } 
 
     try {
-     const newEditorial = await Editorial.create({
+     await Editorial.create({
       editorial_name: editorial_name
      });
  
