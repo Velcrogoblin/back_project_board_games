@@ -3,12 +3,13 @@ const {Editorial }= require("../db");
 const postEditorial = async (req, res) => {
     const { editorial_name } = req.body;
  
-   const existingEditorial = await Editorial.findOne({where: { editorial_name: editorial_name }});
- 
-   if (!editorial_name) {
-    return res.status(400).json({message: "Name is required"});
-   }
-
+    
+    if (!editorial_name) {
+      return res.status(400).json({message: "Name is required"});
+    }
+    
+    const existingEditorial = await Editorial.findOne({where: { editorial_name: editorial_name }});
+    
    if(existingEditorial){
     return res.status(406).json({ message: `Editorial with name ${editorial_name} already exists` });
    } 
