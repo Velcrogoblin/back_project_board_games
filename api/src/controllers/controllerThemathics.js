@@ -18,7 +18,7 @@ const postThematic = async (req, res) => {
     if(existingThematic){ 
       return res.status(406).json({ message: `Thematic ${thematic_name} already exists` })
     }
-    const newThematic = await Thematic.create({ thematic_name: thematic_name });
+    await Thematic.create({ thematic_name: thematic_name });
     return res.status(201).json({ message: `Thematic ${thematic_name} created successfuly` });
   } catch (error) {
     return res.status(500).json({ message: error.message });

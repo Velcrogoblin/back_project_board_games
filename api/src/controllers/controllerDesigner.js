@@ -30,7 +30,7 @@ const postDesigner = async (req, res) => {
       return res.status(201).json({ message: "Designer created successfuly" });
     }
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
 
