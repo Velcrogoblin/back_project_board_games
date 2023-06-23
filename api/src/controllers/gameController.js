@@ -7,6 +7,7 @@ const {
   Mechanic,
   Thematic,
   Author,
+  Op,
 } = require("../db");
 
 const getAllGames = async (req, res) => {
@@ -36,6 +37,9 @@ const getAllGames = async (req, res) => {
 const getGamesByName = async (req, res) => {
   try {
     const { name } = req.query;
+    if (!name || name.length === 0) {
+      return res.status(400).json({ message: "No name was provided" });
+    }
 
     let gameByName = await Game.findAll({
       where: {
@@ -54,10 +58,11 @@ const getGamesByName = async (req, res) => {
       ],
     });
 
-    gameByName.length === 0 &&
-      res
+    if (gameByName.length === 0) {
+      return res
         .status(404)
         .json({ message: `No games were found with name ${name}` });
+    }
 
     return res.status(200).json(gameByName);
   } catch (error) {
@@ -68,6 +73,9 @@ const getGamesByName = async (req, res) => {
 const getGamesById = async (req, res) => {
   try {
     const { id } = req.params;
+    if (!id) {
+      return res.status(400).json({ message: "No id was provided" });
+    }
 
     let gameById = await Game.findByPk(id, {
       include: [
@@ -81,8 +89,11 @@ const getGamesById = async (req, res) => {
       ],
     });
 
-    !gameById &&
-      res.status(404).json({ message: `No games were found with id ${id}` });
+    if (!gameById) {
+      return res
+        .status(404)
+        .json({ message: `No games were found with id ${id}` });
+    }
 
     return res.status(200).json(gameById);
   } catch (error) {

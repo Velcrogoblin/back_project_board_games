@@ -1,4 +1,5 @@
 const { Router } = require("express");
+
 const EditorialRoutes = require("./EditorialRoutes.js");
 const LanguageRoutes = require("./LanguageRoutes.js");
 const gameRoutes = require("./gameRoutes.js");

@@ -1,7 +1,8 @@
 const { Router } = require("express");
+
 const {
-  postAuthor,
   getAllAuthors,
+  postAuthor,
 } = require("../controllers/authorController");
 
 const router = Router();
