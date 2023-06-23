@@ -13,6 +13,7 @@ const {
 const getAllGames = async (req, res) => {
   try {
     let games = await Game.findAll({
+      where: { active: true },
       include: [
         { model: Author },
         { model: Category },
