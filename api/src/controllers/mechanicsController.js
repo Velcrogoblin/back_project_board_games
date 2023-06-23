@@ -43,7 +43,47 @@ const getAllMechanics = async (req, res) => {
   }
 };
 
+const deleteMechanic = async (req, res) => {
+  const { id } = req.params;
+
+  if (isNaN(id)) return res.status(400).json({ message: "The id must be a number." });
+
+  try {
+    const mechanic = await Mechanic.findByPk(id);
+    if (mechanic) {
+      mechanic.active = false;
+      await mechanic.save();
+      return res.status(200).json({ message: `The mechanic ${mechanic.mechanic_name} has been deleted.` });
+    }
+    res.status(404).json({ message: `There is no mechanic with id ${id}.` });
+  } catch ({ message }) {
+    res.status(500).json({ error: message });
+  }
+}
+
+const putMechanic = async (req, res) => {
+  const { mechanic_id, mechanic_name, description, active } = req.body;
+
+  if (!mechanic_id) return res.status(400).json({ message: 'Id is required.' });
+
+  try {
+    const mechanic = await Mechanic.findByPk(mechanic_id);
+    if (mechanic) {
+      if (mechanic_name) mechanic.mechanic_name = mechanic_name;
+      if (description) mechanic.description = description;
+      if (active !== undefined) mechanic.active = active;
+      await mechanic.save();
+      return res.status(200).json({ message: `The mechanic has been updated.` });
+    }
+    res.status(404).json({ message: `There is no mechanic with id ${author_id}.` });
+  } catch ({ message }) {
+    res.status(500).json({ error: message });
+  }
+}
+
 module.exports = {
   postMechanic,
   getAllMechanics,
+  deleteMechanic,
+  putMechanic
 };
