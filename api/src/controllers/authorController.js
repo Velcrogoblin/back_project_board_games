@@ -1,4 +1,4 @@
-const { Author } = require("../db");
+const { Author, Op } = require("../db");
 
 const getAllAuthors = async (req, res) => {
   try {
@@ -9,7 +9,7 @@ const getAllAuthors = async (req, res) => {
     }
     return res.status(200).json(authors);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -76,8 +76,8 @@ const putAuthor = async (req, res) => {
 }
 
 module.exports = {
-  postAuthor,
   getAllAuthors,
   deleteAuthor,
-  putAuthor
+  putAuthor,
+  postAuthor
 };

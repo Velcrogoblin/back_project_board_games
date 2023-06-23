@@ -1,9 +1,10 @@
 const { Router } = require("express");
+
 const {
-  postAuthor,
   getAllAuthors,
   deleteAuthor,
-  putAuthor
+  putAuthor,
+  postAuthor
 } = require("../controllers/authorController");
 
 const router = Router();
