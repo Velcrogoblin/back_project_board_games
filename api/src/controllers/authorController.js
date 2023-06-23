@@ -37,7 +37,41 @@ const postAuthor = async (req, res) => {
   }
 };
 
+const deleteAuthor = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const author = await Author.findByPk(id);
+    if (author) {
+      author.active = false;
+      await author.save();
+      return res.status(200).json({ message: `The author ${author.author_name} has been deleted.` });
+    }
+    res.status(400).json({ message: `There is no author with id ${id}.` });
+  } catch ({ message }) {
+    res.status(500).json({ error: message });
+  }
+}
+
+const putAuthor = async (req, res) => {
+  const { id, author_name, nationality, active } = req.body;
+  try {
+    const author = await Author.findByPk(id);
+    if (author) {
+      if (author_name) author.author_name = author_name;
+      if (nationality) author.nationality = nationality;
+      if (active !== undefined) author.active = active;
+      await author.save();
+      return res.status(200).json({ message: `The author has been updated.` });
+    }
+    res.status(400).json({ message: `There is no author with id ${id}.` });
+  } catch ({ message }) {
+    res.status(500).json({ error: message });
+  }
+}
+
 module.exports = {
   postAuthor,
   getAllAuthors,
+  deleteAuthor,
+  putAuthor
 };
