@@ -215,7 +215,19 @@ const createGame = async (req, res) => {
   }
 };
 
+const deleteGame = async (req, res) => {
+  const { id } = req.params;
+  try {
+    let response = await Game.findByPk(id);
+    await response.update({ active: false });
+    return res.status(200).json({ message: "Game was deleted successfully" });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = {
+  deleteGame,
   getAllGames,
   getGamesById,
   getGamesByName,
