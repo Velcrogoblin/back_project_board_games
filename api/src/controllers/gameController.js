@@ -116,75 +116,96 @@ const createGame = async (req, res) => {
     weight,
     playing_time,
     author_name,
-    category_name,
-    designer_name,
+    categories_name,
+    designers_name,
     editorial_name,
-    language_name,
+    languages_name,
     mechanic_name,
     thematic_name,
   } = req.body;
 
-  if (
-    !name ||
-    !released ||
-    !price ||
-    !age ||
-    !players_min ||
-    !players_max ||
-    !stock ||
-    !image ||
-    !weight ||
-    !playing_time ||
-    !author_name ||
-    !category_name ||
-    !designer_name ||
-    !editorial_name ||
-    !language_name ||
-    !mechanic_name ||
-    !thematic_name
-  ) {
-    return res.status(406).json({ message: "There is missing information." });
-  }
-
-  const existingGame = await Game.findOne({ where: { name: name } });
-
-  if (existingGame) {
-    return res.status(406).json({ message: `${name} already exists.` });
-  }
-
-  const author = await Author.findOne({ where: { author_name } });
-  const category = await Category.findOne({ where: { category_name } });
-  const designer = await Designer.findOne({ where: { designer_name } });
-  const editorial = await Editorial.findOne({ where: { editorial_name } });
-  const language = await Language.findOne({ where: { language_name } });
-  const mechanics = await Mechanic.findOne({ where: { mechanic_name } });
-  const thematics = await Thematic.findOne({ where: { thematic_name } });
-
-  if (!author) {
-    return res.status(406).json({ message: `${author_name} does not exist` });
-  }
-  if (!category) {
-    return res.status(406).json({ message: `${category_name} does not exist` });
-  }
-  if (!designer) {
-    return res.status(406).json({ message: `${designer_name} does not exist` });
-  }
-  if (!editorial) {
-    return res
-      .status(406)
-      .json({ message: `${editorial_name} does not exist` });
-  }
-  if (!language) {
-    return res.status(406).json({ message: `${language_name} does not exist` });
-  }
-  if (!mechanics) {
-    return res.status(406).json({ message: `${mechanic_name} does not exist` });
-  }
-  if (!thematics) {
-    return res.status(406).json({ message: `${thematic_name} does not exist` });
-  }
-
   try {
+    if (
+      !name ||
+      !released ||
+      !price ||
+      !age ||
+      !players_min ||
+      !players_max ||
+      !stock ||
+      !image ||
+      !weight ||
+      !playing_time ||
+      !author_name ||
+      categories_name.length === 0 ||
+      designers_name.length === 0 ||
+      !editorial_name ||
+      languages_name.length === 0 ||
+      !mechanic_name ||
+      !thematic_name
+    ) {
+      return res.status(406).json({ message: "There is missing information." });
+    }
+
+    const existingGame = await Game.findOne({ where: { name: name } });
+
+    if (existingGame) {
+      return res.status(406).json({ message: `${name} already exists.` });
+    }
+
+    const author = await Author.findOne({ where: { author_name } });
+
+    const categories = await Promise.all(categories_name.map(async (category) => {
+      const data = await Category.findOne({ where: { category_name: category } });
+
+      if (!data) {
+        throw { message: `Category ${category} does not exist`, statusCode: 404 };
+      }
+
+      return data.dataValues.category_id;
+    }));
+
+
+    const designers = await Promise.all(designers_name.map(async (designer) => {
+      const data = await Designer.findOne({ where: { designer_name: designer } });
+
+      if (!data) {
+        throw { message: `Designer ${designer} does not exist`, statusCode: 404 };
+      }
+
+      return data.dataValues.designer_id;
+    }));
+
+    const languages = await Promise.all(languages_name.map(async (language) => {
+      const data = await Language.findOne({ where: { language_name: language } });
+
+      if (!data) {
+        throw { message: `Language ${language} does not exist`, statusCode: 404 };
+      }
+
+      return data.dataValues.id_language;
+    }));
+
+    const editorial = await Editorial.findOne({ where: { editorial_name } });
+    const mechanics = await Mechanic.findOne({ where: { mechanic_name } });
+    const thematics = await Thematic.findOne({ where: { thematic_name } });
+
+    if (!author) {
+      return res.status(406).json({ message: `Author ${author_name} does not exist` });
+    }
+
+    if (!editorial) {
+      return res
+        .status(406)
+        .json({ message: `Editorial ${editorial_name} does not exist` });
+    }
+    if (!mechanics) {
+      return res.status(406).json({ message: `Mechanic ${mechanic_name} does not exist` });
+    }
+    if (!thematics) {
+      return res.status(406).json({ message: `Thematic ${thematic_name} does not exist` });
+    }
+
     const newGame = await Game.create({
       name,
       released,
@@ -200,10 +221,10 @@ const createGame = async (req, res) => {
     });
 
     await newGame.setAuthor(author);
-    await newGame.addCategories(category);
-    await newGame.addDesigners(designer);
+    await newGame.addCategories(categories);
+    await newGame.addDesigners(designers);
     await newGame.setEditorial(editorial);
-    await newGame.addLanguages(language);
+    await newGame.addLanguages(languages);
     await newGame.setMechanic(mechanics);
     await newGame.setThematic(thematics);
 
@@ -211,7 +232,9 @@ const createGame = async (req, res) => {
       .status(201)
       .json({ message: `Game ${name} created successfuly` });
   } catch (error) {
-    return res.status(500).json({ message: error.message });
+    const status = error.statusCode || 500;
+    const message = error.message || 'Internal Server Error';
+    return res.status(status).json({ message: message });
   }
 };
 
