@@ -226,7 +226,23 @@ const deleteGame = async (req, res) => {
   }
 };
 
+const putGame = async (req, res) => {
+  const { id } = req.params;
+  try {
+    let response = await Game.findByPk(id);
+    if(!response) {
+      return res.status(404).json({message: "Game was not found"});
+    }
+    await response.update({ on_sale: true });
+    return res.status(200).json({ message: "Sale was updated successfully" });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+
 module.exports = {
+  putGame,
   deleteGame,
   getAllGames,
   getGamesById,
