@@ -14,10 +14,10 @@ const getAllAuthors = async (req, res) => {
 };
 
 const postAuthor = async (req, res) => {
-  const { author_name, nationality } = req.body;
+  const { author_name } = req.body;
   try {
-    if (!author_name || !nationality) {
-      return res.status(400).json({ message: "There are missing information" });
+    if (!author_name) {
+      return res.status(400).json({ message: "There is missing information" });
     }
 
     const author = await Author.findOne({ where: { author_name } });
@@ -29,8 +29,8 @@ const postAuthor = async (req, res) => {
           message: `There is already an author named ${author_name}`,
         });
     } else {
-      await Author.create({ author_name, nationality });
-      return res.status(201).json({ message: "Author was successfully created" });
+      await Author.create({ author_name });
+      return res.status(201).json({ message: "Author created successfuly" });
     }
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -57,7 +57,7 @@ const deleteAuthor = async (req, res) => {
 }
 
 const putAuthor = async (req, res) => {
-  const { author_id, author_name, nationality, active } = req.body;
+  const { author_id, author_name, active } = req.body;
 
   if (!author_id) return res.status(400).json({ message: 'Id is required.' });
 
@@ -65,7 +65,6 @@ const putAuthor = async (req, res) => {
     const author = await Author.findByPk(author_id);
     if (author) {
       if (author_name) author.author_name = author_name;
-      if (nationality) author.nationality = nationality;
       if (active !== undefined) author.active = active;
       await author.save();
       return res.status(200).json({ message: `The author has been updated.` });
@@ -74,7 +73,7 @@ const putAuthor = async (req, res) => {
   } catch ({ message }) {
     res.status(500).json({ error: message });
   }
-}
+};
 
 module.exports = {
   getAllAuthors,
