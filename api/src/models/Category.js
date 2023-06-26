@@ -9,10 +9,12 @@ module.exports = (sequelize) => {
         autoIncrement: true,
         primaryKey: true,
       },
+
       category_name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       active: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,

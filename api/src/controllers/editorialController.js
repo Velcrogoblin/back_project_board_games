@@ -12,11 +12,9 @@ const postEditorial = async (req, res) => {
   });
 
   if (existingEditorial) {
-    return res
-      .status(406)
-      .json({
-        message: `Editorial with name ${editorial_name} already exists`,
-      });
+    return res.status(406).json({
+      message: `Editorial with name ${editorial_name} already exists`,
+    });
   }
 
   try {
@@ -42,29 +40,34 @@ const getAllEditorials = async (req, res) => {
   }
 };
 
-
 const deleteEditorial = async (req, res) => {
   const { id } = req.params;
 
-  if (isNaN(id)) return res.status(400).json({ message: "The id must be a number." });
+  if (isNaN(id))
+    return res.status(400).json({ message: "The id must be a number." });
 
   try {
     const editorial = await Editorial.findByPk(id);
     if (editorial) {
       editorial.active = false;
       await editorial.save();
-      return res.status(200).json({ message: `The editorial ${editorial.editorial_name} has been deleted.` });
+      return res
+        .status(200)
+        .json({
+          message: `The editorial ${editorial.editorial_name} has been deleted.`,
+        });
     }
     res.status(404).json({ message: `There is no editorial with id ${id}.` });
   } catch ({ message }) {
     res.status(500).json({ error: message });
   }
-}
+};
 
 const putEditorial = async (req, res) => {
   const { editorial_id, editorial_name, active } = req.body;
 
-  if (editorial_id === undefined) return res.status(400).json({ message: "Id is required." });
+  if (editorial_id === undefined)
+    return res.status(400).json({ message: "Id is required." });
 
   try {
     const editorial = await Editorial.findByPk(editorial_id);
@@ -72,17 +75,21 @@ const putEditorial = async (req, res) => {
       if (editorial_name) editorial.editorial_name = editorial_name;
       if (active !== undefined) editorial.active = active;
       await editorial.save();
-      return res.status(200).json({ message: `The editorial has been updated.` });
+      return res
+        .status(200)
+        .json({ message: `The editorial has been updated.` });
     }
-    res.status(404).json({ message: `There is no editorial with id ${editorial_id}.` });
+    res
+      .status(404)
+      .json({ message: `There is no editorial with id ${editorial_id}.` });
   } catch ({ message }) {
     res.status(500).json({ error: message });
   }
-}
+};
 
 module.exports = {
   postEditorial,
   getAllEditorials,
   deleteEditorial,
-  putEditorial
+  putEditorial,
 };

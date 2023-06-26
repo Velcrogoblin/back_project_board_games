@@ -6,6 +6,7 @@ const {
   getGamesByName,
   createGame,
   deleteGame,
+  putGameOnSale,
   putGame,
 } = require("../controllers/gameController");
 
@@ -17,6 +18,7 @@ router
   .get("/name", getGamesByName)
   .post("/", createGame)
   .delete("/id/:id", deleteGame)
-  .put("/id/:id", putGame);
+  .put("/id/:id", putGameOnSale)
+  .put("/", putGame);
 
 module.exports = router;

@@ -8,7 +8,8 @@ const {
 
 const router = Router();
 
-router.get("/", getAllThematics)
+router
+  .get("/", getAllThematics)
   .post("/", postThematic)
   .delete("/:id", deleteThematic)
   .put("/", putThematic);

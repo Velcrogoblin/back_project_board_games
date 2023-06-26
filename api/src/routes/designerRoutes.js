@@ -8,7 +8,8 @@ const {
 
 const router = Router();
 
-router.get("/", getAllDesigners)
+router
+  .get("/", getAllDesigners)
   .post("/", postDesigner)
   .delete("/:id", deleteDesigner)
   .put("/", putDesigner);

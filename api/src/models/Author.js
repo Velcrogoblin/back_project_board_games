@@ -9,14 +9,12 @@ module.exports = (sequelize) => {
         primaryKey: true,
         autoIncrement: true,
       },
+
       author_name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      // nationality: {
-      //   type: DataTypes.STRING,
-      //   allowNull: false,
-      // },
+
       active: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,

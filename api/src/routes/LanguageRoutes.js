@@ -8,7 +8,8 @@ const {
 
 const router = Router();
 
-router.get("/", getAllLanguages)
+router
+  .get("/", getAllLanguages)
   .post("/", postLanguage)
   .delete("/:id", deleteLanguage)
   .put("/", putEditorial);
