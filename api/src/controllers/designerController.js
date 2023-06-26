@@ -23,11 +23,9 @@ const postDesigner = async (req, res) => {
     const designer = await Designer.findOne({ where: { designer_name } });
 
     if (designer) {
-      return res
-        .status(400)
-        .json({
-          message: `There is already a designer with the name ${designer_name}`,
-        });
+      return res.status(400).json({
+        message: `There is already a designer with the name ${designer_name}`,
+      });
     } else {
       await Designer.create({ designer_name });
       return res.status(201).json({ message: "Designer created successfuly" });
@@ -40,25 +38,31 @@ const postDesigner = async (req, res) => {
 const deleteDesigner = async (req, res) => {
   const { id } = req.params;
 
-  if (isNaN(id)) return res.status(400).json({ message: 'The id must be a number.' });
+  if (isNaN(id))
+    return res.status(400).json({ message: "The id must be a number." });
 
   try {
     const designer = await Designer.findByPk(id);
     if (designer) {
       designer.active = false;
       await designer.save();
-      return res.status(200).json({ message: `The designer ${designer.designer_name} has been deleted.` });
+      return res
+        .status(200)
+        .json({
+          message: `The designer ${designer.designer_name} has been deleted.`,
+        });
     }
     res.status(404).json({ message: `There is no designer with id ${id}.` });
   } catch ({ message }) {
     res.status(500).json({ error: message });
   }
-}
+};
 
 const putDesigner = async (req, res) => {
   const { designer_id, designer_name, active } = req.body;
 
-  if (designer_id === undefined) return res.status(400).json({ message: 'Id is required.' });
+  if (designer_id === undefined)
+    return res.status(400).json({ message: "Id is required." });
 
   try {
     const designer = await Designer.findByPk(designer_id);
@@ -66,17 +70,21 @@ const putDesigner = async (req, res) => {
       if (designer_name) designer.designer_name = designer_name;
       if (active !== undefined) designer.active = active;
       await designer.save();
-      return res.status(200).json({ message: `The designer has been updated.` });
+      return res
+        .status(200)
+        .json({ message: `The designer has been updated.` });
     }
-    res.status(404).json({ message: `There is no designer with id ${designer_id}.` });
+    res
+      .status(404)
+      .json({ message: `There is no designer with id ${designer_id}.` });
   } catch ({ message }) {
     res.status(500).json({ error: message });
   }
-}
+};
 
 module.exports = {
   postDesigner,
   getAllDesigners,
   deleteDesigner,
-  putDesigner
+  putDesigner,
 };

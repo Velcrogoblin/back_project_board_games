@@ -4,15 +4,15 @@ const {
   getAllAuthors,
   deleteAuthor,
   putAuthor,
-  postAuthor
+  postAuthor,
 } = require("../controllers/authorController");
 
 const router = Router();
 
-router.get("/", getAllAuthors)
+router
+  .get("/", getAllAuthors)
   .post("/", postAuthor)
   .delete("/:id", deleteAuthor)
   .put("/", putAuthor);
-
 
 module.exports = router;

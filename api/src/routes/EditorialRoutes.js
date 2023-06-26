@@ -7,7 +7,8 @@ const {
 } = require("../controllers/editorialController");
 const router = Router();
 
-router.get("/", getAllEditorials)
+router
+  .get("/", getAllEditorials)
   .post("/", postEditorial)
   .delete("/:id", deleteEditorial)
   .put("/", putEditorial);

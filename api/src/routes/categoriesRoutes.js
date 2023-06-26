@@ -8,7 +8,8 @@ const {
 
 const router = Router();
 
-router.get("/", getAllCategories)
+router
+  .get("/", getAllCategories)
   .post("/", postCategory)
   .delete("/:id", deleteCategory)
   .put("/", putCategory);

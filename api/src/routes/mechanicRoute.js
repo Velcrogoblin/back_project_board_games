@@ -8,7 +8,8 @@ const {
 
 const router = Router();
 
-router.get("/", getAllMechanics)
+router
+  .get("/", getAllMechanics)
   .post("/", postMechanic)
   .delete("/:id", deleteMechanic)
   .put("/", putMechanic);
