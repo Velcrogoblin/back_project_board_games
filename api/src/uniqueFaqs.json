@@ -1,0 +1,81 @@
+[{
+    "question": "¿Qué es Board Game ?",
+    "answer": "¿Qué?, ¿todavía no lo sabes? ¡Vamos a ponerte al día! Board Game  (BGA) es una plataforma de juegos de mesa en línea.\r\n\r\nCon BGA, puedes jugar en línea, ya sea en tiempo real o por turnos, contra jugadores de todo el mundo. Está disponible una gran selecció"
+},
+{
+    "question": "¿Qué significa \"partida en tiempo real\"?",
+    "answer": "Cuando juegas una partida en tiempo real, tus oponentes están conectados a la plataforma del juego durante todo la partida. Pueden ver tus jugadas y reaccionar a ellas inmediatamente, como sería el caso en el mundo real."
+},
+{
+    "question": "¿Qué significa \"partida por turnos\"?",
+    "answer": "Al jugar una partida por turnos, los jugadores no necesitan estar conectados todo el tiempo. Se van y vuelven cuando les toca jugar. Una vez que todos tus oponentes hayan completado sus jugadas, se te notificará de que es tu turno (por correo electrónico "
+},
+{
+    "question": "¿Qué necesito para jugar?",
+    "answer": "Tu navegador ... ¡y eso es todo! Board Game  no requiere nada más. De esta manera, puedes jugar desde cualquier dispositivo, en cualquier lugar, en cualquier momento\r\n\r\nSin embargo, estamos utilizando las últimas tecnologías disponibles para la web. Por est"
+},
+{
+    "question": "¿Puedo jugar gratis?",
+    "answer": "Puedes jugar a juegos de mesa y disfrutar de la mayoría de las funcionalidades en Board Game  de forma gratuita. Algunas características adicionales solo están disponibles para nuestros miembros Premium.\r\n\r\nPara más información sobre los beneficios de conve"
+},
+{
+    "question": "¡Me encanta BGA! ¿Cómo puedo ayudar?",
+    "answer": "Gracias! Board Game  es, en definitiva, una página web comunitaria que existe y ha crecido a través de las contribuciones de numerosos jugadores apasionados.\r\n\r\nPuedes contribuir de varias maneras, tales como:\r\nSi eres un hablante nativo en otro idioma que n"
+},
+{
+    "question": "¿Cómo puedo comenzar una nueva partida?",
+    "answer": "Ve a la sección \"Jugar ahora\", selecciona el modo de juego preferido (p. ej. \"Tiempo real\"), busca el juego que deseas jugar y luego haz clic en el botón \"Jugar\".\r\nSi seleccionaste el modo \"Oponentes automáticos\", solo debes esperar a tus oponentes.\r\nDe lo "
+},
+{
+    "question": "¿Qué pasa si nadie se une a mi mesa?",
+    "answer": "Para los juegos más populares, puedes encontrar jugadores en cualquier momento del día. Para otros juegos, si no puedes encontrar oponentes en este momento, te recomendamos que regreses en la hora punta (en torno a las 22:00 CEST).\r\n\r\nConsejo: comprueba el "
+},
+{
+    "question": "¿Puedo unirme a varias mesas en tiempo real al mismo tiempo?",
+    "answer": "Sí, puedes unirte o crear varias mesas en tiempo real al mismo tiempo, usando el lobby Manual.\r\n\r\nIncluso se recomienda estar en varias mesas para maximizar tus oportunidades de encontrar oponentes, en lugar de esperar en una sola mesa.\r\n\r\nCuando comienza una"
+},
+{
+    "question": "Me uní a una partida. ¿Cuándo comienza la partida?",
+    "answer": "Para partidas en tiempo real, cada mesa tiene un administrador que es el creador de la mesa. Es responsabilidad del administrador de la mesa dar inicio a la partida cuando él o ella esté satisfecho(a) con el número de jugadores que se han unido a la mesa."
+},
+{
+    "question": "¿Cómo puedo jugar en solitario?",
+    "answer": "Hay un número creciente de juegos en solitario en la BGA. Para encontrar estos juegos puedes ir a la página de juegos y filtrar por \"Número de jugadores: solitario.\"\r\n\r\nPara empezar un juego en solitario con el lobby \"Manual\":\r\nCrear una nueva mesa\r\nSeleccion"
+},
+{
+    "question": "¿Qué significa el círculo de color al lado del nombre de un jugador?",
+    "answer": "online: Este jugador está activo. Completó una acción muy recientemente.\r\ninactive: Este jugador está inactivo. Está conectado a la página web pero no ha efectuado ninguna acción recientemente.\r\noffline: Este jugador está fuera de línea."
+},
+{
+    "question": "¿Qué significan los iconos al lado del nombre de un jugador?",
+    "answer": "active player: Este jugador debe realizar una jugada ahora.\r\nactive player clockalert: Este jugador debe realizar una jugada ahora, y ha agotado todo su tiempo disponible para pensar. ¿Puede alguien despertarle? ;)\r\nactive player nonack: Este jugador debe r"
+},
+{
+    "question": "Un jugador no está jugando. ¿Qué puedo hacer?",
+    "answer": "Primero, recuerda que los otros jugadores tienen derecho a pensar siempre que lo necesiten sobre su próxima jugada... Bueno, siempre y cuando aún quede algo de tiempo en su reloj de juego. Después de eso, puedes usar el chat para pedirle a este jugador qu"
+},
+{
+    "question": "¿Cómo funciona exactamente el reloj de la partida?",
+    "answer": "Antes de jugar cada partida, puedes ver dos valores que dependen de la configuración de \"velocidad\": el tiempo por turno y el tiempo total por jugador.\r\n\r\nCuando es tu turno de pensar, el tiempo que queda en tu reloj disminuye.\r\n\r\nRegularmente (normalmente en"
+},
+{
+    "question": "¿Cómo administráis los eventos aleatorios (tiradas de dados, cartas barajando...)?",
+    "answer": "Para dados y cualquier acción equivalente a elige un número , usamos la función PHP random_int . Esta función tiene una aleatoriedad criptográficamente segura, lo que significa que puede ser incluso mejor que los dados reales. :)\r\n\r\nPara barajar cartas, e"
+},
+{
+    "question": "¿Qué ocurre si un jugador hace algo erróneo?",
+    "answer": "La plataforma Board Game  ha sido diseñada para alentar a los jugadores a mantener un buen comportamiento. El sistema de reputación te permite distinguir entre jugadores buenos y malos. Por lo tanto, depende de ti decidir si comenzar un juego con ellos o "
+},
+{
+    "question": "Al usar el lobby en \"Modo Automático\": ¿cómo funcionan las preferencias de juego?",
+    "answer": "Al usar el lobby en el \"Modo automático\", puedes especificar tus preferencias para una variedad de opciones para un juego haciendo clic en el engranaje.\r\n\"Estoy de acuerdo en jugar con...\" significa que estás dispuesto a jugar con esta opción.\r\n\"Prefiero no"
+},
+{
+    "question": "¿Cuánto tiempo se mantiene abierta una mesa de juego si nadie está jugando?",
+    "answer": "Cuando nadie ha hecho ninguna jugada en una mesa por un tiempo se cierra automáticamente para liberar recursos del servidor:\r\nUna mesa en tiempo real se cierra automáticamente si han transcurrido más de 4 horas desde su creación y todos sus jugadores están"
+},
+{
+    "question": "¿Cómo funciona mi puntuación de reputación (Karma)?",
+    "answer": "La puntuación de Karma (?) es una manera rápida de revisar si un jugador tiene buena reputación en BGA (no abandona partidas, es amistoso y juega limpio...).\r\n\r\nDependiendo de tu puntuación de Karma, puede que se te permita o no usar algunas características"
+}
+]

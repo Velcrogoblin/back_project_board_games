@@ -1,0 +1,362 @@
+[
+  {
+    "mechanic_name": "Action Drafting",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Action Points",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Action Queue",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Action Retrieval",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Area Majority / Influence",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Area Movement",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Automatic Resource Growth",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Bias",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Campaign / Battle Card Driven",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Card Play Conflict Resolution",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Catch the Leader",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Closed Drafting",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Communication Limits",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Contracts",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Cooperative Game",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Critical Hits and Failures",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Deck Construction",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Deck, Bag, and Pool Building",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Delayed Purchase",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Dice Rolling",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Die Icon Resolution",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Enclosure",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "End Game Bonuses",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Events",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Flicking",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Follow",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Grid Coverage",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Grid Movement",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Hand Management",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Hexagon Grid",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Hidden Roles",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Hidden Victory Points",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Income",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Increase Value of Unchosen Resources",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Kill Steal",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "King of the Hill",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Legacy Game",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Line of Sight",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Loans",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Map Addition",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Map Deformation",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Map Reduction",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Market",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Memory",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Modular Board",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Move Through Deck",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Movement Points",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Movement Template",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Narrative Choice / Paragraph",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Network and Route Building",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Once-Per-Game Abilities",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Open Drafting",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Pattern Building",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Pick-up and Deliver",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Player Elimination",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Point to Point Movement",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Push Your Luck",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Race",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Role Playing",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Scenario / Mission / Campaign Game",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Semi-Cooperative Game",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Set Collection",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Simultaneous Action Selection",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Solo / Solitaire Game",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Square Grid",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Stat Check Resolution",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Storytelling",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Tags",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Take That",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Targeted Clues",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Team-Based Game",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Tech Trees / Tech Tracks",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Tile Placement",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Track Movement",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Trading",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Traitor Game",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Trick-taking",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Turn Order: Auction",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Turn Order: Claim Action",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Turn Order: Pass Order",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Turn Order: Progressive",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Turn Order: Stat-Based",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Turn Order: Time Track",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Variable Phase Order",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Variable Player Powers",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Variable Set-up",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Victory Points as a Resource",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Voting",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Worker Placement",
+    "description": "n/a"
+  },
+  {
+    "mechanic_name": "Worker Placement, Different Worker Types",
+    "description": "n/a"
+  }
+]

@@ -1,0 +1,11 @@
+[
+    {"record":"1","table":"Authors","fields":"author_name,nationality"},
+    {"record":"2","table":"Categories","fields":"category_name"},
+    {"record":"3","table":"Designers","fields":"designer_name"},
+    {"record":"4","table":"Editorials","fields":"editorial_name"},
+    {"record":"5","table":"Languages","fields":"language_name"},
+    {"record":"6","table":"Mechanics","fields":"mechanic_name,description"},
+    {"record":"7","table":"Thematics","fields":"thematic_name"},
+    {"record":"8","table":"Faqs","fields":"question,answer"}
+]
+    

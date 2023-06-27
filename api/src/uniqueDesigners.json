@@ -1,0 +1,464 @@
+[
+  {
+    "designer_name": "Adam Rebottaro"
+  },
+  {
+    "designer_name": "Adrian Smith"
+  },
+  {
+    "designer_name": "Aleksandar Mihajlovic"
+  },
+  {
+    "designer_name": "Aleksander Tutaj"
+  },
+  {
+    "designer_name": "Alessandro Pierangelini"
+  },
+  {
+    "designer_name": "Alexander Wells"
+  },
+  {
+    "designer_name": "Alexandr Elichev"
+  },
+  {
+    "designer_name": "Allison Litchfield"
+  },
+  {
+    "designer_name": "Alvaro Nebot"
+  },
+  {
+    "designer_name": "Andrea Boekhoff"
+  },
+  {
+    "designer_name": "Andrew Thompson"
+  },
+  {
+    "designer_name": "Andrzej Półtoranos"
+  },
+  {
+    "designer_name": "Aragorn Marks"
+  },
+  {
+    "designer_name": "Arden Beckwith"
+  },
+  {
+    "designer_name": "Arnaud Boudoiron"
+  },
+  {
+    "designer_name": "Atha Kanaani"
+  },
+  {
+    "designer_name": "Ben Carre"
+  },
+  {
+    "designer_name": "Ben Zweifel"
+  },
+  {
+    "designer_name": "Beth Sobel"
+  },
+  {
+    "designer_name": "Brynn Metheney"
+  },
+  {
+    "designer_name": "Cari Corene"
+  },
+  {
+    "designer_name": "Carlos López"
+  },
+  {
+    "designer_name": "Chris Quilliams"
+  },
+  {
+    "designer_name": "Chris Raimo"
+  },
+  {
+    "designer_name": "Christof Tisch"
+  },
+  {
+    "designer_name": "Christopher Burdett"
+  },
+  {
+    "designer_name": "Christopher Hosch"
+  },
+  {
+    "designer_name": "Damien Mammoliti"
+  },
+  {
+    "designer_name": "Dan Gerlach"
+  },
+  {
+    "designer_name": "David Demaret"
+  },
+  {
+    "designer_name": "David Forest"
+  },
+  {
+    "designer_name": "David GJ"
+  },
+  {
+    "designer_name": "David Kegg"
+  },
+  {
+    "designer_name": "David Lecossu"
+  },
+  {
+    "designer_name": "David Montgomery"
+  },
+  {
+    "designer_name": "Dennis Lohausen"
+  },
+  {
+    "designer_name": "Domingo Cabrero"
+  },
+  {
+    "designer_name": "Dominic Mayer"
+  },
+  {
+    "designer_name": "Dragolisco"
+  },
+  {
+    "designer_name": "Edgar Ramos"
+  },
+  {
+    "designer_name": "Edgar Skomorowski"
+  },
+  {
+    "designer_name": "Eric Hibbeler"
+  },
+  {
+    "designer_name": "Eric Nouhaut"
+  },
+  {
+    "designer_name": "Evan Simonet"
+  },
+  {
+    "designer_name": "Ewa Labak"
+  },
+  {
+    "designer_name": "Fernando Olmedo"
+  },
+  {
+    "designer_name": "Florent Llamas"
+  },
+  {
+    "designer_name": "Florian Poullet"
+  },
+  {
+    "designer_name": "Francesca Baerald"
+  },
+  {
+    "designer_name": "Frank West"
+  },
+  {
+    "designer_name": "Franz Vohwinkel"
+  },
+  {
+    "designer_name": "Fréderic Moyersoen"
+  },
+  {
+    "designer_name": "Fyodor Ananiev"
+  },
+  {
+    "designer_name": "Garrett Kaida"
+  },
+  {
+    "designer_name": "Gary Storkamp"
+  },
+  {
+    "designer_name": "Gavan Brown"
+  },
+  {
+    "designer_name": "Graham Sternberg"
+  },
+  {
+    "designer_name": "Grzegorz Bobrowski"
+  },
+  {
+    "designer_name": "Guido Favaro"
+  },
+  {
+    "designer_name": "Harald Lieske"
+  },
+  {
+    "designer_name": "Henning Ludvigsen"
+  },
+  {
+    "designer_name": "Ian O'Toole"
+  },
+  {
+    "designer_name": "Ignacio Bazán Lazcano"
+  },
+  {
+    "designer_name": "Ignacy Trzewiczek"
+  },
+  {
+    "designer_name": "Isaac Fryxelius"
+  },
+  {
+    "designer_name": "J. Lonnee"
+  },
+  {
+    "designer_name": "Jacqui Davis"
+  },
+  {
+    "designer_name": "Jason Behnke"
+  },
+  {
+    "designer_name": "Jason Hendricks"
+  },
+  {
+    "designer_name": "Jason Little"
+  },
+  {
+    "designer_name": "Javier González Cava"
+  },
+  {
+    "designer_name": "Jean du Poël"
+  },
+  {
+    "designer_name": "Jerzy Ferdyn"
+  },
+  {
+    "designer_name": "Joel Hustak"
+  },
+  {
+    "designer_name": "Jorge Ramos"
+  },
+  {
+    "designer_name": "Jose David Lanza Cebrian"
+  },
+  {
+    "designer_name": "Josh T. McDowell"
+  },
+  {
+    "designer_name": "Joshua Wright (I)"
+  },
+  {
+    "designer_name": "Karl Kopinski"
+  },
+  {
+    "designer_name": "Karolina Jędrzejak"
+  },
+  {
+    "designer_name": "Kat G Birmelin"
+  },
+  {
+    "designer_name": "Katarzyna Kosobucka"
+  },
+  {
+    "designer_name": "Kenny Ruiz"
+  },
+  {
+    "designer_name": "Klemens Franz"
+  },
+  {
+    "designer_name": "Lina Cossette"
+  },
+  {
+    "designer_name": "Loïc Berger"
+  },
+  {
+    "designer_name": "Loïc Billiau"
+  },
+  {
+    "designer_name": "Lucas Durham"
+  },
+  {
+    "designer_name": "Lukasz Poduch"
+  },
+  {
+    "designer_name": "Maciej Mutwil"
+  },
+  {
+    "designer_name": "Magdalena Leszczyńska"
+  },
+  {
+    "designer_name": "Manny Trembley"
+  },
+  {
+    "designer_name": "Marcin Jakubowski"
+  },
+  {
+    "designer_name": "Marco Armbruster"
+  },
+  {
+    "designer_name": "Marie Cardouat"
+  },
+  {
+    "designer_name": "Mateusz Bielski"
+  },
+  {
+    "designer_name": "Mateusz Komada"
+  },
+  {
+    "designer_name": "Mateusz Kopacz"
+  },
+  {
+    "designer_name": "Mateusz Lenart"
+  },
+  {
+    "designer_name": "Mathieu Harlaut"
+  },
+  {
+    "designer_name": "Mercedes Opheim"
+  },
+  {
+    "designer_name": "Michael Peitsch"
+  },
+  {
+    "designer_name": "Michael Schacht"
+  },
+  {
+    "designer_name": "Michal Ivan"
+  },
+  {
+    "designer_name": "Michał J. Zieliński"
+  },
+  {
+    "designer_name": "Miguel Coimbra"
+  },
+  {
+    "designer_name": "Mike McVey"
+  },
+  {
+    "designer_name": "Mike Mignola"
+  },
+  {
+    "designer_name": "Milan Vavroň"
+  },
+  {
+    "designer_name": "Monica Helland"
+  },
+  {
+    "designer_name": "Moro Rogers"
+  },
+  {
+    "designer_name": "Nan Rangsima"
+  },
+  {
+    "designer_name": "Nicolas Fructus"
+  },
+  {
+    "designer_name": "Nikao"
+  },
+  {
+    "designer_name": "Nolan Nasser"
+  },
+  {
+    "designer_name": "Oksana Svistun"
+  },
+  {
+    "designer_name": "Oliver Barrett"
+  },
+  {
+    "designer_name": "Oliver Freudenreich"
+  },
+  {
+    "designer_name": "Orlando Ramirez"
+  },
+  {
+    "designer_name": "Pascal Quidault"
+  },
+  {
+    "designer_name": "Patryk Jędraszek"
+  },
+  {
+    "designer_name": "Phil Walker-Harding"
+  },
+  {
+    "designer_name": "Piotr Foksowicz"
+  },
+  {
+    "designer_name": "Piotr Gacek"
+  },
+  {
+    "designer_name": "Piotr Słaby"
+  },
+  {
+    "designer_name": "Preston Stone"
+  },
+  {
+    "designer_name": "Rafał Szyma"
+  },
+  {
+    "designer_name": "Richard Wright"
+  },
+  {
+    "designer_name": "Rocky Hammer"
+  },
+  {
+    "designer_name": "Rovina Cai"
+  },
+  {
+    "designer_name": "Ryan Laukat"
+  },
+  {
+    "designer_name": "Ryan Valle"
+  },
+  {
+    "designer_name": "Rémy Tornior"
+  },
+  {
+    "designer_name": "Samuel R. Shimota"
+  },
+  {
+    "designer_name": "Santi Santisteban"
+  },
+  {
+    "designer_name": "Sensit Communication GmbH"
+  },
+  {
+    "designer_name": "Shane Tyree"
+  },
+  {
+    "designer_name": "Stefano de Fazi"
+  },
+  {
+    "designer_name": "Steffen Bieker"
+  },
+  {
+    "designer_name": "Sydni Kruger"
+  },
+  {
+    "designer_name": "Thibault Girard"
+  },
+  {
+    "designer_name": "Thierry Masson"
+  },
+  {
+    "designer_name": "Tobias Schweiger"
+  },
+  {
+    "designer_name": "Tomasz Bentkowski"
+  },
+  {
+    "designer_name": "Tomasz Larek"
+  },
+  {
+    "designer_name": "Vincent Dutrait"
+  },
+  {
+    "designer_name": "Vlad Ricean"
+  },
+  {
+    "designer_name": "Wadim Kashin"
+  },
+  {
+    "designer_name": "Wolfgang Warsch"
+  },
+  {
+    "designer_name": "Zhao Run Quan"
+  },
+  {
+    "designer_name": "Zoe Robinson"
+  },
+  {
+    "designer_name": "Zoë van Dijk"
+  },
+  {
+    "designer_name": "Édouard Guiton"
+  },
+  {
+    "designer_name": "Éric Azagury"
+  }
+]
