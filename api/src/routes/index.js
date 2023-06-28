@@ -9,6 +9,7 @@ const mechanicsRoute = require("./mechanicRoute.js");
 const authorRoutes = require("./authorRoutes.js");
 const designerRoutes = require("./designerRoutes.js");
 const userRoutes = require("./userRoutes.js");
+const roleRoutes = require("./roleRoutes.js");
 
 const router = Router();
 
@@ -20,7 +21,7 @@ router.use("/thematics", thematicRoute);
 router.use("/mechanics", mechanicsRoute);
 router.use("/authors", authorRoutes);
 router.use("/designers", designerRoutes);
-
 router.use("/users", userRoutes);
+router.use("/roles", roleRoutes);
 
 module.exports = router;
