@@ -78,12 +78,6 @@ module.exports = (sequelize) => {
         allowNull: false,
         defaultValue: false,
       },
-
-      amount: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        defaultValue: 1,
-      }
     },
     {
       timestamps: false,
