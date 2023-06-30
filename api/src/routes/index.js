@@ -11,6 +11,7 @@ const designerRoutes = require("./designerRoutes.js");
 const userRoutes = require("./userRoutes.js");
 const roleRoutes = require("./roleRoutes.js");
 const faqsRoutes = require("./faqRoute.js");
+const paymentRoutes = require("./paymentRoute");
 
 const router = Router();
 
@@ -28,5 +29,6 @@ router.use("/roles", roleRoutes);
 
 router.use("/faqs", faqsRoutes);
 
+router.use("/create-order", paymentRoutes);
 
 module.exports = router;
