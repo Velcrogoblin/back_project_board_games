@@ -1,3 +1,5 @@
+/* localhost:3001/faqs/search?question=tiempo */
+
 const { Router } = require("express");
 const {
   getAllFaqs,
@@ -16,6 +18,4 @@ router
   .put("/", putFaq)
   .get("/search", getFaqsByQuestion);
 
-/* localhost:3001/faqs/search?question=tiempo */
-
-http: module.exports = router;
+module.exports = router;

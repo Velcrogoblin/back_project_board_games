@@ -1,0 +1,2006 @@
+[
+  {
+    "game_id": 177736,
+    "name": "A Feast for Odin",
+    "released": "2016-01-01",
+    "price": 58.5,
+    "age": 12,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/s9oGMCo1fcfV4Dk3EnqLZw__original/img/N1X-0JB1GapFVhl98nP4tNFXMcM=/0x0/filters:format(png)/pic3146943.png"
+    },
+    "weight": 3.9,
+    "playing_time": 30,
+    "author_name": "Uwe Rosenberg",
+    "categories_name": [
+      "Eurogames"
+    ],
+    "designers_name": [
+      "Dennis Lohausen"
+    ],
+    "editorial_name": "Feuerland Spiele",
+    "languages_name": [
+      "German",
+      "English"
+    ],
+    "mechanic_name": "Automatic Resource Growth",
+    "thematic_name": "Economic"
+  },
+  {
+    "game_id": 31260,
+    "name": "Agricola",
+    "released": "2007-01-01",
+    "price": 54,
+    "age": 12,
+    "players_min": 1,
+    "players_max": 5,
+    "rating": [
+      7
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/dDDo2Hexl80ucK1IlqTk-g__original/img/toobKoejPiHpfpHk4SYd1UAJafw=/0x0/filters:format(jpeg)/pic831744.jpg"
+    },
+    "weight": 3.6,
+    "playing_time": 30,
+    "author_name": "Uwe Rosenberg",
+    "categories_name": [
+      "Eurogames"
+    ],
+    "designers_name": [
+      "Klemens Franz"
+    ],
+    "editorial_name": "Lookout Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Automatic Resource Growth",
+    "thematic_name": "Animals"
+  },
+  {
+    "game_id": 230889,
+    "name": "Aristeia!",
+    "released": "2017-01-01",
+    "price": 90,
+    "age": 14,
+    "players_min": 2,
+    "players_max": 2,
+    "rating": [
+      8
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/Tre1B7gmGFMNfNi6XsgkBQ__original/img/Tv0XXVsYKr5q36JoetYwgbqEYio=/0x0/filters:format(jpeg)/pic3667786.jpg"
+    },
+    "weight": 3,
+    "playing_time": 60,
+    "author_name": "Alberto Abal",
+    "categories_name": [
+      "Ameritrash"
+    ],
+    "designers_name": [
+      "Kenny Ruiz"
+    ],
+    "editorial_name": "Corvus Belli",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Fighting"
+  },
+  {
+    "game_id": 342942,
+    "name": "Ark Nova",
+    "released": "2021-01-01",
+    "price": 166.5,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 69,
+    "image": {
+      "url": "https://cf.geekdo-images.com/SoU8p28Sk1s8MSvoM4N8pQ__original/img/g4S18szTdrXCdIwVKzMKrZrYAcM=/0x0/filters:format(jpeg)/pic6293412.jpg"
+    },
+    "weight": 3.7,
+    "playing_time": 90,
+    "author_name": "Mathias Wigge",
+    "categories_name": [
+      "Eurogames"
+    ],
+    "designers_name": [
+      "Steffen Bieker",
+      "Loïc Billiau",
+      "Dennis Lohausen",
+      "Christof Tisch"
+    ],
+    "editorial_name": "Feuerland Spiele",
+    "languages_name": [
+      "German",
+      "English"
+    ],
+    "mechanic_name": "End Game Bonuses",
+    "thematic_name": "Animals"
+  },
+  {
+    "game_id": 205637,
+    "name": "Arkham Horror: The Card Game",
+    "released": "2016-01-01",
+    "price": 105,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 2,
+    "rating": [
+      8
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/B5F5ulz0UivNgrI9Ky0euA__original/img/guEKCewM_2e5ugltSN3dTSwdZJI=/0x0/filters:format(jpeg)/pic3122349.jpg"
+    },
+    "weight": 3.5,
+    "playing_time": 60,
+    "author_name": "Nate French",
+    "categories_name": [
+      "Cooperative"
+    ],
+    "designers_name": [
+      "Christopher Hosch",
+      "Marcin Jakubowski",
+      "Ignacio Bazán Lazcano",
+      "Henning Ludvigsen",
+      "Mercedes Opheim",
+      "Zoe Robinson",
+      "Evan Simonet"
+    ],
+    "editorial_name": "Fantasy Flight Games",
+    "languages_name": [
+      "English",
+      "French",
+      "Spanish"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 3955,
+    "name": "BANG!",
+    "released": "2002-01-01",
+    "price": 16,
+    "age": 10,
+    "players_min": 4,
+    "players_max": 7,
+    "rating": [
+      6
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/_04xA-d-rfygm0c49HE4vA__original/img/el-4Ilu9DeYunRT3r4TVP8Vy3uk=/0x0/filters:format(jpeg)/pic1170986.jpg"
+    },
+    "weight": 1.6,
+    "playing_time": 20,
+    "author_name": "Emiliano Sciarra",
+    "categories_name": [
+      "Party"
+    ],
+    "designers_name": [
+      "Stefano de Fazi",
+      "Alessandro Pierangelini"
+    ],
+    "editorial_name": "dV Giochi (DV Games)",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Hand Management",
+    "thematic_name": "American West"
+  },
+  {
+    "game_id": 170216,
+    "name": "Blood Rage",
+    "released": "2015-01-01",
+    "price": 87,
+    "age": 14,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/HkZSJfQnZ3EpS214xtuplg__original/img/Myy6IPDJDzLoPdXrPXVZcddBQoQ=/0x0/filters:format(jpeg)/pic2439223.jpg"
+    },
+    "weight": 2.9,
+    "playing_time": 60,
+    "author_name": "Eric M. Lang",
+    "categories_name": [
+      "Ameritrash"
+    ],
+    "designers_name": [
+      "Henning Ludvigsen",
+      "Thierry Masson",
+      "Mike McVey",
+      "Adrian Smith"
+    ],
+    "editorial_name": "Cool Mini Or Not",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Fantasy"
+  },
+  {
+    "game_id": 273330,
+    "name": "Bloodborne: The Board Game",
+    "released": "2021-01-01",
+    "price": 67.5,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 34,
+    "image": {
+      "url": "https://cf.geekdo-images.com/clKFvn2bUUPbY62eSmc-ig__original/img/Ftulo3vFiGUJaRsW9TOif-ViyDg=/0x0/filters:format(png)/pic4757839.png"
+    },
+    "weight": 3,
+    "playing_time": 45,
+    "author_name": "Eric M. Lang",
+    "categories_name": [
+      "Narrative"
+    ],
+    "designers_name": [
+      "Arnaud Boudoiron",
+      "Henning Ludvigsen",
+      "Aragorn Marks",
+      "Mike McVey",
+      "Edgar Ramos"
+    ],
+    "editorial_name": "CMON Global Limited",
+    "languages_name": [
+      "English"
+    ],
+    "mechanic_name": "Campaign / Battle Card Driven",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 224517,
+    "name": "Brass: Birmingham",
+    "released": "2018-01-01",
+    "price": 117,
+    "age": 14,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/x3zxjr-Vw5iU4yDPg70Jgw__original/img/FpyxH41Y6_ROoePAilPNEhXnzO8=/0x0/filters:format(jpeg)/pic3490053.jpg"
+    },
+    "weight": 3.9,
+    "playing_time": 60,
+    "author_name": "Gavan Brown",
+    "categories_name": [
+      "Eurogames"
+    ],
+    "designers_name": [
+      "Lina Cossette",
+      "David Forest",
+      "Damien Mammoliti"
+    ],
+    "editorial_name": "Roxley",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Hand Management",
+    "thematic_name": "Economic"
+  },
+  {
+    "game_id": 102794,
+    "name": "Caverna: The Cave Farmers",
+    "released": "2013-01-01",
+    "price": 57,
+    "age": 12,
+    "players_min": 1,
+    "players_max": 7,
+    "rating": [
+      7
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/rz22tqa5PCYvK9oDjIbvxg__original/img/h9il8XnFB0iqHNHsNTPNGxJZWdM=/0x0/filters:format(jpeg)/pic1790789.jpg"
+    },
+    "weight": 3.8,
+    "playing_time": 30,
+    "author_name": "Uwe Rosenberg",
+    "categories_name": [
+      "Eurogames"
+    ],
+    "designers_name": [
+      "Javier González Cava",
+      "Klemens Franz"
+    ],
+    "editorial_name": "Lookout Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Automatic Resource Growth",
+    "thematic_name": "Animals"
+  },
+  {
+    "game_id": 5782,
+    "name": "Coloretto",
+    "released": "2003-01-01",
+    "price": 19.5,
+    "age": 8,
+    "players_min": 2,
+    "players_max": 5,
+    "rating": [
+      6
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/pd3qaiROSgTJ5js_0e4Nhw__original/img/W1cSDjB5Bi9bGhl3VRxQSP_Vw54=/0x0/filters:format(png)/pic6653783.png"
+    },
+    "weight": 1.3,
+    "playing_time": 30,
+    "author_name": "Michael Schacht",
+    "categories_name": [
+      "Party"
+    ],
+    "designers_name": [
+      "Guido Favaro",
+      "Michael Schacht",
+      "Oksana Svistun"
+    ],
+    "editorial_name": "ABACUSSPIELE",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Open Drafting",
+    "thematic_name": "Animals"
+  },
+  {
+    "game_id": 521,
+    "name": "Crokinole",
+    "released": "3776-01-01",
+    "price": 18,
+    "age": 8,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/7ejbxsn-UtLl3ehamuAEdw__original/img/HJOZG6y87_skppfIqX-voRlhNxE=/0x0/filters:format(jpeg)/pic79413.jpg"
+    },
+    "weight": 1.2,
+    "playing_time": 30,
+    "author_name": "(Uncredited)",
+    "categories_name": [
+      "Family"
+    ],
+    "designers_name": [
+      "Allison Litchfield",
+      "Orlando Ramirez"
+    ],
+    "editorial_name": "(Public Domain)",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Flicking",
+    "thematic_name": "Action / Dexterity"
+  },
+  {
+    "game_id": 192457,
+    "name": "Cry Havoc",
+    "released": "2016-01-01",
+    "price": 99,
+    "age": 10,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/OaKLFUgTVdUYvGxLT5QjsQ__original/img/9hr6b_e0WOJJZKLBcuBfuZ0wBuE=/0x0/filters:format(jpeg)/pic3090929.jpg"
+    },
+    "weight": 3.3,
+    "playing_time": 60,
+    "author_name": "Grant Rodiek",
+    "categories_name": [
+      "Ameritrash"
+    ],
+    "designers_name": [
+      "Fyodor Ananiev",
+      "Mateusz Bielski",
+      "Grzegorz Bobrowski",
+      "Thibault Girard",
+      "Wadim Kashin",
+      "Tomasz Larek",
+      "Florent Llamas",
+      "Aleksandar Mihajlovic",
+      "Fernando Olmedo",
+      "Lukasz Poduch",
+      "Rafał Szyma",
+      "Aleksander Tutaj"
+    ],
+    "editorial_name": "Portal Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Area Majority / Influence",
+    "thematic_name": "Fighting"
+  },
+  {
+    "game_id": 253344,
+    "name": "Cthulhu: Death May Die",
+    "released": "2019-01-01",
+    "price": 108,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 5,
+    "rating": [
+      8
+    ],
+    "stock": 69,
+    "image": {
+      "url": "https://cf.geekdo-images.com/e8D09pfFsUsoX1D81EeoZg__original/img/8_FKwPd8bBL3PFjef8Yjz_sFWSk=/0x0/filters:format(jpeg)/pic4705171.jpg"
+    },
+    "weight": 2.4,
+    "playing_time": 90,
+    "author_name": "Rob Daviau",
+    "categories_name": [
+      "Ameritrash"
+    ],
+    "designers_name": [
+      "Nicolas Fructus",
+      "Karl Kopinski",
+      "Thierry Masson",
+      "Edgar Skomorowski",
+      "Adrian Smith",
+      "Richard Wright"
+    ],
+    "editorial_name": "CMON Global Limited",
+    "languages_name": [
+      "English"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Fantasy"
+  },
+  {
+    "game_id": 322708,
+    "name": "Descent: Legends of the Dark",
+    "released": "2021-01-01",
+    "price": 162,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 92,
+    "image": {
+      "url": "https://cf.geekdo-images.com/Q96PxRVbrDxS9_4ZPTJtHQ__original/img/kGU8ligha3fyP0LuVTwmLMK9yEQ=/0x0/filters:format(png)/pic5941333.png"
+    },
+    "weight": 2.7,
+    "playing_time": 120,
+    "author_name": "Kara Centell-Dunk",
+    "categories_name": [
+      "Narrative"
+    ],
+    "designers_name": [
+      "Preston Stone",
+      "Gary Storkamp"
+    ],
+    "editorial_name": "Fantasy Flight Games",
+    "languages_name": [
+      "English",
+      "French",
+      "Spanish"
+    ],
+    "mechanic_name": "Cooperative Game",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 285192,
+    "name": "Destinies",
+    "released": "2021-01-01",
+    "price": 85.5,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 3,
+    "rating": [
+      7
+    ],
+    "stock": 69,
+    "image": {
+      "url": "https://cf.geekdo-images.com/oaD1ZQ3yGj6lacLdtqgdnQ__original/img/LJXy5--WfYNypO-Xd7nhkzU5Xzs=/0x0/filters:format(png)/pic5558118.png"
+    },
+    "weight": 1.9,
+    "playing_time": 90,
+    "author_name": "Michał Gołąb Gołębiowski",
+    "categories_name": [
+      "Narrative"
+    ],
+    "designers_name": [
+      "Karolina Jędrzejak",
+      "Mateusz Komada",
+      "Katarzyna Kosobucka",
+      "Magdalena Leszczyńska"
+    ],
+    "editorial_name": "Lucky Duck Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Dice Rolling",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 244271,
+    "name": "Dice Throne: Season Two – Battle Chest",
+    "released": "2018-01-01",
+    "price": 21,
+    "age": 8,
+    "players_min": 2,
+    "players_max": 6,
+    "rating": [
+      8
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/lJkCMk1jwCl-KHSPZJCPZQ__original/img/sWgmSr0KiOvb3iGINSg-2huDnSk=/0x0/filters:format(jpeg)/pic4441140.jpg"
+    },
+    "weight": 2.1,
+    "playing_time": 20,
+    "author_name": "Nate Chatellier",
+    "categories_name": [
+      "Family"
+    ],
+    "designers_name": [
+      "Gavan Brown",
+      "Manny Trembley"
+    ],
+    "editorial_name": "Lucky Duck Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Dice Rolling",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 39856,
+    "name": "Dixit",
+    "released": "2008-01-01",
+    "price": 18,
+    "age": 8,
+    "players_min": 3,
+    "players_max": 8,
+    "rating": [
+      7
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/J0PlHArkZDJ57H-brXW2Fw__original/img/jt3kFCHJ3HJ2079dMLwipFZqdQg=/0x0/filters:format(jpeg)/pic6738336.jpg"
+    },
+    "weight": 1.2,
+    "playing_time": 30,
+    "author_name": "Jean-Louis Roubira",
+    "categories_name": [
+      "Party"
+    ],
+    "designers_name": [
+      "Marie Cardouat"
+    ],
+    "editorial_name": "Libellud",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Race",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 220308,
+    "name": "Gaia Project",
+    "released": "2017-01-01",
+    "price": 132,
+    "age": 12,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/hGWFm3hbMlCDsfCsauOQ4g__original/img/tjlflQtUPFiTpLpwk1NCVCS29Ic=/0x0/filters:format(png)/pic5375625.png"
+    },
+    "weight": 4.4,
+    "playing_time": 60,
+    "author_name": "Jens Drögemüller",
+    "categories_name": [
+      "Eurogames"
+    ],
+    "designers_name": [
+      "Dennis Lohausen"
+    ],
+    "editorial_name": "Feuerland Spiele",
+    "languages_name": [
+      "German",
+      "English"
+    ],
+    "mechanic_name": "End Game Bonuses",
+    "thematic_name": "Civilization"
+  },
+  {
+    "game_id": 174430,
+    "name": "Gloomhaven",
+    "released": "2017-01-01",
+    "price": 117,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/sZYp_3BTDGjh2unaZfZmuA__original/img/7d-lj5Gd1e8PFnD97LYFah2c45M=/0x0/filters:format(jpeg)/pic2437871.jpg"
+    },
+    "weight": 3.9,
+    "playing_time": 60,
+    "author_name": "Isaac Childres",
+    "categories_name": [
+      "Narrative"
+    ],
+    "designers_name": [
+      "Alexandr Elichev",
+      "Josh T. McDowell",
+      "Alvaro Nebot"
+    ],
+    "editorial_name": "Cephalofair Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Queue",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 291457,
+    "name": "Gloomhaven: Jaws of the Lion",
+    "released": "2020-01-01",
+    "price": 54,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/_HhIdavYW-hid20Iq3hhmg__original/img/PBzsLRqNKQKJxGnzpb7o3qLWPQM=/0x0/filters:format(jpeg)/pic5055631.jpg"
+    },
+    "weight": 3.6,
+    "playing_time": 30,
+    "author_name": "Isaac Childres",
+    "categories_name": [
+      "Cooperative"
+    ],
+    "designers_name": [
+      "Francesca Baerald",
+      "David Demaret",
+      "Alexandr Elichev"
+    ],
+    "editorial_name": "Cephalofair Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Queue",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 366013,
+    "name": "Heat: Pedal to the Metal",
+    "released": "2022-01-01",
+    "price": 33,
+    "age": 10,
+    "players_min": 1,
+    "players_max": 6,
+    "rating": [
+      8
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/-vOrd4bOspibyohYExLqWg__original/img/iXU8a9WaVlwrkiEiOxWN06y9y5g=/0x0/filters:format(png)/pic6940449.png"
+    },
+    "weight": 2.2,
+    "playing_time": 30,
+    "author_name": "Asger Harding Granerud",
+    "categories_name": [
+      "Family"
+    ],
+    "designers_name": [
+      "Vincent Dutrait"
+    ],
+    "editorial_name": "Days of Wonder",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Hand Management",
+    "thematic_name": "Racing"
+  },
+  {
+    "game_id": 243759,
+    "name": "Hellboy: The Board Game",
+    "released": "2019-01-01",
+    "price": 90,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/7ZodeqpFRMqqet-xmxkzEg__original/img/vFaDYVUyGp3ybfRW-CXV2B6BTFo=/0x0/filters:format(jpeg)/pic4297042.jpg"
+    },
+    "weight": 3,
+    "playing_time": 60,
+    "author_name": "James M. Hewitt",
+    "categories_name": [
+      "Narrative"
+    ],
+    "designers_name": [
+      "Jose David Lanza Cebrian",
+      "Mike Mignola"
+    ],
+    "editorial_name": "Mantic Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Area Movement",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 254640,
+    "name": "Just One",
+    "released": "2018-01-01",
+    "price": 10,
+    "age": 8,
+    "players_min": 3,
+    "players_max": 7,
+    "rating": [
+      7
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/qKcKjHpzAvLddwBhyindag__original/img/NPUrOSJ5NEC7aPkoEXnTHJ7vICU=/0x0/filters:format(jpeg)/pic4268499.jpg"
+    },
+    "weight": 1,
+    "playing_time": 20,
+    "author_name": "Ludovic Roudy",
+    "categories_name": [
+      "Party"
+    ],
+    "designers_name": [
+      "Éric Azagury",
+      "Florian Poullet"
+    ],
+    "editorial_name": "Repos Production",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Communication Limits",
+    "thematic_name": "Party Game"
+  },
+  {
+    "game_id": 96848,
+    "name": "Mage Knight Board Game",
+    "released": "2011-01-01",
+    "price": 129,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/DUO2hz9AlLOH8p9ED-lCWg__original/img/PDDH38Vf9NEB_4ODURxcJKNBfVQ=/0x0/filters:format(jpeg)/pic1083380.jpg"
+    },
+    "weight": 4.3,
+    "playing_time": 60,
+    "author_name": "Vlaada Chvátil",
+    "categories_name": [
+      "Cooperative"
+    ],
+    "designers_name": [
+      "J. Lonnee",
+      "Chris Raimo",
+      "Milan Vavroň"
+    ],
+    "editorial_name": "WizKids (I)",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Cooperative Game",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 336382,
+    "name": "Marvel United: X-Men",
+    "released": "2021-01-01",
+    "price": 40,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 5,
+    "rating": [
+      8
+    ],
+    "stock": 30,
+    "image": {
+      "url": "https://cf.geekdo-images.com/McQXSQjyTtrqpGA77GSRxg__original/img/Z6Bl-Nc4XfMk3Su5-Qa3C3fBbFw=/0x0/filters:format(jpeg)/pic6245965.jpg"
+    },
+    "weight": 2,
+    "playing_time": 40,
+    "author_name": "Andrea Chiarvesio",
+    "categories_name": [
+      "Family"
+    ],
+    "designers_name": [
+      "Édouard Guiton"
+    ],
+    "editorial_name": "CMON Global Limited",
+    "languages_name": [
+      "English"
+    ],
+    "mechanic_name": "Cooperative Game",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 197070,
+    "name": "Massive Darkness",
+    "released": "2017-01-01",
+    "price": 150,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 6,
+    "rating": [
+      7
+    ],
+    "stock": 92,
+    "image": {
+      "url": "https://cf.geekdo-images.com/4gH_fX2BQPViWLe9pNfSKg__original/img/_bA6dQIzEddE6_i_N7U5zP6ZZ1g=/0x0/filters:format(jpeg)/pic3687923.jpg"
+    },
+    "weight": 2.5,
+    "playing_time": 120,
+    "author_name": "Raphaël Guiton",
+    "categories_name": [
+      "Ameritrash"
+    ],
+    "designers_name": [
+      "Édouard Guiton",
+      "Jason Hendricks"
+    ],
+    "editorial_name": "CMON Global Limited",
+    "languages_name": [
+      "English"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 167355,
+    "name": "Nemesis",
+    "released": "2018-01-01",
+    "price": 153,
+    "age": 12,
+    "players_min": 1,
+    "players_max": 5,
+    "rating": [
+      8
+    ],
+    "stock": 69,
+    "image": {
+      "url": "https://cf.geekdo-images.com/tAqLpWxQ0Oo3GaPP3MER1g__original/img/sA6r1p6BO_Tgyc3-xgIESC9Y-vg=/0x0/filters:format(jpeg)/pic5073276.jpg"
+    },
+    "weight": 3.4,
+    "playing_time": 90,
+    "author_name": "Adam Kwapiński",
+    "categories_name": [
+      "Cooperative"
+    ],
+    "designers_name": [
+      "Piotr Foksowicz",
+      "Patryk Jędraszek",
+      "Ewa Labak",
+      "Andrzej Półtoranos"
+    ],
+    "editorial_name": "Awaken Realms",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Campaign / Battle Card Driven",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 293835,
+    "name": "Oltréé",
+    "released": "2021-01-01",
+    "price": 72,
+    "age": 8,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/oRvBhsKMNDWdGtfccvGANg__original/img/rGqtpDXQ2OQaw9Pp52mBswW7SJY=/0x0/filters:format(png)/pic6452865.png"
+    },
+    "weight": 2.4,
+    "playing_time": 60,
+    "author_name": "Antoine Bauza",
+    "categories_name": [
+      "Narrative"
+    ],
+    "designers_name": [
+      "Vincent Dutrait"
+    ],
+    "editorial_name": "Studio H",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Cooperative Game",
+    "thematic_name": "Fantasy"
+  },
+  {
+    "game_id": 314040,
+    "name": "Pandemic Legacy: Season 0",
+    "released": "2020-01-01",
+    "price": 69.75,
+    "age": 14,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 34,
+    "image": {
+      "url": "https://cf.geekdo-images.com/y0x1zbkpUXjddzWWnhekYw__original/img/2VlfzwT4b8f1s2HqbilcjR-bM3I=/0x0/filters:format(jpeg)/pic5581457.jpg"
+    },
+    "weight": 3.1,
+    "playing_time": 45,
+    "author_name": "Rob Daviau",
+    "categories_name": [
+      "Cooperative"
+    ],
+    "designers_name": [
+      "Dan Gerlach",
+      "Monica Helland",
+      "Atha Kanaani",
+      "Samuel R. Shimota"
+    ],
+    "editorial_name": "Z-Man Games",
+    "languages_name": [
+      "English",
+      "German",
+      "French"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Spies/Secret Agents"
+  },
+  {
+    "game_id": 161936,
+    "name": "Pandemic Legacy: Season 1",
+    "released": "2015-01-01",
+    "price": 84,
+    "age": 13,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/-Qer2BBPG7qGGDu6KcVDIw__original/img/PlzAH7swN1nsFxOXbfUvE3TkE5w=/0x0/filters:format(png)/pic2452831.png"
+    },
+    "weight": 2.8,
+    "playing_time": 60,
+    "author_name": "Rob Daviau",
+    "categories_name": [
+      "Cooperative"
+    ],
+    "designers_name": [
+      "Chris Quilliams"
+    ],
+    "editorial_name": "Z-Man Games",
+    "languages_name": [
+      "English",
+      "German",
+      "French"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Environmental"
+  },
+  {
+    "game_id": 150,
+    "name": "PitchCar",
+    "released": "1995-01-01",
+    "price": 16.5,
+    "age": 6,
+    "players_min": 2,
+    "players_max": 8,
+    "rating": [
+      7
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/lvC1qJo4-RQ_zqudi_oRmA__original/img/6hC5NG-_7acG1lMzMfrAnou4Fb8=/0x0/filters:format(jpeg)/pic215555.jpg"
+    },
+    "weight": 1.1,
+    "playing_time": 30,
+    "author_name": "Jean du Poël",
+    "categories_name": [
+      "Party"
+    ],
+    "designers_name": [
+      "Jean du Poël"
+    ],
+    "editorial_name": "Ferti",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Flicking",
+    "thematic_name": "Action / Dexterity"
+  },
+  {
+    "game_id": 3076,
+    "name": "Puerto Rico",
+    "released": "2002-01-01",
+    "price": 148.5,
+    "age": 12,
+    "players_min": 3,
+    "players_max": 5,
+    "rating": [
+      7
+    ],
+    "stock": 69,
+    "image": {
+      "url": "https://cf.geekdo-images.com/QFiIRd2kimaMqTyWsX0aUg__original/img/DOgIp57F7tKZvxeITGAd3e_Q9as=/0x0/filters:format(jpeg)/pic158548.jpg"
+    },
+    "weight": 3.3,
+    "playing_time": 90,
+    "author_name": "Andreas Seyfarth",
+    "categories_name": [
+      "Eurogames"
+    ],
+    "designers_name": [
+      "Harald Lieske",
+      "Franz Vohwinkel"
+    ],
+    "editorial_name": "alea",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Drafting",
+    "thematic_name": "City Building"
+  },
+  {
+    "game_id": 121921,
+    "name": "Robinson Crusoe: Adventures on the Cursed Island",
+    "released": "2012-01-01",
+    "price": 114,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/FbFnaTx3aT5dM18K_bR_Pg__original/img/TB2dGHOnuUr54jQYIJZDIMilOJE=/0x0/filters:format(jpeg)/pic3165731.jpg"
+    },
+    "weight": 3.8,
+    "playing_time": 60,
+    "author_name": "Joanna Kijanka",
+    "categories_name": [
+      "Cooperative"
+    ],
+    "designers_name": [
+      "Tomasz Bentkowski",
+      "Mateusz Bielski",
+      "Vincent Dutrait",
+      "Jerzy Ferdyn",
+      "Mateusz Kopacz",
+      "Mateusz Lenart",
+      "Dominic Mayer",
+      "Maciej Mutwil",
+      "Zhao Run Quan",
+      "Rafał Szyma",
+      "Piotr Słaby",
+      "Ignacy Trzewiczek",
+      "Michał J. Zieliński"
+    ],
+    "editorial_name": "Portal Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Queue",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 9220,
+    "name": "Saboteur",
+    "released": "2004-01-01",
+    "price": 19.5,
+    "age": 8,
+    "players_min": 3,
+    "players_max": 10,
+    "rating": [
+      6
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/0vJwP6NGa7GHPZKC3gplUw__original/img/TJDCd-PYySXmhQn-LC-y88JPA7U=/0x0/filters:format(jpeg)/pic3989824.jpg"
+    },
+    "weight": 1.3,
+    "playing_time": 30,
+    "author_name": "Fréderic Moyersoen",
+    "categories_name": [
+      "Party"
+    ],
+    "designers_name": [
+      "Andrea Boekhoff",
+      "Fréderic Moyersoen"
+    ],
+    "editorial_name": "AMIGO",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Hand Management",
+    "thematic_name": "Bluffing"
+  },
+  {
+    "game_id": 255984,
+    "name": "Sleeping Gods",
+    "released": "2021-01-01",
+    "price": 96,
+    "age": 13,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/Zdt8l4oTBpFICsMyNof7Jg__original/img/-okZ810RkA8fKKhIeZyX4cnqmbE=/0x0/filters:format(png)/pic5975244.png"
+    },
+    "weight": 3.2,
+    "playing_time": 60,
+    "author_name": "Ryan Laukat",
+    "categories_name": [
+      "Narrative"
+    ],
+    "designers_name": [
+      "Ryan Laukat"
+    ],
+    "editorial_name": "Red Raven Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 241590,
+    "name": "Smart10",
+    "released": "2017-01-01",
+    "price": 12,
+    "age": 10,
+    "players_min": 2,
+    "players_max": 8,
+    "rating": [
+      7
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/pwa0lKfmlE4PvFo-YVxrLQ__original/img/M-q1H7vjciksvgG4H73R8W-Zq70=/0x0/filters:format(jpeg)/pic4945756.jpg"
+    },
+    "weight": 1.2,
+    "playing_time": 20,
+    "author_name": "Christoph Reiser",
+    "categories_name": [
+      "Party"
+    ],
+    "designers_name": [
+      "Ryan Laukat"
+    ],
+    "editorial_name": "Asmodee",
+    "languages_name": [
+      "English",
+      "Spanish"
+    ],
+    "mechanic_name": "Push Your Luck",
+    "thematic_name": "Trivia"
+  },
+  {
+    "game_id": 162886,
+    "name": "Spirit Island",
+    "released": "2017-01-01",
+    "price": 184.5,
+    "age": 13,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 69,
+    "image": {
+      "url": "https://cf.geekdo-images.com/kjCm4ZvPjIZxS-mYgSPy1g__original/img/9uLd9C3XAvInLCLhAoXqKVk56zs=/0x0/filters:format(jpeg)/pic7013651.jpg"
+    },
+    "weight": 4.1,
+    "playing_time": 90,
+    "author_name": "R. Eric Reuss",
+    "categories_name": [
+      "Cooperative"
+    ],
+    "designers_name": [
+      "Jason Behnke",
+      "Loïc Berger",
+      "Loïc Billiau",
+      "Kat G Birmelin",
+      "Cari Corene",
+      "Lucas Durham",
+      "Rocky Hammer",
+      "Sydni Kruger",
+      "Nolan Nasser",
+      "Jorge Ramos",
+      "Adam Rebottaro",
+      "Moro Rogers",
+      "Graham Sternberg",
+      "Shane Tyree",
+      "Joshua Wright (I)"
+    ],
+    "editorial_name": "Greater Than Games, LLC",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Retrieval",
+    "thematic_name": "Fantasy"
+  },
+  {
+    "game_id": 164153,
+    "name": "Star Wars: Imperial Assault",
+    "released": "2014-01-01",
+    "price": 99,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 5,
+    "rating": [
+      7
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/pIQ_MXvaoARRp1loCHJuHg__original/img/12Xvbw01hpsAjsO0xrajZt2b5HY=/0x0/filters:format(jpeg)/pic2247647.jpg"
+    },
+    "weight": 3.3,
+    "playing_time": 60,
+    "author_name": "Justin Kemppainen",
+    "categories_name": [
+      "Cooperative"
+    ],
+    "designers_name": [
+      "Arden Beckwith",
+      "Christopher Burdett",
+      "Rovina Cai",
+      "Lucas Durham",
+      "Joel Hustak",
+      "Michal Ivan",
+      "David Kegg",
+      "Henning Ludvigsen",
+      "Brynn Metheney",
+      "Vlad Ricean",
+      "Ryan Valle",
+      "Ben Zweifel"
+    ],
+    "editorial_name": "Fantasy Flight Games",
+    "languages_name": [
+      "English",
+      "French",
+      "Spanish"
+    ],
+    "mechanic_name": "Dice Rolling",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 233571,
+    "name": "Star Wars: Legion",
+    "released": "2018-01-01",
+    "price": 204,
+    "age": 14,
+    "players_min": 2,
+    "players_max": 2,
+    "rating": [
+      8
+    ],
+    "stock": 92,
+    "image": {
+      "url": "https://cf.geekdo-images.com/pttzJMbECpFBL_h5tD6SaA__original/img/rXzpLhn0vPKerOglFVoRk_J4NIY=/0x0/filters:format(jpeg)/pic3764376.jpg"
+    },
+    "weight": 3.4,
+    "playing_time": 120,
+    "author_name": "Alex Davy",
+    "categories_name": [
+      "Ameritrash"
+    ],
+    "designers_name": [
+      "Henning Ludvigsen"
+    ],
+    "editorial_name": "Fantasy Flight Games",
+    "languages_name": [
+      "English",
+      "French",
+      "Spanish"
+    ],
+    "mechanic_name": "Dice Rolling",
+    "thematic_name": "Miniatures"
+  },
+  {
+    "game_id": 370913,
+    "name": "Star Wars: The Clone Wars",
+    "released": "2022-01-01",
+    "price": 63,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 5,
+    "rating": [
+      7
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/JDp6QChGMYgYdZOrIztwSw__original/img/bF4XneSxbh6rzDG4jTULqX5hKYs=/0x0/filters:format(jpeg)/pic7091709.jpg"
+    },
+    "weight": 2.1,
+    "playing_time": 60,
+    "author_name": "Alexandar Ortloff",
+    "categories_name": [
+      "Narrative"
+    ],
+    "designers_name": [
+      "Atha Kanaani"
+    ],
+    "editorial_name": "Z-Man Games",
+    "languages_name": [
+      "English",
+      "German",
+      "French"
+    ],
+    "mechanic_name": "Cooperative Game",
+    "thematic_name": "Movies / TV / Radio theme"
+  },
+  {
+    "game_id": 252328,
+    "name": "Star Wars: X-Wing (Second Edition)",
+    "released": "2018-01-01",
+    "price": 46.5,
+    "age": 14,
+    "players_min": 2,
+    "players_max": 2,
+    "rating": [
+      8
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/oPYTn7JgqxEsOuJ835WQnw__original/img/f4EpXqRON_VQ94prr6UM4tBabRk=/0x0/filters:format(jpeg)/pic4271201.jpg"
+    },
+    "weight": 3.1,
+    "playing_time": 30,
+    "author_name": "Jason Little",
+    "categories_name": [
+      "Ameritrash"
+    ],
+    "designers_name": [
+      "Jason Little"
+    ],
+    "editorial_name": "Fantasy Flight Games",
+    "languages_name": [
+      "English",
+      "French",
+      "Spanish"
+    ],
+    "mechanic_name": "Action Queue",
+    "thematic_name": "Aviation / Flight"
+  },
+  {
+    "game_id": 133473,
+    "name": "Sushi Go!",
+    "released": "2013-01-01",
+    "price": 9,
+    "age": 8,
+    "players_min": 2,
+    "players_max": 5,
+    "rating": [
+      7
+    ],
+    "stock": 11,
+    "image": {
+      "url": "https://cf.geekdo-images.com/Fn3PSPZVxa3YurlorITQ1Q__original/img/5vRsn2TT9eJmq27i9HtLWKpB_xs=/0x0/filters:format(jpeg)/pic1900075.jpg"
+    },
+    "weight": 1.2,
+    "playing_time": 15,
+    "author_name": "Phil Walker-Harding",
+    "categories_name": [
+      "Party"
+    ],
+    "designers_name": [
+      "Nan Rangsima",
+      "Tobias Schweiger",
+      "Phil Walker-Harding"
+    ],
+    "editorial_name": "Adventureland Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Closed Drafting",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 146508,
+    "name": "T.I.M.E Stories",
+    "released": "2015-01-01",
+    "price": 117,
+    "age": 12,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 69,
+    "image": {
+      "url": "https://cf.geekdo-images.com/XmwCsjQ3C1Ul53ZN2o8Q-Q__original/img/sUuboe9L4_nrIokyjAE74uklCjE=/0x0/filters:format(png)/pic2617634.png"
+    },
+    "weight": 2.6,
+    "playing_time": 90,
+    "author_name": "Peggy Chassenet",
+    "categories_name": [
+      "Cooperative"
+    ],
+    "designers_name": [
+      "Ben Carre",
+      "David Lecossu",
+      "Pascal Quidault"
+    ],
+    "editorial_name": "Space Cowboys",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Cooperative Game",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 264220,
+    "name": "Tainted Grail: The Fall of Avalon",
+    "released": "2019-01-01",
+    "price": 99,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/aAwBzPzta4joKfFZt05hCw__original/img/e1HfD3XIvObNuGH6rq7kUSK-5aQ=/0x0/filters:format(jpeg)/pic4385726.jpg"
+    },
+    "weight": 3.3,
+    "playing_time": 60,
+    "author_name": "Krzysztof Piskorski",
+    "categories_name": [
+      "Narrative"
+    ],
+    "designers_name": [
+      "Piotr Foksowicz",
+      "Piotr Gacek",
+      "Patryk Jędraszek",
+      "Ewa Labak",
+      "Michael Peitsch",
+      "Andrzej Półtoranos"
+    ],
+    "editorial_name": "Awaken Realms",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Area Movement",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 167791,
+    "name": "Terraforming Mars",
+    "released": "2016-01-01",
+    "price": 198,
+    "age": 12,
+    "players_min": 1,
+    "players_max": 5,
+    "rating": [
+      8
+    ],
+    "stock": 92,
+    "image": {
+      "url": "https://cf.geekdo-images.com/wg9oOLcsKvDesSUdZQ4rxw__original/img/thIqWDnH9utKuoKVEUqveDixprI=/0x0/filters:format(jpeg)/pic3536616.jpg"
+    },
+    "weight": 3.3,
+    "playing_time": 120,
+    "author_name": "Jacob Fryxelius",
+    "categories_name": [
+      "Eurogames"
+    ],
+    "designers_name": [
+      "Isaac Fryxelius"
+    ],
+    "editorial_name": "FryxGames",
+    "languages_name": [
+      "Spanish",
+      "English"
+    ],
+    "mechanic_name": "Closed Drafting",
+    "thematic_name": "Economic"
+  },
+  {
+    "game_id": 324856,
+    "name": "The Crew: Mission Deep Sea",
+    "released": "2021-01-01",
+    "price": 20,
+    "age": 10,
+    "players_min": 2,
+    "players_max": 5,
+    "rating": [
+      8
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/VuBqZ1sMaDAVVHF_OEJP4g__original/img/jGWxczXC_VWZofeAmlO_DkB0hCI=/0x0/filters:format(jpeg)/pic5988903.jpg"
+    },
+    "weight": 2,
+    "playing_time": 20,
+    "author_name": "Thomas Sing",
+    "categories_name": [
+      "Family"
+    ],
+    "designers_name": [
+      "Marco Armbruster"
+    ],
+    "editorial_name": "KOSMOS",
+    "languages_name": [
+      "English"
+    ],
+    "mechanic_name": "Communication Limits",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 284083,
+    "name": "The Crew: The Quest for Planet Nine",
+    "released": "2019-01-01",
+    "price": 20,
+    "age": 10,
+    "players_min": 2,
+    "players_max": 5,
+    "rating": [
+      7
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/98LnQShydr11OBKS46xY-Q__original/img/Q-ZkgnuBu9OTBr7J3qnqPjqamAE=/0x0/filters:format(jpeg)/pic5687013.jpg"
+    },
+    "weight": 2,
+    "playing_time": 20,
+    "author_name": "Thomas Sing",
+    "categories_name": [
+      "Family"
+    ],
+    "designers_name": [
+      "Marco Armbruster",
+      "Sensit Communication GmbH"
+    ],
+    "editorial_name": "KOSMOS",
+    "languages_name": [
+      "English"
+    ],
+    "mechanic_name": "Communication Limits",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 281259,
+    "name": "The Isle of Cats",
+    "released": "2019-01-01",
+    "price": 69,
+    "age": 8,
+    "players_min": 1,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/AuAheDzhkLufiZFE9JaRNA__original/img/pKq-l1Ms78olHwMbZYMa_x6m-fM=/0x0/filters:format(jpeg)/pic4781085.jpg"
+    },
+    "weight": 2.3,
+    "playing_time": 60,
+    "author_name": "Frank West",
+    "categories_name": [
+      "Family"
+    ],
+    "designers_name": [
+      "Dragolisco",
+      "Frank West"
+    ],
+    "editorial_name": "The City of Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Closed Drafting",
+    "thematic_name": "Animals"
+  },
+  {
+    "game_id": 244992,
+    "name": "The Mind",
+    "released": "2018-01-01",
+    "price": 11,
+    "age": 8,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      6
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/q_JGK291hrhnhiRB0667oA__original/img/8VjZEG278faO9JZwzce3v3EKssI=/0x0/filters:format(png)/pic3979766.png"
+    },
+    "weight": 1.1,
+    "playing_time": 20,
+    "author_name": "Wolfgang Warsch",
+    "categories_name": [
+      "Party"
+    ],
+    "designers_name": [
+      "Oliver Freudenreich"
+    ],
+    "editorial_name": "Nürnberger-Spielkarten-Verlag",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Communication Limits",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 244521,
+    "name": "The Quacks of Quedlinburg",
+    "released": "2018-01-01",
+    "price": 42.75,
+    "age": 10,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 34,
+    "image": {
+      "url": "https://cf.geekdo-images.com/pH5LgRL4mNRon-2NsSDb1Q__original/img/8PEJOyuKGbTaEGbUbCoLQy_i65Y=/0x0/filters:format(png)/pic6137509.png"
+    },
+    "weight": 1.9,
+    "playing_time": 45,
+    "author_name": "Wolfgang Warsch",
+    "categories_name": [
+      "Family"
+    ],
+    "designers_name": [
+      "Dennis Lohausen",
+      "Wolfgang Warsch"
+    ],
+    "editorial_name": "Schmidt Spiele",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Catch the Leader",
+    "thematic_name": "Medieval"
+  },
+  {
+    "game_id": 353288,
+    "name": "Trekking Through History",
+    "released": "2022-01-01",
+    "price": 27,
+    "age": 10,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 23,
+    "image": {
+      "url": "https://cf.geekdo-images.com/9VimKoKMxKiulhjeOFZLnw__original/img/SjWThtNzxQWmpbVotkZ5M8e1vVs=/0x0/filters:format(jpeg)/pic6637421.jpg"
+    },
+    "weight": 1.8,
+    "playing_time": 30,
+    "author_name": "Charlie Bink",
+    "categories_name": [
+      "Family"
+    ],
+    "designers_name": [
+      "Eric Hibbeler"
+    ],
+    "editorial_name": "Underdog Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Open Drafting",
+    "thematic_name": "Adventure"
+  },
+  {
+    "game_id": 126163,
+    "name": "Tzolk'in: The Mayan Calendar",
+    "released": "2012-01-01",
+    "price": 166.5,
+    "age": 13,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 69,
+    "image": {
+      "url": "https://cf.geekdo-images.com/kXf7mDyDYuHg6oe8yTUIEA__original/img/f6-Au0KTnNR4nugSu2U-wPNbZCU=/0x0/filters:format(jpeg)/pic4604439.jpg"
+    },
+    "weight": 3.7,
+    "playing_time": 90,
+    "author_name": "Simone Luciani",
+    "categories_name": [
+      "Eurogames"
+    ],
+    "designers_name": [
+      "Milan Vavroň"
+    ],
+    "editorial_name": "Czech Games Edition",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Bias",
+    "thematic_name": "Ancient"
+  },
+  {
+    "game_id": 274637,
+    "name": "Unmatched: Battle of Legends, Volume One",
+    "released": "2019-01-01",
+    "price": 19,
+    "age": 9,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/4AlLbprNustr9G7pbkGRuw__original/img/d7Z89SEv9T_HqPaYEomeKcFmgeA=/0x0/filters:format(jpeg)/pic4621579.jpg"
+    },
+    "weight": 1.9,
+    "playing_time": 20,
+    "author_name": "Rob Daviau",
+    "categories_name": [
+      "Ameritrash"
+    ],
+    "designers_name": [
+      "Oliver Barrett",
+      "Alexander Wells"
+    ],
+    "editorial_name": "Mondo Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 335764,
+    "name": "Unmatched: Battle of Legends, Volume Two",
+    "released": "2021-01-01",
+    "price": 22,
+    "age": 9,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/_N9ueJu-Vaq656p7HSI9sw__original/img/fa9W5Vt7oNkH2j33U6K7RMHwqlI=/0x0/filters:format(jpeg)/pic6267930.jpg"
+    },
+    "weight": 2.2,
+    "playing_time": 20,
+    "author_name": "Noah Cohen",
+    "categories_name": [
+      "Ameritrash"
+    ],
+    "designers_name": [
+      "Zoë van Dijk",
+      "Garrett Kaida"
+    ],
+    "editorial_name": "Restoration Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 294484,
+    "name": "Unmatched: Cobble & Fog",
+    "released": "2020-01-01",
+    "price": 20,
+    "age": 9,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      8
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/iyIO6udRfIn0xM1rIxyO2g__original/img/PZBFIDjPGZddto7n5F5gP_2slUA=/0x0/filters:format(jpeg)/pic5056685.jpg"
+    },
+    "weight": 2,
+    "playing_time": 20,
+    "author_name": "Rob Daviau",
+    "categories_name": [
+      "Ameritrash"
+    ],
+    "designers_name": [
+      "Ian O'Toole",
+      "Andrew Thompson"
+    ],
+    "editorial_name": "Mondo Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 180020,
+    "name": "Virus!",
+    "released": "2015-01-01",
+    "price": 10,
+    "age": 8,
+    "players_min": 2,
+    "players_max": 6,
+    "rating": [
+      6
+    ],
+    "stock": 15,
+    "image": {
+      "url": "https://cf.geekdo-images.com/vWWGyNHsJUUi0rAHA8f0BQ__original/img/FljIdUW5qhLiXctzija63-YSuCU=/0x0/filters:format(png)/pic4810191.png"
+    },
+    "weight": 1,
+    "playing_time": 20,
+    "author_name": "Domingo Cabrero",
+    "categories_name": [
+      "Party"
+    ],
+    "designers_name": [
+      "Domingo Cabrero",
+      "David GJ",
+      "Carlos López",
+      "Santi Santisteban"
+    ],
+    "editorial_name": "Tranjis Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Hand Management",
+    "thematic_name": "Card Game"
+  },
+  {
+    "game_id": 183394,
+    "name": "Viticulture Essential Edition",
+    "released": "2015-01-01",
+    "price": 65.25,
+    "age": 13,
+    "players_min": 1,
+    "players_max": 6,
+    "rating": [
+      8
+    ],
+    "stock": 34,
+    "image": {
+      "url": "https://cf.geekdo-images.com/l_PRU2lVlX9seScRFcvFlA__original/img/gDL7OZFlzoOFgU0VYlREs8P5hCQ=/0x0/filters:format(jpeg)/pic6500949.jpg"
+    },
+    "weight": 2.9,
+    "playing_time": 45,
+    "author_name": "Jamey Stegmaier",
+    "categories_name": [
+      "Eurogames"
+    ],
+    "designers_name": [
+      "Jacqui Davis",
+      "David Montgomery",
+      "Beth Sobel"
+    ],
+    "editorial_name": "Stonemaier Games",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Contracts",
+    "thematic_name": "Economic"
+  },
+  {
+    "game_id": 113924,
+    "name": "Zombicide",
+    "released": "2012-01-01",
+    "price": 75,
+    "age": 14,
+    "players_min": 1,
+    "players_max": 6,
+    "rating": [
+      7
+    ],
+    "stock": 46,
+    "image": {
+      "url": "https://cf.geekdo-images.com/ZqjfzvtaTIT5FYp1D2CfKw__original/img/Arh3sc5cBx5FYg92vCvwtx-lKJw=/0x0/filters:format(jpeg)/pic1196191.jpg"
+    },
+    "weight": 2.5,
+    "playing_time": 60,
+    "author_name": "Raphaël Guiton",
+    "categories_name": [
+      "Narrative"
+    ],
+    "designers_name": [
+      "Miguel Coimbra",
+      "Nicolas Fructus",
+      "Édouard Guiton",
+      "Mathieu Harlaut",
+      "Eric Nouhaut"
+    ],
+    "editorial_name": "CMON Global Limited",
+    "languages_name": [
+      "English"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Fighting"
+  },
+  {
+    "game_id": 310448,
+    "name": "Zombie Teenz Evolution",
+    "released": "2020-01-01",
+    "price": 11.25,
+    "age": 8,
+    "players_min": 2,
+    "players_max": 4,
+    "rating": [
+      7
+    ],
+    "stock": 11,
+    "image": {
+      "url": "https://cf.geekdo-images.com/elS-EEtVF92Vk-YBqnJKeA__original/img/Zr5Q4VUehMBvib7M48FyaAa9Gss=/0x0/filters:format(png)/pic5733331.png"
+    },
+    "weight": 1.5,
+    "playing_time": 15,
+    "author_name": "Annick Lobet",
+    "categories_name": [
+      "Family"
+    ],
+    "designers_name": [
+      "Nikao",
+      "Rémy Tornior"
+    ],
+    "editorial_name": "Le Scorpion Masqué",
+    "languages_name": [
+      "Russian"
+    ],
+    "mechanic_name": "Action Points",
+    "thematic_name": "Children's Game"
+  }
+]

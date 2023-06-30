@@ -15,11 +15,17 @@
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
+    "json-stringify-pretty-compact": "^4.0.0",
+    "json5": "^2.2.3",
+    "jsonc-parser": "^3.2.0",
+    "jsonfile": "^6.1.0",
+    "jsonlint": "^1.6.3",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.22",
     "pg": "^8.11.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.32.0",
+    "stringify-object": "^5.0.0",
     "xlsx": "^0.18.5"
   }
 }

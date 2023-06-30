@@ -15,15 +15,17 @@ const postFaq = async (req, res) => {
         },
       },
     });
+
     if (existingFaq) {
       return res
         .status(406)
         .json({ message: `Faq ${question} already exists` });
     }
-    await Faq.create({ question: question, answer: answer });
+
+    await Faq.create({ question, answer });
     return res
       .status(201)
-      .json({ message: `Faq ${question} created successfuly` });
+      .json({ message: `Faq ${question} created successfully` });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -31,13 +33,13 @@ const postFaq = async (req, res) => {
 
 const getAllFaqs = async (req, res) => {
   try {
-    const existingFaq = await Faq.findAll();
+    const existingFaqs = await Faq.findAll();
 
-    if (existingFaq.length === 0) {
+    if (existingFaqs.length === 0) {
       return res.status(404).json({ message: "No Faqs found" });
     }
 
-    return res.status(200).json(existingFaq);
+    return res.status(200).json(existingFaqs);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -46,45 +48,53 @@ const getAllFaqs = async (req, res) => {
 const deleteFaq = async (req, res) => {
   const { id } = req.params;
 
-  if (isNaN(id))
+  if (isNaN(id)) {
     return res.status(400).json({ message: "The id must be a number." });
+  }
 
   try {
-    const Faq = await Faq.findByPk(id);
-    if (Faq) {
-      Faq.active = false;
-      await Faq.save();
+    const faq = await Faq.findByPk(id);
+
+    if (faq) {
+      faq.active = false;
+      await faq.save();
       return res
         .status(200)
-        .json({ message: `The Faq ${Faq.question} has been deleted.` });
+        .json({ message: `The Faq ${faq.question} has been deleted.` });
     }
-    res.status(404).json({ message: `There is no Faq with id ${id}.` });
-  } catch ({ message }) {
-    res.status(500).json({ error: message });
+
+    return res.status(404).json({ message: `There is no Faq with id ${id}.` });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
   }
 };
 
 const putFaq = async (req, res) => {
-  const { Faq_id, question, active } = req.body;
+  const { faq_id, question, active } = req.body;
 
-  if (Faq_id === undefined)
-    return res.status(400).json({ message: "Id is required." });
+  if (!faq_id) {
+    return res.status(400).json({ message: "faq_id is required." });
+  }
 
   try {
-    const Faq = await Faq.findByPk(Faq_id);
-    if (Faq) {
-      if (question) Faq.question = question;
-      if (active !== undefined) Faq.active = active;
-      await Faq.save();
-      return res.status(200).json({ message: `The Faq has been updated.` });
+    const faq = await Faq.findByPk(faq_id);
+
+    if (faq) {
+      if (question) faq.question = question;
+      if (active !== undefined) faq.active = active;
+
+      await faq.save();
+      return res.status(200).json({ message: "The Faq has been updated." });
     }
-    res.status(404).json({ message: `There is no Faq with id ${Faq_id}.` });
-  } catch ({ message }) {
-    res.status(500).json({ error: message });
+
+    return res
+      .status(404)
+      .json({ message: `There is no Faq with id ${faq_id}.` });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
   }
 };
 
-// Función para obtener faqs por pregunta
 const getFaqsByQuestion = async (req, res) => {
   try {
     const searchTerm = req.query.question || "";
@@ -97,13 +107,13 @@ const getFaqsByQuestion = async (req, res) => {
     });
 
     if (faqs.length === 0) {
-      res.status(404).json({ message: "No se encontraron preguntas." });
-    } else {
-      res.json(faqs);
+      return res.status(404).json({ message: "No se encontraron preguntas." });
     }
+
+    return res.json(faqs);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Error al obtener los faq" });
+    return res.status(500).json({ message: "Error al obtener los faq" });
   }
 };
 

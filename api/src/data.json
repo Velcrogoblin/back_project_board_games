@@ -6,6 +6,7 @@
     {"record":"5","table":"Languages","fields":"language_name"},
     {"record":"6","table":"Mechanics","fields":"mechanic_name,description"},
     {"record":"7","table":"Thematics","fields":"thematic_name"},
-    {"record":"8","table":"Faqs","fields":"question,answer"}
+    {"record":"8","table":"Faqs","fields":"question,answer"},
+    {"record":"9","table":"Games","fields":"game_id,name,released,price,age,players_min,players_max,rating,stock,image,weight,playing_time,author_name,categories_name,designers_name,editorial_name,languages_name,mechanic_name,thematic_name"}
 ]
-    
+ 
