@@ -11,7 +11,12 @@ const designerRoutes = require("./designerRoutes.js");
 const userRoutes = require("./userRoutes.js");
 const roleRoutes = require("./roleRoutes.js");
 const faqsRoutes = require("./faqRoute.js");
+
 const paymentRoutes = require("./paymentRoute");
+const successRoutes = require("./successRoutes");
+const failureRoutes = require("./failureRoutes");
+const pendingRoutes = require("./pendingRoutes");
+const webhookRoutes = require("./webhookRoutes");
 
 const router = Router();
 
@@ -30,5 +35,9 @@ router.use("/roles", roleRoutes);
 router.use("/faqs", faqsRoutes);
 
 router.use("/create-order", paymentRoutes);
+router.use("/success", successRoutes);
+router.use("/failure", failureRoutes);
+router.use("/pending", pendingRoutes);
+router.use("/webhook", webhookRoutes);
 
 module.exports = router;
