@@ -10,13 +10,17 @@ const authorRoutes = require("./authorRoutes.js");
 const designerRoutes = require("./designerRoutes.js");
 const userRoutes = require("./userRoutes.js");
 const roleRoutes = require("./roleRoutes.js");
+const shippingAddressRouter = require("./shippingAddressRoutes.js");
 const faqsRoutes = require("./faqRoute.js");
+
 
 const paymentRoutes = require("./paymentRoute");
 const successRoutes = require("./successRoutes");
 const failureRoutes = require("./failureRoutes");
 const pendingRoutes = require("./pendingRoutes");
 const webhookRoutes = require("./webhookRoutes");
+
+
 
 const router = Router();
 
@@ -28,10 +32,9 @@ router.use("/thematics", thematicRoute);
 router.use("/mechanics", mechanicsRoute);
 router.use("/authors", authorRoutes);
 router.use("/designers", designerRoutes);
-
 router.use("/users", userRoutes);
 router.use("/roles", roleRoutes);
-
+router.use("/shipping-address", shippingAddressRouter);
 router.use("/faqs", faqsRoutes);
 
 router.use("/create-order", paymentRoutes);

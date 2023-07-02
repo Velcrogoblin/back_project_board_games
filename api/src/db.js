@@ -5,8 +5,9 @@ const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DEPLOY } = process.env;
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-  // DB_DEPLOY,
+
+  //`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+  DB_DEPLOY,
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
@@ -48,7 +49,12 @@ const {
   Thematic,
   Author,
   User,
+
   Purchase,
+
+  Role,
+  ShippingAddress
+
 } = sequelize.models;
 
 // Aca vendrian las relaciones
@@ -74,11 +80,19 @@ Language.belongsToMany(Game, { through: "GameLanguage", timestamps: false });
 Game.belongsTo(Author);
 Author.hasMany(Game);
 
+
 User.hasMany(Purchase);
 Purchase.belongsTo(User);
 
 Game.belongsToMany(Purchase, { through: "GamePurchase", timestamps: false });
 Purchase.belongsToMany(Game, { through: "GamePurchase", timestamps: false });
+
+User.belongsTo(Role);
+Role.hasMany(User);
+
+User.belongsTo(ShippingAddress);
+ShippingAddress.hasOne(User);
+
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
