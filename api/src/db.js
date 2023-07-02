@@ -5,7 +5,8 @@ const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DEPLOY } = process.env;
 
 const sequelize = new Sequelize(
-  // `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+
+  //`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
   DB_DEPLOY,
   {
     logging: false, // set to console.log to see the raw SQL queries
@@ -48,17 +49,18 @@ const {
   Thematic,
   Author,
   User,
+
+  Purchase,
+
   Role,
   ShippingAddress
+
 } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews)
 Game.belongsToMany(Category, { through: "GameCategory", timestamps: false });
 Category.belongsToMany(Game, { through: "GameCategory", timestamps: false });
-
-// Game.belongsToMany(User, { through: "GameUser", timestamps: false });
-// User.belongsToMany(Game, { through: "GameUser", timestamps: false });
 
 Game.belongsTo(Thematic);
 Thematic.hasMany(Game);
@@ -78,11 +80,19 @@ Language.belongsToMany(Game, { through: "GameLanguage", timestamps: false });
 Game.belongsTo(Author);
 Author.hasMany(Game);
 
+
+User.hasMany(Purchase);
+Purchase.belongsTo(User);
+
+Game.belongsToMany(Purchase, { through: "GamePurchase", timestamps: false });
+Purchase.belongsToMany(Game, { through: "GamePurchase", timestamps: false });
+
 User.belongsTo(Role);
 Role.hasMany(User);
 
 User.belongsTo(ShippingAddress);
 ShippingAddress.hasOne(User);
+
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
