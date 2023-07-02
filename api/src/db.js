@@ -5,7 +5,7 @@ const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DEPLOY } = process.env;
 
 const sequelize = new Sequelize(
-  //`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+  // `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
   DB_DEPLOY,
   {
     logging: false, // set to console.log to see the raw SQL queries
@@ -47,7 +47,9 @@ const {
   Mechanic,
   Thematic,
   Author,
-  User
+  User,
+  Role,
+  ShippingAddress
 } = sequelize.models;
 
 // Aca vendrian las relaciones
@@ -75,6 +77,12 @@ Language.belongsToMany(Game, { through: "GameLanguage", timestamps: false });
 
 Game.belongsTo(Author);
 Author.hasMany(Game);
+
+User.belongsTo(Role);
+Role.hasMany(User);
+
+User.belongsTo(ShippingAddress);
+ShippingAddress.hasOne(User);
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
