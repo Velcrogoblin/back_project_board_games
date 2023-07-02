@@ -44,10 +44,6 @@ const createOrder = async (req, res) => {
         failure: `${HOST}/failure`,
         pending: `${HOST}/pending`,
       },
-
-      notification_url: "https://33ab-152-168-78-22.sa.ngrok.io/webhook",
-
-      auto_return: approved,
     });
 
     return res.status(200).json(result.body);
