@@ -46,7 +46,10 @@ const createOrder = async (req, res) => {
       },
     });
 
-    return res.status(200).json(result.body);
+    return res.status(200).json({
+      id_mercadopago: result.body.id,
+      init_point: result.body.init_point,
+    });
   } catch ({ message }) {
     return res.status(500).json({ message });
   }
