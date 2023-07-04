@@ -29,9 +29,9 @@ const createOrder = async (req, res) => {
     const result = await mercadopago.preferences.create({
       items: pedido,
       back_urls: {
-        success: "http://localhost:5173/success",
-        failure: "http://localhost:5173/failure",
-        pending: "http://localhost:5173/pending",
+        success: `${HOST_DEPLOY}/sucess`,
+        failure: `${HOST_DEPLOY}/failure`,
+        pending: `${HOST_DEPLOY}/pending`,
       },
     });
 
