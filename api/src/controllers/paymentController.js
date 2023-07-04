@@ -1,18 +1,14 @@
 const mercadopago = require("mercadopago");
-const { Game } = require("../db");
 require("dotenv").config();
 
-// Test user token, not a real one
-const { MERCADO_PAGO_TOKEN, CURRENCY, PORT } = process.env;
+const { MERCADO_PAGO_TOKEN, CURRENCY, HOST_DEPLOY } = process.env;
 
-// Maybe this could be in the .env
-const HOST = `http://localhost:${PORT}`;
-
-// This code is ugly, I will clean it up
 const createOrder = async (req, res) => {
   try {
-    // items = [{ monopoly, ... }, { nicoJuego, ... }]
     const { items } = req.body;
+    if (!items || items.length === 0) {
+      return res.status(400).json({ message: "Items is empty" });
+    }
 
     // Game must exist in the database
 
@@ -33,9 +29,9 @@ const createOrder = async (req, res) => {
     const result = await mercadopago.preferences.create({
       items: pedido,
       back_urls: {
-        success: `${HOST}/success`,
-        failure: `${HOST}/failure`,
-        pending: `${HOST}/pending`,
+        success: `${HOST_DEPLOY}/success`,
+        failure: `${HOST_DEPLOY}/failure`,
+        pending: `${HOST_DEPLOY}/pending`,
       },
     });
 
