@@ -29,9 +29,9 @@ const createOrder = async (req, res) => {
     const result = await mercadopago.preferences.create({
       items: pedido,
       back_urls: {
-        success: "https://boardgames-woad.vercel.app/success",
-        failure: "https://boardgames-woad.vercel.app/failure",
-        pending: "https://boardgames-woad.vercel.app/pending",
+        success: "https://boardgames-n9tuptxl0-mgs1987.vercel.app/success",
+        failure: "https://boardgames-n9tuptxl0-mgs1987.vercel.app/failure",
+        pending: "https://boardgames-n9tuptxl0-mgs1987.vercel.app/pending",
       },
     });
 
