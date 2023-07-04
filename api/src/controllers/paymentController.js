@@ -1,7 +1,7 @@
 const mercadopago = require("mercadopago");
 require("dotenv").config();
 
-const { MERCADO_PAGO_TOKEN, CURRENCY } = process.env;
+const { MERCADO_PAGO_TOKEN, CURRENCY, HOST_DEPLOY } = process.env;
 
 const createOrder = async (req, res) => {
   try {
@@ -29,9 +29,9 @@ const createOrder = async (req, res) => {
     const result = await mercadopago.preferences.create({
       items: pedido,
       back_urls: {
-        success: "http://localhost:3001/success",
-        failure: "http://localhost:3001/failure",
-        pending: "http://localhost:3001/pending",
+        success: "http://localhost:5173/success",
+        failure: "http://localhost:5173/failure",
+        pending: "http://localhost:5173/pending",
       },
     });
 
