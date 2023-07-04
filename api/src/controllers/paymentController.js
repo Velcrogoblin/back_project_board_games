@@ -1,4 +1,5 @@
 const mercadopago = require("mercadopago");
+const { Game } = require("../db");
 require("dotenv").config();
 
 // Test user token, not a real one
@@ -10,18 +11,8 @@ const HOST = `http://localhost:${PORT}`;
 // This code is ugly, I will clean it up
 const createOrder = async (req, res) => {
   try {
-    const { name, price, quantity } = req.body;
-    if (!name || !price || !quantity) {
-      return res
-        .status(400)
-        .json({ message: "Must provide product name, price and quantity" });
-    }
-
-    if (isNaN(parseFloat(price)) || isNaN(parseInt(quantity))) {
-      return res
-        .status(418)
-        .json({ message: "Price and quantity must be numbers, teapot" });
-    }
+    // items = [{ monopoly, ... }, { nicoJuego, ... }]
+    const { items } = req.body;
 
     // Game must exist in the database
 
@@ -29,16 +20,18 @@ const createOrder = async (req, res) => {
       access_token: MERCADO_PAGO_TOKEN,
     });
 
-    const result = await mercadopago.preferences.create({
-      items: [
-        {
-          title: name,
-          unit_price: parseFloat(price),
-          currency_id: CURRENCY,
-          quantity: parseInt(quantity),
-        },
-      ],
+    let pedido = [];
+    const preferences = items.map((item) => {
+      pedido.push({
+        title: item.title,
+        unit_price: item.unit_price,
+        currency_id: CURRENCY,
+        quantity: item.quantity,
+      });
+    });
 
+    const result = await mercadopago.preferences.create({
+      items: pedido,
       back_urls: {
         success: `${HOST}/success`,
         failure: `${HOST}/failure`,
