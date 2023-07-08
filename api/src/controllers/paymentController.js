@@ -22,14 +22,13 @@ const createOrder = async (req, res) => {
       currency_id: CURRENCY,
       quantity: item.quantity,
     }));
-    console.log(preferences);
 
     const result = await mercadopago.preferences.create({
       items: preferences,
       back_urls: {
-        success: `${HOST_DEPLOY}/success`,
-        failure: `${HOST_DEPLOY}/failure`,
-        pending: `${HOST_DEPLOY}/pending`,
+        success: `${HOST_DEPLOY}success`,
+        failure: `${HOST_DEPLOY}failure`,
+        pending: `${HOST_DEPLOY}pending`,
       },
     });
 
