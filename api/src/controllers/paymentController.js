@@ -10,20 +10,6 @@ const createOrder = async (req, res) => {
       return res.status(400).json({ message: "Items is empty" });
     }
 
-    // const propsNeeded = ["title", "unit_price", "currency", "quantity"];
-    // for (const item of items) {
-    //   for (const prop of propsNeeded) {
-    //     if (
-    //       item.hasOwnProperty(prop) ||
-    //       !item[prop] === undefined ||
-    //       !item[prop] === ""
-    //     ) {
-    //       return res
-    //         .status(400)
-    //         .json({ message: "All fields must be filled in" });
-    //     }
-    //   }
-    // }
     // Game must exist in the database
 
     mercadopago.configure({
@@ -40,9 +26,9 @@ const createOrder = async (req, res) => {
     const result = await mercadopago.preferences.create({
       items: preferences,
       back_urls: {
-        success: `${HOST_DEPLOY}/success`,
-        failure: `${HOST_DEPLOY}/failure`,
-        pending: `${HOST_DEPLOY}/pending`,
+        success: `${HOST_DEPLOY}success`,
+        failure: `${HOST_DEPLOY}failure`,
+        pending: `${HOST_DEPLOY}pending`,
       },
     });
 
