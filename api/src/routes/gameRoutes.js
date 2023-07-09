@@ -8,6 +8,7 @@ const {
   deleteGame,
   putGameOnSale,
   putGame,
+  destroyGame
 } = require("../controllers/gameController");
 
 const router = Router();
@@ -17,8 +18,9 @@ router
   .get("/id/:id", getGamesById)
   .get("/name", getGamesByName)
   .post("/", createGame)
-  .delete("/id/:id", deleteGame)
+  .put("/id/:id", deleteGame)
   .put("/id/:id", putGameOnSale)
-  .put("/", putGame);
+  .put("/", putGame)
+  .delete("/id/:id", destroyGame)
 
 module.exports = router;
