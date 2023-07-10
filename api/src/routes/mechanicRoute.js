@@ -4,6 +4,7 @@ const {
   postMechanic,
   deleteMechanic,
   putMechanic,
+  destroyMechanic
 } = require("../controllers/mechanicsController");
 
 const router = Router();
@@ -11,7 +12,8 @@ const router = Router();
 router
   .get("/", getAllMechanics)
   .post("/", postMechanic)
-  .delete("/:id", deleteMechanic)
-  .put("/", putMechanic);
+  .put("/:id", deleteMechanic)
+  .put("/", putMechanic)
+  .delete("/:id", destroyMechanic)
 
 module.exports = router;

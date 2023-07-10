@@ -4,6 +4,7 @@ const {
   postThematic,
   deleteThematic,
   putThematic,
+  destroyThematic,
 } = require("../controllers/themathicsController");
 
 const router = Router();
@@ -11,7 +12,8 @@ const router = Router();
 router
   .get("/", getAllThematics)
   .post("/", postThematic)
-  .delete("/:id", deleteThematic)
-  .put("/", putThematic);
+  .put("/:id", deleteThematic)
+  .put("/", putThematic)
+  .delete("/:id", destroyThematic)
 
 module.exports = router;
