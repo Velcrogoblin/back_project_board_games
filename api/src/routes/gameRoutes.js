@@ -15,7 +15,7 @@ const router = Router();
 
 router
   .get("/", getAllGames)
-  .get("/:id", getGamesById)
+  .get("/id/:id", getGamesById)
   .get("/name", getGamesByName)
   .post("/", createGame)
   .put("/delete/:id", deleteGame)
