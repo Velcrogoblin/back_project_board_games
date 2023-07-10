@@ -1,7 +1,7 @@
 const mercadopago = require("mercadopago");
 require("dotenv").config();
 
-const { MERCADO_PAGO_TOKEN, CURRENCY, HOST_DEPLOY } = process.env;
+const { MERCADO_PAGO_TOKEN, CURRENCY, BACK_URL, FRONT_URL } = process.env;
 
 const createOrder = async (req, res) => {
   try {
@@ -26,9 +26,9 @@ const createOrder = async (req, res) => {
     const result = await mercadopago.preferences.create({
       items: preferences,
       back_urls: {
-        success: `${HOST_DEPLOY}success`,
-        failure: `${HOST_DEPLOY}failure`,
-        pending: `${HOST_DEPLOY}pending`,
+        success: `${BACK_URL}success`,
+        failure: `${BACK_URL}failure`,
+        pending: `${BACK_URL}pending`,
       },
     });
 
@@ -41,6 +41,26 @@ const createOrder = async (req, res) => {
   }
 };
 
+const payment = (req, res) => {
+  try {
+    const { status } = req.query;
+    const paymentStatus = status === "approved" ? "Approved" : "Pay in process";
+    switch (paymentStatus) {
+      case "Approved":
+        return res.redirect(`${FRONT_URL}success`);
+
+      case "Pay in process":
+        return res.redirect(`${FRONT_URL}pending`);
+
+      default:
+        return res.redirect(`${FRONT_URL}failure`);
+    }
+  } catch ({ message }) {
+    return res.status(500).json({ message });
+  }
+};
+
 module.exports = {
   createOrder,
+  payment,
 };
