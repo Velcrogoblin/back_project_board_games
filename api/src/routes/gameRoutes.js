@@ -15,12 +15,12 @@ const router = Router();
 
 router
   .get("/", getAllGames)
-  .get("/id/:id", getGamesById)
+  .get("/:id", getGamesById)
   .get("/name", getGamesByName)
   .post("/", createGame)
-  .put("/id/:id", deleteGame)
-  .put("/id/:id", putGameOnSale)
+  .put("/delete/:id", deleteGame)
+  .put("/:id", putGameOnSale)
   .put("/", putGame)
-  .delete("/id/:id", destroyGame)
+  .delete("/:id", destroyGame)
 
 module.exports = router;

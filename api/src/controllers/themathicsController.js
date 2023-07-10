@@ -66,6 +66,21 @@ const deleteThematic = async (req, res) => {
   }
 };
 
+const destroyThematic = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (isNaN(id)) {
+      return res.status(400).json({ message: "id is invalid" });
+    }
+
+    let response = await Thematic.findByPk(id);
+    await response.destroy();
+    return res.status(200).json({ message: "Thematic was destroyed successfully" });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
 const putThematic = async (req, res) => {
   const { thematic_id, thematic_name, active } = req.body;
 
@@ -95,4 +110,5 @@ module.exports = {
   getAllThematics,
   deleteThematic,
   putThematic,
+  destroyThematic,
 };

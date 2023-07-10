@@ -61,7 +61,7 @@ module.exports = (sequelize) => {
       image: {
         type: DataTypes.JSON,
         allowNull: true,
-        //defaultValue: "https://res.cloudinary.com/dwqp5iaqw/image/upload/v1688870174/boduDefaultImg_hss0gg.jpg"
+       // defaultValue: "https://res.cloudinary.com/dwqp5iaqw/image/upload/v1688870174/boduDefaultImg_hss0gg.jpg"
       },
 
       weight: {
