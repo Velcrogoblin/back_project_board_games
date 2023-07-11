@@ -12,7 +12,6 @@ const userRoutes = require("./userRoutes.js");
 const roleRoutes = require("./roleRoutes.js");
 const shippingAddressRouter = require("./shippingAddressRoutes.js");
 const faqsRoutes = require("./faqRoute.js");
-
 const paymentRoutes = require("./paymentRoute");
 
 const router = Router();
@@ -29,7 +28,6 @@ router.use("/users", userRoutes);
 router.use("/roles", roleRoutes);
 router.use("/shipping-address", shippingAddressRouter);
 router.use("/faqs", faqsRoutes);
-
 router.use("/create-order", paymentRoutes);
 
 module.exports = router;

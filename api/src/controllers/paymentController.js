@@ -26,9 +26,9 @@ const createOrder = async (req, res) => {
     const result = await mercadopago.preferences.create({
       items: preferences,
       back_urls: {
-        success: `${BACK_URL}success`,
-        failure: `${BACK_URL}failure`,
-        pending: `${BACK_URL}pending`,
+        success: BACK_URL,
+        failure: BACK_URL,
+        pending: BACK_URL,
       },
     });
 
