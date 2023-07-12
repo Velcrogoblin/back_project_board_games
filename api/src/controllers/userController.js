@@ -13,23 +13,25 @@ const getUsers = async (req, res) => {
   }
 };
 
+
 const createUser = async (req, res) => {
-  const { user_id, email, name, role_name, active = true } = req.body;
+  const { uid, email, name, role_name = 'client', active = true } = req.body;
 
   try {
-    if (!user_id || !email || !name || !role_name) return res.status(400).json({ message: "Incomplete information to create the user" });
+    if (!uid || !email || !name || !role_name) return res.status(400).json({ message: "Incomplete information to create the user" });
 
     const role = await Role.findOne({
       where: {
         role_name
       }
     });
+
     if (!role) return res.status(400).json({ message: `There is no role with name ${role_name}` });
 
     const user = await User.findOne({
       where: {
         [Op.or]: [
-          { user_id: user_id },
+          { user_id: uid },
           { email: email }
         ]
       }
@@ -37,7 +39,7 @@ const createUser = async (req, res) => {
 
     if (user) return res.status(400).json({ message: "User already exists." });
 
-    const newUser = await User.create({ user_id, email, name, active });
+    const newUser = await User.create({ user_id:uid, email, name, role_name, active });
     await newUser.setRole(role.role_id)
     return res.status(201).json({ message: "User has been create." });
 
