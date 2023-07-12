@@ -120,8 +120,8 @@ const createGame = async (req, res) => {
     designers_name,
     editorial_name,
     languages_name,
-    mechanic_name,
-    thematic_name,
+    mechanics_name,
+    thematics_name,
   } = req.body;
 
   try {
@@ -141,8 +141,8 @@ const createGame = async (req, res) => {
       designers_name.length === 0 ||
       !editorial_name ||
       languages_name.length === 0 ||
-      !mechanic_name ||
-      !thematic_name
+      !mechanics_name.length === 0 ||
+      !thematics_name.length === 0
     ) {
       return res.status(406).json({ message: "There is missing information." });
     }
@@ -206,9 +206,41 @@ const createGame = async (req, res) => {
       })
     );
 
+    const mechanics = await Promise.all(
+      mechanics_name.map(async (mechanic) => {
+        const data = await Mechanic.findOne({
+          where: { mechanic_name: mechanic },
+        });
+
+        if (!data) {
+          throw {
+            message: `Mechanic ${mechanic} does not exist`,
+            statusCode: 404,
+          };
+        }
+
+        return data.dataValues.mechanic_id;
+      })
+    );
+
+    const thematics = await Promise.all(
+      thematics_name.map(async (thematic) => {
+        const data = await Thematic.findOne({
+          where: { thematic_name: thematic },
+        });
+
+        if (!data) {
+          throw {
+            message: `Thematic ${thematic} does not exist`,
+            statusCode: 404,
+          };
+        }
+
+        return data.dataValues.thematic_id;
+      })
+    );
+
     const editorial = await Editorial.findOne({ where: { editorial_name } });
-    const mechanics = await Mechanic.findOne({ where: { mechanic_name } });
-    const thematics = await Thematic.findOne({ where: { thematic_name } });
 
     if (!author) {
       return res
@@ -221,16 +253,7 @@ const createGame = async (req, res) => {
         .status(406)
         .json({ message: `Editorial ${editorial_name} does not exist` });
     }
-    if (!mechanics) {
-      return res
-        .status(406)
-        .json({ message: `Mechanic ${mechanic_name} does not exist` });
-    }
-    if (!thematics) {
-      return res
-        .status(406)
-        .json({ message: `Thematic ${thematic_name} does not exist` });
-    }
+    
 
     const newGame = await Game.create({
       name,
@@ -251,8 +274,8 @@ const createGame = async (req, res) => {
     await newGame.addDesigners(designers);
     await newGame.setEditorial(editorial);
     await newGame.addLanguages(languages);
-    await newGame.setMechanic(mechanics);
-    await newGame.setThematic(thematics);
+    await newGame.addMechanics(mechanics);
+    await newGame.addThematics(thematics);
 
     return res
       .status(201)
@@ -331,8 +354,8 @@ const putGame = async (req, res) => {
     designers_name,
     editorial_name,
     languages_name,
-    mechanic_name,
-    thematic_name,
+    mechanics_name,
+    thematics_name,
   } = req.body;
 
   try {
@@ -353,8 +376,8 @@ const putGame = async (req, res) => {
       designers_name.length === 0 ||
       !editorial_name ||
       languages_name.length === 0 ||
-      !mechanic_name ||
-      !thematic_name
+      !mechanics_name.length === 0 ||
+      !thematics_name.length === 0
     ) {
       return res.status(406).json({ message: "There is missing information." });
     }
@@ -422,25 +445,45 @@ const putGame = async (req, res) => {
       })
     );
 
+    const mechanics = await Promise.all(
+      mechanics_name.map(async (mechanic) => {
+        const data = await Mechanic.findOne({
+          where: { mechanic_name: mechanic },
+        });
+
+        if (!data) {
+          throw {
+            message: `Mechanic ${mechanic} does not exist`,
+            statusCode: 404,
+          };
+        }
+
+        return data.dataValues.mechanic_id;
+      })
+    );
+
+    const thematics = await Promise.all(
+      thematics_name.map(async (thematic) => {
+        const data = await Thematic.findOne({
+          where: { thematic_name: thematic },
+        });
+
+        if (!data) {
+          throw {
+            message: `Thematic ${thematic} does not exist`,
+            statusCode: 404,
+          };
+        }
+
+        return data.dataValues.thematic_id;
+      })
+    );
+
     const editorial = await Editorial.findOne({ where: { editorial_name } });
     if (!editorial) {
       return res
         .status(406)
         .json({ message: `Editorial ${editorial_name} does not exist` });
-    }
-
-    const mechanics = await Mechanic.findOne({ where: { mechanic_name } });
-    if (!mechanics) {
-      return res
-        .status(406)
-        .json({ message: `Mechanic ${mechanic_name} does not exist` });
-    }
-
-    const thematics = await Thematic.findOne({ where: { thematic_name } });
-    if (!thematics) {
-      return res
-        .status(406)
-        .json({ message: `Thematic ${thematic_name} does not exist` });
     }
 
     await existingGame.update({
@@ -457,8 +500,6 @@ const putGame = async (req, res) => {
       playing_time,
       author_name,
       editorial_name,
-      mechanic_name,
-      thematic_name,
     });
 
     await existingGame.setCategories([]);
@@ -469,6 +510,12 @@ const putGame = async (req, res) => {
 
     await existingGame.setDesigners([]);
     await existingGame.addDesigners(designers);
+
+    await existingGame.setMechanics([]);
+    await existingGame.addMechanics(mechanics);
+
+    await existingGame.setThematics([]);
+    await existingGame.addThematics(thematics);
 
     return res
       .status(200)
