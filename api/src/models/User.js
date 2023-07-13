@@ -7,7 +7,7 @@ module.exports = (sequelize) => {
       user_id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
-        primaryKey: true
+        primaryKey: true,
       },
       email: {
         type: DataTypes.STRING,
@@ -17,11 +17,12 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       active: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-        defaultValue: true
-      }
+        defaultValue: true,
+      },
     },
     {
       timestamps: false,

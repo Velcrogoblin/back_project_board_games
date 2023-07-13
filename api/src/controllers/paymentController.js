@@ -10,8 +10,6 @@ const createOrder = async (req, res) => {
       return res.status(400).json({ message: "Items is empty" });
     }
 
-    // Game must exist in the database
-
     mercadopago.configure({
       access_token: MERCADO_PAGO_TOKEN,
     });
