@@ -60,11 +60,11 @@ const {
 Game.belongsToMany(Category, { through: "GameCategory", timestamps: false });
 Category.belongsToMany(Game, { through: "GameCategory", timestamps: false });
 
-Game.belongsTo(Thematic);
-Thematic.hasMany(Game);
+Game.belongsToMany(Thematic, {through: "GameThematic", timestamps: false });
+Thematic.belongsToMany(Game, {through: "GameThematic", timestamps: false });
 
-Game.belongsTo(Mechanic);
-Mechanic.hasMany(Game);
+Game.belongsToMany(Mechanic, {through: "GameMechanic", timestamps: false });
+Mechanic.belongsToMany(Game, {through: "GameMechanic", timestamps: false });
 
 Game.belongsToMany(Designer, { through: "GameDesigner", timestamps: false });
 Designer.belongsToMany(Game, { through: "GameDesigner", timestamps: false });

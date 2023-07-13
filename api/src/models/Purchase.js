@@ -10,19 +10,12 @@ module.exports = (sequelize) => {
         autoIncrement: true,
       },
 
-      title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-
-      unit_price: {
+      total_amount: {
         type: DataTypes.FLOAT,
         allowNull: false,
-      },
-
-      quantity: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        validate: {
+          isFloat: true,
+        },
       },
 
       active: {
