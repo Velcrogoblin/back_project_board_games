@@ -137,10 +137,10 @@ const createGame = async (req, res) => {
       !weight ||
       !playing_time ||
       !author_name ||
-      categories_name.length === 0 ||
-      designers_name.length === 0 ||
+      !categories_name.length === 0 ||
+      !designers_name.length === 0 ||
       !editorial_name ||
-      languages_name.length === 0 ||
+      !languages_name.length === 0 ||
       !mechanics_name.length === 0 ||
       !thematics_name.length === 0
     ) {
@@ -253,7 +253,6 @@ const createGame = async (req, res) => {
         .status(406)
         .json({ message: `Editorial ${editorial_name} does not exist` });
     }
-    
 
     const newGame = await Game.create({
       name,
@@ -535,5 +534,5 @@ module.exports = {
   getGamesById,
   getGamesByName,
   createGame,
-  destroyGame
+  destroyGame,
 };
