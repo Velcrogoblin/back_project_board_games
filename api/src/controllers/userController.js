@@ -17,6 +17,9 @@ const getUsers = async (req, res) => {
 const createUser = async (req, res) => {
   const { uid, email, name, role_name = 'client', active = true } = req.body;
 
+  console.log('req.body')
+  console.log(req.body)
+
   try {
     if (!uid || !email || !name || !role_name) return res.status(400).json({ message: "Incomplete information to create the user" });
 
@@ -36,6 +39,9 @@ const createUser = async (req, res) => {
         ]
       }
     });
+
+    console.log('user')
+    console.log(user)
 
     if (user) return res.status(400).json({ message: "User already exists." });
 
