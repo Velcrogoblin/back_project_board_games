@@ -263,14 +263,13 @@ const putGameOnSale = async (req, res) => {
 
 const putGame = async (req, res) => {
   const {
-    id,
+    game_id,
     name,
     released,
     price,
     age,
     players_min,
     players_max,
-    rating,
     stock,
     image,
     weight,
@@ -283,6 +282,29 @@ const putGame = async (req, res) => {
     mechanics_name,
     thematics_name,
   } = req.body;
+
+  //if (
+  //   //!game_id ||
+  //   !name ||
+  //   !released ||
+  //   !price ||
+  //   !age ||
+  //   !players_min ||
+  //   !players_max ||
+  //   !stock ||
+  //   !image ||
+  //   !weight ||
+  //   !playing_time ||
+  //   !author_name ||
+  //   categories_name.length === 0 ||
+  //   designers_name.length === 0 ||
+  //   !editorial_name ||
+  //   languages_name.length === 0 ||
+  //   mechanics_name.length === 0 ||
+  //   thematics_name.length === 0
+  // ) {
+  //   return res.status(406).json({ message: "There is missing information." });
+  // }
 
   try {
     // if (
@@ -307,10 +329,40 @@ const putGame = async (req, res) => {
     // ) {
     //   return res.status(406).json({ message: "There is missing information." });
     // }
+    // if (isNaN(game_id)) {
+    //   return res.status(400).json({ message: "id is invalid" });
+    // }
+    // if (!name) return res.status(406).json({ message: "name is required" });
+    // if (!released)
+    //   return res.status(406).json({ message: "released is required" });
+    // if (!price) return res.status(406).json({ message: "price is required" });
+    // if (!age) return res.status(406).json({ message: "age is required" });
+    // if (!players_min)
+    //   return res.status(406).json({ message: "players_min is required" });
+    // if (!players_max)
+    //   return res.status(406).json({ message: "players_max is required" });
+    // if (!stock) return res.status(406).json({ message: "stock is required" });
+    // if (!image) return res.status(406).json({ message: "image is required" });
+    // if (!playing_time)
+    //   return res.status(406).json({ message: "playing_time is required" });
+    // //if (!author_name) return res.status(406).json({ message: "author_name is required" });
 
-    const existingGame = await Game.findByPk(id);
+    // if (!editorial_name)
+    //   return res.status(406).json({ message: "editorial_name is required" });
+    // if (!categories_name)
+    //   return res.status(406).json({ message: "categories_name is required" });
+    // if (!designers_name)
+    //   return res.status(406).json({ message: "designers_name is required" });
+    // if (!languages_name)
+    //   return res.status(406).json({ message: "languages_name is required" });
+    // if (!mechanics_name)
+    //   return res.status(406).json({ message: "mechanics_name is required" });
+    // if (!thematics_name)
+    //   return res.status(406).json({ message: "thematics_name is required" });
+
+    const existingGame = await Game.findByPk(game_id);
     if (!existingGame) {
-      return res.status(400).json({ message: `No games with ${id}` });
+      return res.status(400).json({ message: `No games with ${game_id}` });
     }
 
     const author = await Author.findOne({ where: { author_name } });
@@ -320,90 +372,106 @@ const putGame = async (req, res) => {
         .json({ message: `Author ${author_name} does not exist` });
     }
 
-    const categories = await Promise.all(
-      categories_name.map(async (category) => {
-        const data = await Category.findOne({
-          where: { category_name: category },
-        });
+    const categories = await Category.findAll({
+      where: { category_name: categories_name },
+    });
+    const designers = await Designer.findAll({
+      where: { designer_name: designers_name },
+    });
+    const languages = await Language.findAll({
+      where: { language_name: languages_name },
+    });
+    const mechanics = await Mechanic.findAll({
+      where: { mechanic_name: mechanics_name },
+    });
+    const thematics = await Thematic.findAll({
+      where: { thematic_name: thematics_name },
+    });
 
-        if (!data) {
-          throw {
-            message: `Category ${category} does not exist`,
-            statusCode: 404,
-          };
-        }
+    // const categories = await Promise.all(
+    //   categories_name.map(async (category) => {
+    //     const data = await Category.findOne({
+    //       where: { category_name: category },
+    //     });
 
-        return data.dataValues.category_id;
-      })
-    );
+    //     if (!data) {
+    //       throw {
+    //         message: `Category ${category} does not exist`,
+    //         statusCode: 404,
+    //       };
+    //     }
 
-    const designers = await Promise.all(
-      designers_name.map(async (designer) => {
-        const data = await Designer.findOne({
-          where: { designer_name: designer },
-        });
+    //     return data.dataValues.category_id;
+    //   })
+    // );
 
-        if (!data) {
-          throw {
-            message: `Designer ${designer} does not exist`,
-            statusCode: 404,
-          };
-        }
+    // const designers = await Promise.all(
+    //   designers_name.map(async (designer) => {
+    //     const data = await Designer.findOne({
+    //       where: { designer_name: designer },
+    //     });
 
-        return data.dataValues.designer_id;
-      })
-    );
+    //     if (!data) {
+    //       throw {
+    //         message: `Designer ${designer} does not exist`,
+    //         statusCode: 404,
+    //       };
+    //     }
 
-    const languages = await Promise.all(
-      languages_name.map(async (language) => {
-        const data = await Language.findOne({
-          where: { language_name: language },
-        });
+    //     return data.dataValues.designer_id;
+    //   })
+    // );
 
-        if (!data) {
-          throw {
-            message: `Language ${language} does not exist`,
-            statusCode: 404,
-          };
-        }
+    // const languages = await Promise.all(
+    //   languages_name.map(async (language) => {
+    //     const data = await Language.findOne({
+    //       where: { language_name: language },
+    //     });
 
-        return data.dataValues.id_language;
-      })
-    );
+    //     if (!data) {
+    //       throw {
+    //         message: `Language ${language} does not exist`,
+    //         statusCode: 404,
+    //       };
+    //     }
 
-    const mechanics = await Promise.all(
-      mechanics_name.map(async (mechanic) => {
-        const data = await Mechanic.findOne({
-          where: { mechanic_name: mechanic },
-        });
+    //     return data.dataValues.id_language;
+    //   })
+    // );
 
-        if (!data) {
-          throw {
-            message: `Mechanic ${mechanic} does not exist`,
-            statusCode: 404,
-          };
-        }
+    // const mechanics = await Promise.all(
+    //   mechanics_name.map(async (mechanic) => {
+    //     const data = await Mechanic.findOne({
+    //       where: { mechanic_name: mechanic },
+    //     });
 
-        return data.dataValues.mechanic_id;
-      })
-    );
+    //     if (!data) {
+    //       throw {
+    //         message: `Mechanic ${mechanic} does not exist`,
+    //         statusCode: 404,
+    //       };
+    //     }
 
-    const thematics = await Promise.all(
-      thematics_name.map(async (thematic) => {
-        const data = await Thematic.findOne({
-          where: { thematic_name: thematic },
-        });
+    //     return data.dataValues.mechanic_id;
+    //   })
+    // );
 
-        if (!data) {
-          throw {
-            message: `Thematic ${thematic} does not exist`,
-            statusCode: 404,
-          };
-        }
+    // const thematics = await Promise.all(
+    //   thematics_name.map(async (thematic) => {
+    //     const data = await Thematic.findOne({
+    //       where: { thematic_name: thematic },
+    //     });
 
-        return data.dataValues.thematic_id;
-      })
-    );
+    //     if (!data) {
+    //       throw {
+    //         message: `Thematic ${thematic} does not exist`,
+    //         statusCode: 404,
+    //       };
+    //     }
+
+    //     return data.dataValues.thematic_id;
+    //   })
+    // );
 
     const editorial = await Editorial.findOne({ where: { editorial_name } });
     if (!editorial) {
