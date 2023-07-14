@@ -270,7 +270,6 @@ const putGame = async (req, res) => {
     age,
     players_min,
     players_max,
-    rating,
     stock,
     image,
     weight,
@@ -302,8 +301,8 @@ const putGame = async (req, res) => {
       designers_name.length === 0 ||
       !editorial_name ||
       languages_name.length === 0 ||
-      !mechanics_name.length === 0 ||
-      !thematics_name.length === 0
+      mechanics_name.length === 0 ||
+      thematics_name.length === 0
     ) {
       return res.status(406).json({ message: "There is missing information." });
     }
