@@ -263,7 +263,7 @@ const putGameOnSale = async (req, res) => {
 
 const putGame = async (req, res) => {
   const {
-    id,
+    game_id,
     name,
     released,
     price,
@@ -285,7 +285,7 @@ const putGame = async (req, res) => {
 
   try {
     if (
-      !id ||
+      !game_id ||
       !name ||
       !released ||
       !price ||
@@ -319,90 +319,106 @@ const putGame = async (req, res) => {
         .json({ message: `Author ${author_name} does not exist` });
     }
 
-    const categories = await Promise.all(
-      categories_name.map(async (category) => {
-        const data = await Category.findOne({
-          where: { category_name: category },
-        });
+    const categories = await Category.findAll({
+      where: { category_name: categories_name },
+    });
+    const designers = await Designer.findAll({
+      where: { designer_name: designers_name },
+    });
+    const languages = await Language.findAll({
+      where: { language_name: languages_name },
+    });
+    const mechanics = await Mechanic.findAll({
+      where: { mechanic_name: mechanics_name },
+    });
+    const thematics = await Thematic.findAll({
+      where: { thematic_name: thematics_name },
+    });
 
-        if (!data) {
-          throw {
-            message: `Category ${category} does not exist`,
-            statusCode: 404,
-          };
-        }
+    // const categories = await Promise.all(
+    //   categories_name.map(async (category) => {
+    //     const data = await Category.findOne({
+    //       where: { category_name: category },
+    //     });
 
-        return data.dataValues.category_id;
-      })
-    );
+    //     if (!data) {
+    //       throw {
+    //         message: `Category ${category} does not exist`,
+    //         statusCode: 404,
+    //       };
+    //     }
 
-    const designers = await Promise.all(
-      designers_name.map(async (designer) => {
-        const data = await Designer.findOne({
-          where: { designer_name: designer },
-        });
+    //     return data.dataValues.category_id;
+    //   })
+    // );
 
-        if (!data) {
-          throw {
-            message: `Designer ${designer} does not exist`,
-            statusCode: 404,
-          };
-        }
+    // const designers = await Promise.all(
+    //   designers_name.map(async (designer) => {
+    //     const data = await Designer.findOne({
+    //       where: { designer_name: designer },
+    //     });
 
-        return data.dataValues.designer_id;
-      })
-    );
+    //     if (!data) {
+    //       throw {
+    //         message: `Designer ${designer} does not exist`,
+    //         statusCode: 404,
+    //       };
+    //     }
 
-    const languages = await Promise.all(
-      languages_name.map(async (language) => {
-        const data = await Language.findOne({
-          where: { language_name: language },
-        });
+    //     return data.dataValues.designer_id;
+    //   })
+    // );
 
-        if (!data) {
-          throw {
-            message: `Language ${language} does not exist`,
-            statusCode: 404,
-          };
-        }
+    // const languages = await Promise.all(
+    //   languages_name.map(async (language) => {
+    //     const data = await Language.findOne({
+    //       where: { language_name: language },
+    //     });
 
-        return data.dataValues.id_language;
-      })
-    );
+    //     if (!data) {
+    //       throw {
+    //         message: `Language ${language} does not exist`,
+    //         statusCode: 404,
+    //       };
+    //     }
 
-    const mechanics = await Promise.all(
-      mechanics_name.map(async (mechanic) => {
-        const data = await Mechanic.findOne({
-          where: { mechanic_name: mechanic },
-        });
+    //     return data.dataValues.id_language;
+    //   })
+    // );
 
-        if (!data) {
-          throw {
-            message: `Mechanic ${mechanic} does not exist`,
-            statusCode: 404,
-          };
-        }
+    // const mechanics = await Promise.all(
+    //   mechanics_name.map(async (mechanic) => {
+    //     const data = await Mechanic.findOne({
+    //       where: { mechanic_name: mechanic },
+    //     });
 
-        return data.dataValues.mechanic_id;
-      })
-    );
+    //     if (!data) {
+    //       throw {
+    //         message: `Mechanic ${mechanic} does not exist`,
+    //         statusCode: 404,
+    //       };
+    //     }
 
-    const thematics = await Promise.all(
-      thematics_name.map(async (thematic) => {
-        const data = await Thematic.findOne({
-          where: { thematic_name: thematic },
-        });
+    //     return data.dataValues.mechanic_id;
+    //   })
+    // );
 
-        if (!data) {
-          throw {
-            message: `Thematic ${thematic} does not exist`,
-            statusCode: 404,
-          };
-        }
+    // const thematics = await Promise.all(
+    //   thematics_name.map(async (thematic) => {
+    //     const data = await Thematic.findOne({
+    //       where: { thematic_name: thematic },
+    //     });
 
-        return data.dataValues.thematic_id;
-      })
-    );
+    //     if (!data) {
+    //       throw {
+    //         message: `Thematic ${thematic} does not exist`,
+    //         statusCode: 404,
+    //       };
+    //     }
+
+    //     return data.dataValues.thematic_id;
+    //   })
+    // );
 
     const editorial = await Editorial.findOne({ where: { editorial_name } });
     if (!editorial) {
