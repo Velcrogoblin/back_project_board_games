@@ -23,12 +23,14 @@ const postPurchase = async (req, res) => {
     if (!existingGame) {
       return res
         .status(400)
-        .json({ message: `No ${game_name} game was found` });
+        .json({ message: `No game named ${game_name} was found` });
     }
 
     const existingUser = await User.findOne({ where: { name: username } });
     if (!existingUser) {
-      return res.status(400).json({ message: `No ${username} user was found` });
+      return res
+        .status(400)
+        .json({ message: `No user named ${username} was found` });
     }
 
     const existingPurchase = await Purchase.findOne({
