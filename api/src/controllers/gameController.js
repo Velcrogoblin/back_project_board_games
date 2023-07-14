@@ -285,7 +285,7 @@ const putGame = async (req, res) => {
 
   try {
     if (
-      !id ||
+      !game_id ||
       !name ||
       !released ||
       !price ||
