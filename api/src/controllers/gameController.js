@@ -283,29 +283,6 @@ const putGame = async (req, res) => {
     thematics_name,
   } = req.body;
 
-  if (
-    !game_id ||
-    !name ||
-    !released ||
-    !price ||
-    !age ||
-    !players_min ||
-    !players_max ||
-    !stock ||
-    !image ||
-    !weight ||
-    !playing_time ||
-    !author_name ||
-    categories_name.length === 0 ||
-    designers_name.length === 0 ||
-    !editorial_name ||
-    languages_name.length === 0 ||
-    mechanics_name.length === 0 ||
-    thematics_name.length === 0
-  ) {
-    return res.status(406).json({ message: "There is missing information." });
-  }
-
   try {
     if (
       !id ||
@@ -320,6 +297,7 @@ const putGame = async (req, res) => {
       !weight ||
       !playing_time ||
       !author_name ||
+      !categories_name ||
       categories_name.length === 0 ||
       designers_name.length === 0 ||
       !editorial_name ||
@@ -329,9 +307,11 @@ const putGame = async (req, res) => {
     ) {
       return res.status(406).json({ message: "There is missing information." });
     }
+
     if (isNaN(game_id)) {
       return res.status(400).json({ message: "id is invalid" });
     }
+
     if (!name) {
       return res.status(406).json({ message: "name is required" });
     }
