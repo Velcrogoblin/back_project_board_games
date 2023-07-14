@@ -285,28 +285,28 @@ const putGame = async (req, res) => {
   } = req.body;
 
   try {
-    if (
-      !id ||
-      !name ||
-      !released ||
-      !price ||
-      !age ||
-      !players_min ||
-      !players_max ||
-      !stock ||
-      !image ||
-      !weight ||
-      !playing_time ||
-      !author_name ||
-      categories_name.length === 0 ||
-      designers_name.length === 0 ||
-      !editorial_name ||
-      languages_name.length === 0 ||
-      !mechanics_name.length === 0 ||
-      !thematics_name.length === 0
-    ) {
-      return res.status(406).json({ message: "There is missing information." });
-    }
+    // if (
+    //   !id ||
+    //   !name ||
+    //   !released ||
+    //   !price ||
+    //   !age ||
+    //   !players_min ||
+    //   !players_max ||
+    //   !stock ||
+    //   !image ||
+    //   !weight ||
+    //   !playing_time ||
+    //   !author_name ||
+    //   categories_name.length === 0 ||
+    //   designers_name.length === 0 ||
+    //   !editorial_name ||
+    //   languages_name.length === 0 ||
+    //   !mechanics_name.length === 0 ||
+    //   !thematics_name.length === 0
+    // ) {
+    //   return res.status(406).json({ message: "There is missing information." });
+    // }
 
     const existingGame = await Game.findByPk(id);
     if (!existingGame) {
