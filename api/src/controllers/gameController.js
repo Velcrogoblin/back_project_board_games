@@ -264,7 +264,7 @@ const putGameOnSale = async (req, res) => {
 const putGame = async (req, res) => {
 
   const {
-    id,
+    game_id,
     name,
     released,
     price,
@@ -309,7 +309,7 @@ const putGame = async (req, res) => {
 
     try {
 
-      if (isNaN(id)) {
+      if (isNaN(game_id)) {
         return res.status(400).json({ message: "id is invalid" });
       }
       if (!name) return res.status(406).json({ message: "name is required" });
@@ -333,9 +333,9 @@ const putGame = async (req, res) => {
       if (!thematics_name)
         return res.status(406).json({ message: "thematics_name is required" });
 
-    const existingGame = await Game.findByPk(id);
+    const existingGame = await Game.findByPk(game_id);
     if (!existingGame) {
-      return res.status(400).json({ message: `No games with ${id}` });
+      return res.status(400).json({ message: `No games with ${game_id}` });
     }
 
     const author = await Author.findOne({ where: { author_name } });
