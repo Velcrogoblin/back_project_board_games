@@ -263,7 +263,7 @@ const putGameOnSale = async (req, res) => {
 
 const putGame = async (req, res) => {
   const {
-    game_id,
+    //game_id,
     name,
     released,
     price,
@@ -285,7 +285,7 @@ const putGame = async (req, res) => {
 
   try {
     if (
-      !game_id ||
+      //!game_id ||
       !name ||
       !released ||
       !price ||
