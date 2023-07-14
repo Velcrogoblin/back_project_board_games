@@ -5,9 +5,9 @@ const { PORT } = process.env;
 
 conn.sync({ force: false }).then(() => {
   console.log("Connecting to the database");
-  console.log("Filling db");
+  // console.log("Filling db");
   // getUsers();
-  // console.log("Erik dejame hacer un force: true");
+  console.log("Erik dejame hacer un force: true");
   server.listen(PORT, () => {
     console.log(`Listening at port: ${PORT}`);
   });
