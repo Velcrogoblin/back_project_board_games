@@ -503,7 +503,6 @@ const putGame = async (req, res) => {
       age,
       players_min,
       players_max,
-      rating,
       stock,
       image,
       weight,
