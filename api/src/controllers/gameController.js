@@ -262,6 +262,7 @@ const putGameOnSale = async (req, res) => {
 };
 
 const putGame = async (req, res) => {
+
   const {
     //game_id,
     name,
@@ -282,30 +283,52 @@ const putGame = async (req, res) => {
     mechanics_name,
     thematics_name,
   } = req.body;
+  
+    //if (
+    //   //!game_id ||
+    //   !name ||
+    //   !released ||
+    //   !price ||
+    //   !age ||
+    //   !players_min ||
+    //   !players_max ||
+    //   !stock ||
+    //   !image ||
+    //   !weight ||
+    //   !playing_time ||
+    //   !author_name ||
+    //   categories_name.length === 0 ||
+    //   designers_name.length === 0 ||
+    //   !editorial_name ||
+    //   languages_name.length === 0 ||
+    //   mechanics_name.length === 0 ||
+    //   thematics_name.length === 0
+    // ) {
+    //   return res.status(406).json({ message: "There is missing information." });
+    // }
 
-  try {
-    if (
-      //!game_id ||
-      !name ||
-      !released ||
-      !price ||
-      !age ||
-      !players_min ||
-      !players_max ||
-      !stock ||
-      !image ||
-      !weight ||
-      !playing_time ||
-      !author_name ||
-      categories_name.length === 0 ||
-      designers_name.length === 0 ||
-      !editorial_name ||
-      languages_name.length === 0 ||
-      mechanics_name.length === 0 ||
-      thematics_name.length === 0
-    ) {
-      return res.status(406).json({ message: "There is missing information." });
-    }
+    try {
+
+      if (!name) return res.status(406).json({ message: "name is required" });
+      if (!released) return res.status(406).json({ message: "released is required" });
+      if (!price) return res.status(406).json({ message: "price is required" });
+      if (!age) return res.status(406).json({ message: "age is required" });
+      if (!players_min) return res.status(406).json({ message: "players_min is required" });
+      if (!players_max) return res.status(406).json({ message: "players_max is required" });
+      if (!stock) return res.status(406).json({ message: "stock is required" });
+      if (!image) return res.status(406).json({ message: "image is required" });
+      if (!playing_time) return res.status(406).json({ message: "playing_time is required" });
+      if (!author_name) return res.status(406).json({ message: "author_name is required" });
+  
+      if (!editorial_name) return res.status(406).json({ message: "editorial_name is required" });
+      if (!categories_name) return res.status(406).json({ message: "categories_name is required" });
+      if (!designers_name)  return res.status(406).json({ message: "designers_name is required" });
+      if (!languages_name)
+        return res.status(406).json({ message: "languages_name is required" });
+      if (!mechanics_name)
+        return res.status(406).json({ message: "mechanics_name is required" });
+      if (!thematics_name)
+        return res.status(406).json({ message: "thematics_name is required" });
 
     const existingGame = await Game.findByPk(id);
     if (!existingGame) {
