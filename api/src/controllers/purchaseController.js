@@ -2,7 +2,10 @@ const { Purchase, User, Game } = require("../db");
 
 const getAllPurchase = async (req, res) => {
   try {
-    const purchases = await Purchase.findAll({ where: { active: true } });
+    const purchases = await Purchase.findAll({
+      where: { active: true },
+      include: [{ model: User }],
+    });
     if (purchases.length === 0) {
       return res.status(418).json({ message: "There are no purchase yet." });
     }
@@ -64,8 +67,8 @@ const postPurchase = async (req, res) => {
     await Purchase.create({
       description: games,
       total_amount,
-      username,
       UserUserId: existingUser.user_id,
+      user_id: existingUser.user_id,
     });
 
     return res

@@ -1,4 +1,4 @@
-const { Game, Purchase, Op } = require("../db");
+const { Game, Purchase, User, Op } = require("../db");
 const mercadopago = require("mercadopago");
 require("dotenv").config();
 
@@ -39,14 +39,14 @@ const createOrder = async (req, res) => {
         throw new Error("Quantity cannot be greater than existing stock.");
       }
 
-      Game.update(
+      await Game.update(
         {
           stock: existingGame.stock - item.quantity,
         },
         {
           where: {
             name: {
-              [Op.iLike]: item.title,
+              [Op.iLike]: `%${item.title}%`,
             },
           },
         }
@@ -54,6 +54,15 @@ const createOrder = async (req, res) => {
     });
 
     await Promise.all(itemPromise);
+
+    const existingUser = await User.findOne({
+      where: { name: { [Op.iLike]: `%${username}%` } },
+    });
+    if (!existingUser) {
+      return res
+        .status(400)
+        .json({ message: `No user named ${username} was found.` });
+    }
 
     const preferences = items.map((item) => ({
       title: item.title,
@@ -74,8 +83,9 @@ const createOrder = async (req, res) => {
 
     const gamesCreated = await Purchase.create({
       description: gamesPurchases,
-      username,
       total_amount: totalAmount,
+      user_id: existingUser.user_id,
+      UserUserId: existingUser.user_id,
     });
 
     const result = await mercadopago.preferences.create({

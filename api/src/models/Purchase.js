@@ -15,11 +15,6 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
 
-      username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-
       total_amount: {
         type: DataTypes.FLOAT,
         allowNull: false,
@@ -32,6 +27,11 @@ module.exports = (sequelize) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true,
+      },
+
+      user_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
     },
     {
