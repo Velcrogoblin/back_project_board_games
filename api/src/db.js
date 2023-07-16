@@ -79,9 +79,6 @@ Author.hasMany(Game);
 User.hasMany(Purchase);
 Purchase.belongsTo(User);
 
-Game.belongsToMany(Purchase, { through: "GamePurchase", timestamps: false });
-Purchase.belongsToMany(Game, { through: "GamePurchase", timestamps: false });
-
 User.belongsTo(Role);
 Role.hasMany(User);
 
