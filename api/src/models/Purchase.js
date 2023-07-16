@@ -10,6 +10,16 @@ module.exports = (sequelize) => {
         autoIncrement: true,
       },
 
+      description: {
+        type: DataTypes.ARRAY(DataTypes.JSON),
+        allowNull: false,
+      },
+
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+
       total_amount: {
         type: DataTypes.FLOAT,
         allowNull: false,

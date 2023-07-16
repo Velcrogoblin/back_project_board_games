@@ -1,18 +1,59 @@
+const { Game, Purchase, Op } = require("../db");
 const mercadopago = require("mercadopago");
 require("dotenv").config();
 
-const { MERCADO_PAGO_TOKEN, CURRENCY, BACK_URL, FRONT_URL } = process.env;
+const { MERCADO_PAGO_TOKEN, CURRENCY, BACK_URL, FRONT_URL, MERCADO_PAGO_FEE } =
+  process.env;
+
+mercadopago.configure({
+  access_token: MERCADO_PAGO_TOKEN,
+});
 
 const createOrder = async (req, res) => {
   try {
-    const { items } = req.body;
+    const { items, username } = req.body;
+    if (!username || username === "") {
+      return res.status(400).json({ message: "Username is not valid." });
+    }
     if (!items || items.length === 0) {
-      return res.status(400).json({ message: "Items is empty" });
+      return res.status(400).json({ message: "Items array is empty." });
     }
 
-    mercadopago.configure({
-      access_token: MERCADO_PAGO_TOKEN,
+    const itemPromise = items.map(async (item) => {
+      if (!item.title || item.title === "") {
+        throw new Error("Must provide a title.");
+      }
+
+      if (isNaN(item.unit_price)) {
+        throw new Error("Must provide a unit price.");
+      }
+
+      if (isNaN(item.quantity)) {
+        throw new Error("Must provide a quantity.");
+      }
+      const existingGame = await Game.findOne({ where: { name: item.title } });
+      if (!existingGame) {
+        throw new Error(`No game named ${item.title} was found.`);
+      }
+      if (item.quantity >= existingGame.stock) {
+        throw new Error("Quantity cannot be greater than existing stock.");
+      }
+
+      Game.update(
+        {
+          stock: existingGame.stock - item.quantity,
+        },
+        {
+          where: {
+            name: {
+              [Op.iLike]: item.title,
+            },
+          },
+        }
+      );
     });
+
+    await Promise.all(itemPromise);
 
     const preferences = items.map((item) => ({
       title: item.title,
@@ -21,17 +62,44 @@ const createOrder = async (req, res) => {
       quantity: item.quantity,
     }));
 
+    let totalAmount = 0;
+    const gamesPurchases = items.map((item) => {
+      totalAmount += item.unit_price;
+      return {
+        name: item.title,
+        price: item.unit_price,
+        quantity: item.quantity,
+      };
+    });
+
+    const gamesCreated = await Purchase.create({
+      description: gamesPurchases,
+      username,
+      total_amount: totalAmount,
+    });
+
     const result = await mercadopago.preferences.create({
       items: preferences,
+      external_reference: gamesCreated.purchase_id.toString(),
+      payment_methods: {
+        excluded_payment_types: [
+          {
+            id: "atm",
+          },
+        ],
+        installments: Number(MERCADO_PAGO_FEE),
+      },
       back_urls: {
         success: BACK_URL,
         failure: BACK_URL,
         pending: BACK_URL,
       },
-    });
 
+      auto_return: "approved",
+    });
     return res.status(200).json({
-      id_mercadopago: result.body.id,
+      mercadopago_id: result.body.id,
+      purchase_id: gamesCreated.purchase_id,
       init_point: result.body.init_point,
     });
   } catch ({ message }) {

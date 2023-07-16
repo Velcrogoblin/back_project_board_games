@@ -1,6 +1,5 @@
 const { DataTypes } = require("sequelize");
 
-// Nationalities y states se van, agregar categories
 module.exports = (sequelize) => {
   sequelize.define(
     "Game",
@@ -61,7 +60,9 @@ module.exports = (sequelize) => {
       image: {
         type: DataTypes.JSON,
         allowNull: true,
-        defaultValue: "https://res.cloudinary.com/dwqp5iaqw/image/upload/v1689282470/boduDefaultImg_n0nim4.jpg"
+        defaultValue: [
+          "https://res.cloudinary.com/dwqp5iaqw/image/upload/v1689282470/boduDefaultImg_n0nim4.jpg",
+        ],
       },
 
       weight: {

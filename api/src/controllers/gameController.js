@@ -10,6 +10,9 @@ const {
   Op,
 } = require("../db");
 
+require("dotenv").config();
+const { DEFAULT_IMAGE } = process.env;
+
 const getAllGames = async (req, res) => {
   try {
     let games = await Game.findAll({
@@ -124,37 +127,73 @@ const createGame = async (req, res) => {
   } = req.body;
 
   try {
-    if (!name) return res.status(406).json({ message: "name is required" });
-    if (!released)
+    if (!name) {
+      return res.status(406).json({ message: "name is required" });
+    }
+
+    if (!released) {
       return res.status(406).json({ message: "released is required" });
-    if (!price) return res.status(406).json({ message: "price is required" });
-    if (!age) return res.status(406).json({ message: "age is required" });
-    if (!players_min)
+    }
+
+    if (!price) {
+      return res.status(406).json({ message: "price is required" });
+    }
+
+    if (!age) {
+      return res.status(406).json({ message: "age is required" });
+    }
+
+    if (!players_min) {
       return res.status(406).json({ message: "players_min is required" });
-    if (!players_max)
+    }
+
+    if (!players_max) {
       return res.status(406).json({ message: "players_max is required" });
+    }
 
-    if (!stock) return res.status(406).json({ message: "stock is required" });
-    if (!image) return res.status(406).json({ message: "image is required" });
-    if (!playing_time)
+    if (!stock) {
+      return res.status(406).json({ message: "stock is required" });
+    }
+
+    if (!image) {
+      return res.status(406).json({ message: "Image is required" });
+    }
+
+    if (image.length === 0) {
+      image.push(DEFAULT_IMAGE);
+    }
+
+    if (!playing_time) {
       return res.status(406).json({ message: "playing_time is required" });
-    if (!author_name)
+    }
+
+    if (!author_name) {
       return res.status(406).json({ message: "author_name is required" });
+    }
 
-    if (!editorial_name)
+    if (!editorial_name) {
       return res.status(406).json({ message: "editorial_name is required" });
-    if (!categories_name)
-      return res.status(406).json({ message: "categories_name is required" });
-    if (!designers_name)
-      return res.status(406).json({ message: "designers_name is required" });
-    if (!languages_name)
-      return res.status(406).json({ message: "languages_name is required" });
-    if (!mechanics_name)
-      return res.status(406).json({ message: "mechanics_name is required" });
-    if (!thematics_name)
-      return res.status(406).json({ message: "thematics_name is required" });
+    }
 
-    if (image.length === 0) {image.push("https://res.cloudinary.com/dwqp5iaqw/image/upload/v1689282470/boduDefaultImg_n0nim4.jpg")};
+    if (!categories_name) {
+      return res.status(406).json({ message: "categories_name is required" });
+    }
+
+    if (!designers_name) {
+      return res.status(406).json({ message: "designers_name is required" });
+    }
+
+    if (!languages_name) {
+      return res.status(406).json({ message: "languages_name is required" });
+    }
+
+    if (!mechanics_name) {
+      return res.status(406).json({ message: "mechanics_name is required" });
+    }
+
+    if (!thematics_name) {
+      return res.status(406).json({ message: "thematics_name is required" });
+    }
 
     const existingGame = await Game.findOne({ where: { name: name } });
 
@@ -205,13 +244,11 @@ const createGame = async (req, res) => {
     await newGame.addMechanics(mechanics);
     await newGame.addThematics(thematics);
 
-    return res
-      .status(201)
-      .json({ message: `Game ${name} created successfuly` });
+    return res.status(201).json({ message: `${name} was successfuly created` });
   } catch (error) {
-    const status = error.statusCode || 500;
-    const message = error.message || "Internal Server Error";
-    return res.status(status).json({ message: message });
+    // const status = error.statusCode || 500;
+    // const message = error.message || "Internal Server Error";
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -295,7 +332,6 @@ const putGame = async (req, res) => {
       !players_min ||
       !players_max ||
       !stock ||
-      !image ||
       !weight ||
       !playing_time ||
       !author_name ||
@@ -314,6 +350,7 @@ const putGame = async (req, res) => {
       return res.status(400).json({ message: "id is invalid" });
     }
 
+    // El servidor más seguro xD
     // if (!name) {
     //   return res.status(406).json({ message: "name is required" });
     // }
@@ -406,6 +443,8 @@ const putGame = async (req, res) => {
       where: { thematic_name: thematics_name },
     });
 
+    // Si este gigantesco código comentado no se va a usar
+    // habrá que eliminarlo
     // const categories = await Promise.all(
     //   categories_name.map(async (category) => {
     //     const data = await Category.findOne({
