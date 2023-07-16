@@ -10,6 +10,9 @@ const {
   Op,
 } = require("../db");
 
+require("dotenv").config();
+const { DEFAULT_IMAGE } = process.env;
+
 const getAllGames = async (req, res) => {
   try {
     let games = await Game.findAll({
@@ -127,6 +130,7 @@ const createGame = async (req, res) => {
     if (!name) {
       return res.status(406).json({ message: "name is required" });
     }
+
     if (!released) {
       return res.status(406).json({ message: "released is required" });
     }
@@ -134,9 +138,11 @@ const createGame = async (req, res) => {
     if (!price) {
       return res.status(406).json({ message: "price is required" });
     }
+
     if (!age) {
       return res.status(406).json({ message: "age is required" });
     }
+
     if (!players_min) {
       return res.status(406).json({ message: "players_min is required" });
     }
@@ -149,10 +155,12 @@ const createGame = async (req, res) => {
       return res.status(406).json({ message: "stock is required" });
     }
 
+    if (!image) {
+      return res.status(406).json({ message: "Image is required" });
+    }
+
     if (image.length === 0) {
-      image.push(
-        "https://res.cloudinary.com/dwqp5iaqw/image/upload/v1689282470/boduDefaultImg_n0nim4.jpg"
-      );
+      image.push(DEFAULT_IMAGE);
     }
 
     if (!playing_time) {
