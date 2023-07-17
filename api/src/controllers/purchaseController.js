@@ -1,13 +1,72 @@
-const { Purchase, User, Game } = require("../db");
+const { Purchase, User, Game, Op } = require("../db");
 
 const getAllPurchase = async (req, res) => {
   try {
-    const purchases = await Purchase.findAll({ where: { active: true } });
+    const purchases = await Purchase.findAll({
+      where: { active: true },
+      include: [{ model: User }],
+    });
     if (purchases.length === 0) {
       return res.status(418).json({ message: "There are no purchase yet." });
     }
 
     return res.status(200).json(purchases);
+  } catch ({ message }) {
+    return res.status(500).json({ message });
+  }
+};
+
+const getPurchaseByIdUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (id === "") {
+      return res.status(400).json({ message: "id is not valid." });
+    }
+
+    const userPurchases = await Purchase.findAll({
+      where: {
+        user_id: {
+          [Op.iLike]: `%${id}%`,
+        },
+      },
+
+      include: [{ model: User }],
+    });
+
+    if (!userPurchases) {
+      return res
+        .status(400)
+        .json({ message: `No purchases with user id ${id} was found.` });
+    }
+
+    return res.status(200).json(userPurchases);
+  } catch ({ message }) {
+    return res.status(500).json({ message });
+  }
+};
+
+const getPurchaseById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (isNaN(id)) {
+      return res.status(400).json({ message: "id is not valid." });
+    }
+
+    const existingPurchase = await Purchase.findOne({
+      where: {
+        purchase_id: {
+          [Op.eq]: id,
+        },
+      },
+      include: [{ model: User }],
+    });
+    if (!existingPurchase) {
+      return res
+        .status(400)
+        .json({ message: `No purchase with id ${id} was found.` });
+    }
+
+    return res.status(200).json(existingPurchase);
   } catch ({ message }) {
     return res.status(500).json({ message });
   }
@@ -64,8 +123,8 @@ const postPurchase = async (req, res) => {
     await Purchase.create({
       description: games,
       total_amount,
-      username,
       UserUserId: existingUser.user_id,
+      user_id: existingUser.user_id,
     });
 
     return res
@@ -100,6 +159,8 @@ const deletePurchase = async (req, res) => {
 
 module.exports = {
   getAllPurchase,
+  getPurchaseByIdUser,
+  getPurchaseById,
   postPurchase,
   deletePurchase,
 };
