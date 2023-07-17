@@ -69,8 +69,8 @@ Language.belongsToMany(Game, { through: "GameLanguage", timestamps: false });
 Game.belongsTo(Author);
 Author.hasMany(Game);
 
-User.hasMany(Purchase);
-Purchase.belongsTo(User);
+User.hasMany(Purchase, { foreingKey: "user_id" });
+Purchase.belongsTo(User, { foreingKey: "user_id" });
 
 User.belongsTo(Role);
 Role.hasMany(User);
