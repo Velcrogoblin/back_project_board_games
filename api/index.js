@@ -3,7 +3,7 @@ const { conn } = require("./src/db.js");
 const { PORT } = process.env;
 
 conn
-  .sync({ force: false })
+  .sync({ alter: true })
   .then(() => {
     console.log("Connecting to the database");
     server.listen(PORT, () => {

@@ -46,6 +46,7 @@ const {
   Purchase,
   Role,
   ShippingAddress,
+  Review,
 } = sequelize.models;
 
 Game.belongsToMany(Category, { through: "GameCategory", timestamps: false });
@@ -60,23 +61,29 @@ Mechanic.belongsToMany(Game, { through: "GameMechanic", timestamps: false });
 Game.belongsToMany(Designer, { through: "GameDesigner", timestamps: false });
 Designer.belongsToMany(Game, { through: "GameDesigner", timestamps: false });
 
-Game.belongsTo(Editorial);
-Editorial.hasMany(Game);
-
 Game.belongsToMany(Language, { through: "GameLanguage", timestamps: false });
 Language.belongsToMany(Game, { through: "GameLanguage", timestamps: false });
 
+Review.belongsToMany(User, { through: "UserReview", timestamps: false });
+User.belongsToMany(Review, { through: "UserReview", timestamps: false });
+
+Game.belongsToMany(Review, { through: "GameReview", timestamps: false });
+Review.belongsToMany(Game, { through: "GameReview", timestamps: false });
+
+Game.belongsTo(Editorial);
+Editorial.hasMany(Game);
+
 Game.belongsTo(Author);
 Author.hasMany(Game);
-
-User.hasMany(Purchase, { foreingKey: "user_id" });
-Purchase.belongsTo(User, { foreingKey: "user_id" });
 
 User.belongsTo(Role);
 Role.hasMany(User);
 
 User.belongsTo(ShippingAddress);
 ShippingAddress.hasOne(User);
+
+User.hasMany(Purchase, { foreingKey: "user_id" });
+Purchase.belongsTo(User, { foreingKey: "user_id" });
 
 module.exports = {
   ...sequelize.models,

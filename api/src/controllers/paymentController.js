@@ -11,10 +11,11 @@ mercadopago.configure({
 
 const createOrder = async (req, res) => {
   try {
-    const { items, username } = req.body;
-    if (!username || username === "") {
+    const { items, user_id } = req.body;
+    if (!user_id || user_id === "") {
       return res.status(400).json({ message: "Username is not valid." });
     }
+
     if (!items || items.length === 0) {
       return res.status(400).json({ message: "Items array is empty." });
     }
@@ -31,10 +32,12 @@ const createOrder = async (req, res) => {
       if (isNaN(item.quantity)) {
         throw new Error("Must provide a quantity.");
       }
+
       const existingGame = await Game.findOne({ where: { name: item.title } });
       if (!existingGame) {
         throw new Error(`No game named ${item.title} was found.`);
       }
+
       if (item.quantity >= existingGame.stock) {
         throw new Error("Quantity cannot be greater than existing stock.");
       }
@@ -55,13 +58,11 @@ const createOrder = async (req, res) => {
 
     await Promise.all(itemPromise);
 
-    const existingUser = await User.findOne({
-      where: { name: { [Op.iLike]: `%${username}%` } },
-    });
+    const existingUser = await User.findByPk(user_id);
     if (!existingUser) {
       return res
         .status(400)
-        .json({ message: `No user named ${username} was found.` });
+        .json({ message: `No user with id ${user_id} was found.` });
     }
 
     const preferences = items.map((item) => ({
@@ -84,8 +85,7 @@ const createOrder = async (req, res) => {
     const gamesCreated = await Purchase.create({
       description: gamesPurchases,
       total_amount: totalAmount,
-      user_id: existingUser.user_id,
-      UserUserId: existingUser.user_id,
+      user_id,
     });
 
     const result = await mercadopago.preferences.create({
@@ -107,6 +107,7 @@ const createOrder = async (req, res) => {
 
       auto_return: "approved",
     });
+
     return res.status(200).json({
       mercadopago_id: result.body.id,
       purchase_id: gamesCreated.purchase_id,
