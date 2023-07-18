@@ -249,6 +249,7 @@ module.exports = {
   getUsers,
   getUserById,
   deleteUser,
+  destroyUser,
   putUser,
   addShippingAddress,
   getShippingAddressById,
