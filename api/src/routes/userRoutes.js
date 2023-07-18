@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { getUsers, getUserById, createUser, deleteUser, putUser, addShippingAddress, getShippingAddressById, editWish_list } = require("../controllers/userController");
+const { getUsers, getUserById, createUser, deleteUser, putUser, addShippingAddress, getShippingAddressById, verifyEmail, editWish_list } = require("../controllers/userController");
 
 const router = Router();
 
@@ -10,5 +10,7 @@ router.get("/", getUsers)
   .post("/shippingaddress", addShippingAddress)
   .delete("/:uid", deleteUser)
   .put("/", putUser)
+  .put("/verifyemail/:id", verifyEmail)
   .put("/wishList", editWish_list);
+  
 module.exports = router;
