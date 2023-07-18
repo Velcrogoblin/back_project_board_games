@@ -157,7 +157,7 @@ const addShippingAddress = async(req,res) => {
 }
 
 const editWish_list = async (req, res) => {
-  const {game_id, user_id, wish_list } = req.body;
+  const {game_id, user_id } = req.body;
 
   try {
     if(!game_id || !user_id) {
@@ -174,10 +174,10 @@ const editWish_list = async (req, res) => {
       return res.status(404).json({message: `user with id ${user_id} was not found`});
     }
 
-    if(existingUser.wish_list.includes(existingGame)) {
-      await existingUser.wish_list.filter((g) => g.game_id !== game_id)
+    if(existingUser.wish_list.filter((g) => g.game_id === game_id)) {
+      existingUser.wish_list.filter((g) => g.game_id !== game_id)
     } else {
-    await existingUser.wish_list.push(existingGame);
+      existingUser.wish_list.push(existingGame);
     }
     await existingUser.save();
     return res.status(200).json({message: `${existingGame.name} added to your whishlist`});
@@ -195,5 +195,6 @@ module.exports = {
   deleteUser,
   putUser,
   addShippingAddress,
-  getShippingAddressById
+  getShippingAddressById,
+  editWish_list
 };
