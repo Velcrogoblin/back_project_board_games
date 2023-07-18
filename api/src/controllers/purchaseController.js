@@ -90,15 +90,6 @@ const postPurchase = async (req, res) => {
         .json({ message: `No user named ${username} was found` });
     }
 
-    const existingPurchase = await Purchase.findOne({
-      where: { total_amount, username },
-    });
-    if (existingPurchase) {
-      return res
-        .status(400)
-        .json({ message: "It's already exist this purchase" });
-    }
-
     const gamePromises = games.map(async (game) => {
       if (!game.name || game.name === "") {
         throw new Error("Must provide the game name.");
