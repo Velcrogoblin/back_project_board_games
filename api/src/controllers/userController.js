@@ -156,6 +156,38 @@ const addShippingAddress = async(req,res) => {
 
 }
 
+const editWish_list = async (req, res) => {
+  const {game_id, user_id, wish_list } = req.body;
+
+  try {
+    if(!game_id || !user_id) {
+      return res.status(400).json({message: "there is missing information"})
+    }
+
+    const existingGame = await Game.findByPk(game_id);
+    if(!existingGame) {
+      return res.status(404).json({message: `game with id ${game_id} was not found`});
+    }
+
+    const existingUser = await User.findByPk(user_id);
+    if(!existingUser) {
+      return res.status(404).json({message: `user with id ${user_id} was not found`});
+    }
+
+    if(existingUser.wish_list.includes(existingGame)) {
+      await existingUser.wish_list.filter((g) => g.game_id !== game_id)
+    } else {
+    await existingUser.wish_list.push(existingGame);
+    }
+    await existingUser.save();
+    return res.status(200).json({message: `${existingGame.name} added to your whishlist`});
+
+  } catch(error) {
+    return res.status(500).json({message: error.message});
+  }
+}
+
+
 module.exports = {
   createUser,
   getUsers,
