@@ -3,7 +3,7 @@ const { conn } = require("./src/db.js");
 const { PORT } = process.env;
 const {getUsers} = require("./src/helper/fillDb.js")
 conn
-  .sync({ force: false })
+  .sync({ alter: true })
   .then(() => {
     //getUsers()
     console.log("Connecting to the database");

@@ -14,6 +14,7 @@ const shippingAddressRouter = require("./shippingAddressRoutes.js");
 const faqsRoutes = require("./faqRoute.js");
 const paymentRoutes = require("./paymentRoute");
 const purchaseRoutes = require("./purchaseRoutes");
+const reviewRoutes = require("./reviewRoutes");
 
 const router = Router();
 
@@ -31,5 +32,6 @@ router.use("/shipping-address", shippingAddressRouter);
 router.use("/faqs", faqsRoutes);
 router.use("/create-order", paymentRoutes);
 router.use("/purchase", purchaseRoutes);
+router.use("/reviews", reviewRoutes);
 
 module.exports = router;

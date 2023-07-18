@@ -85,6 +85,22 @@ const deleteUser = async (req, res) => {
   }
 };
 
+const destroyUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).json({ message: "id is missing" });
+    }
+
+    let response = await User.findByPk(id);
+    await response.destroy();
+    return res.status(200).json({ message: "User was destroyed successfully" });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+
 const putUser = async (req, res) => {
   const { user_id, email, name, role_name, active, province, city, postal_code, street, street_number, apartment_number, phone_number } = req.body;
   try {
@@ -233,6 +249,7 @@ module.exports = {
   getUsers,
   getUserById,
   deleteUser,
+  destroyUser,
   putUser,
   addShippingAddress,
   getShippingAddressById,
