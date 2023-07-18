@@ -4,10 +4,11 @@ const { getUsers, getUserById, createUser, deleteUser, putUser, addShippingAddre
 const router = Router();
 
 router.get("/", getUsers)
-  .get("/:id", getUserById)
+  .get("/:user_id", getUserById)
   .get("/shippingaddress/:id", getShippingAddressById)
   .post("/", createUser)
   .post("/shippingaddress", addShippingAddress)
+  .delete("/:user_id", deleteUser)
   .delete("/:uid", deleteUser)
   .delete("/destroy/:id", destroyUser)
   .put("/", putUser)
