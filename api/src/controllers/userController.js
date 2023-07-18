@@ -88,8 +88,8 @@ const deleteUser = async (req, res) => {
 const destroyUser = async (req, res) => {
   try {
     const { user_id } = req.params;
-    if (isNaN(user_id)) {
-      return res.status(400).json({ message: "id is invalid" });
+    if (!user_id) {
+      return res.status(400).json({ message: "id is missing" });
     }
 
     let response = await User.findByPk(user_id);
