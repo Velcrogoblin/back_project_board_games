@@ -1,9 +1,12 @@
-const { User, Role } = require("../db");
+const { User, Role, Game } = require("../db");
 const { Op } = require("sequelize");
+const actualizarEmailVerified  = require("../firebase");
 
 const getUsers = async (req, res) => {
   try {
-    const users = await User.findAll();
+    const users = await User.findAll({
+      include: Role
+    });
     if (users.length === 0) {
       return res.status(404).json({ message: 'No hay usuarios' });
     }
@@ -15,7 +18,10 @@ const getUsers = async (req, res) => {
 const getUserById = async (req, res) => {
   const {id} = req.params;
   try {
-    const users = await User.findByPk(id)
+    // const users = await User.findByPk(id)
+    const users = await User.findByPk(id, {
+      include: Role
+    })
     if (!users) {
       return res.status(404).json({ message: `There is no user with id: ${id}` });
     }
@@ -26,7 +32,7 @@ const getUserById = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const { uid, email, name, role_name = 'client', active = true, province, city, postal_code, street, street_number, apartment_number, phone_number } = req.body;
+  const { user_id:uid, email, name, role_name = 'client', active = true, province, city, postal_code, street, street_number, apartment_number, phone_number } = req.body;
 
   try {
     if (!uid || !email || !name || !role_name) return res.status(400).json({ message: "Incomplete information to create the user" });
@@ -61,7 +67,7 @@ const createUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-  const { uid } = req.params;
+  const { user_id:uid } = req.params;
   try {
     const user = await User.findByPk(uid);
     if (user) {
@@ -79,16 +85,39 @@ const deleteUser = async (req, res) => {
   }
 };
 
-const putUser = async (req, res) => {
-  const { user_id, email, name, role_name, active } = req.body;
+const destroyUser = async (req, res) => {
   try {
-    if (!user_id || !email || !name) return res.status(400).json({ message: "Incomplete information for the user." });
+    const { user_id } = req.params;
+    if (!user_id) {
+      return res.status(400).json({ message: "id is missing" });
+    }
+
+    let response = await User.findByPk(user_id);
+    await response.destroy();
+    return res.status(200).json({ message: "User was destroyed successfully" });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+
+const putUser = async (req, res) => {
+  const { user_id, email, name, role_name, active, province, city, postal_code, street, street_number, apartment_number, phone_number } = req.body;
+  try {
+    if (!user_id) return res.status(400).json({ message: "Incomplete information for the user." });
 
     const user = await User.findByPk(user_id);
     if (!user) return res.status(400).json({ message: `There is no user with uid: ${user_id}.` });
 
     if (email) user.email = email;
     if (name) user.name = name;
+    if (province) user.email = email;
+    if (city) user.name = name;
+    if (postal_code) user.email = email;
+    if (street) user.name = name;
+    if (street_number) user.email = email;
+    if (apartment_number) user.name = name;
+    if (phone_number) user.name = name;
     if (role_name) {
       const roleId = await Role.findOne({ where: { role_name } });
       if (!roleId) return res.status(400).json({ message: `There is no role with name ${role_name}` });
@@ -153,15 +182,77 @@ const addShippingAddress = async(req,res) => {
   } catch ({message}) {
     res.status(500).json({ error: message });
   }
-
 }
+
+const verifyEmail = async(req,res) => {
+  const {id: user_id} = req.params;
+  try {
+    if (!user_id) return res.status(400).json({ message: "User Id is require." });
+
+    const user = await User.findByPk(user_id);
+    if (!user) return res.status(400).json({ message: `There is no user with this uid.` });
+
+    if(user.emailVerified){
+      return res.status(404).json({message: 'Verification link already used.'})
+    } else{
+      user.email_verified = true;
+      await user.save();
+      await actualizarEmailVerified(user_id);
+      return res.status(200).json({message: 'Your email has been verified.'})
+    }
+  } catch ({message}) {
+    res.status(500).json({ error: message });
+  }
+}
+
+const editWish_list = async (req, res) => {
+  const {game_id, user_id } = req.body;
+
+  try {
+    if(!game_id || !user_id) {
+      return res.status(400).json({message: "there is missing information"})
+    }
+   
+    const existingGame = await Game.findByPk(game_id);
+    if(!existingGame) {
+      return res.status(404).json({message: `game with id ${game_id} was not found`});
+    }
+    
+    const existingUser = await User.findByPk(user_id);
+    if(!existingUser) {
+      return res.status(404).json({message: `user with id ${user_id} was not found`});
+    }
+   
+    const wishListAux = existingUser.wish_list.filter((g) => g.game_id === game_id);
+    
+    if(wishListAux.length > 0) {
+      const newWishlist = existingUser.wish_list.filter((g) => g.game_id !== game_id)
+      await existingUser.update({wish_list: newWishlist});
+      
+      return res.status(200).json({message: `${existingGame.name} was removed from your wishlist`})
+      
+    } else {
+      await existingUser.update({wish_list: [...existingUser.wish_list, existingGame.dataValues]});
+    }
+    
+    return res.status(200).json({message: `${existingGame.name} was added to your whishlist`});
+
+
+  } catch(error) {
+    return res.status(500).json({message: error.message});
+  }
+}
+
 
 module.exports = {
   createUser,
   getUsers,
   getUserById,
   deleteUser,
+  destroyUser,
   putUser,
   addShippingAddress,
-  getShippingAddressById
+  getShippingAddressById,
+  verifyEmail,
+  editWish_list
 };
