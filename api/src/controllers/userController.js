@@ -67,9 +67,9 @@ const createUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-  const { user_id:uid } = req.params;
+  const { user_id } = req.params;
   try {
-    const user = await User.findByPk(uid);
+    const user = await User.findByPk(user_id);
     if (user) {
       if (user.active === false) {
         return res.status(400).json({ message: `The user ${user.name} has been previously removed.` });
@@ -87,9 +87,9 @@ const deleteUser = async (req, res) => {
 };
 
 const destroyUser = async (req, res) => {
-  const { user_id:uid } = req.params;
+  const { user_id } = req.params;
   try {
-    const response = await User.findByPk(uid);
+    const response = await User.findByPk(user_id);
     await response.destroy();
     return res.status(200).json({ message: "User was destroyed successfully" });
   } catch (error) {
