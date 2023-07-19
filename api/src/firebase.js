@@ -27,20 +27,28 @@ const auth = admin.auth();
 
 // Define la función para actualizar el valor de emailVerified de un usuario
 const actualizarEmailVerified = async(uid) => {
-
-console.log("Estoy dentro de actualizarEmail")
   try {
-    const respuesta = await auth.updateUser(uid, {
+    await auth.updateUser(uid, {
       emailVerified: true
     });
 
-    console.log('respuesta')
-    console.log(respuesta)
-
-    console.log('Valor de emailVerified actualizado correctamente.');
   } catch (error) {
-    console.error('Error al actualizar el valor de emailVerified:', error);
+    console.error(error);
   }
 }
 
-module.exports = actualizarEmailVerified;
+const activeFalseUser = async (uid) => {
+  try {
+    await auth.updateUser(uid, {
+      disabled: true
+    });
+
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+module.exports = {
+  actualizarEmailVerified, 
+  activeFalseUser
+};
