@@ -25,6 +25,12 @@ module.exports = (sequelize) => {
           notEmpty: true,
         },
       },
+
+      active: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+        allowNull: false,
+      },
     },
     {
       timestamps: false,
