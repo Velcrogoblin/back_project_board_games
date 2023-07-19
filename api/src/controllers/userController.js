@@ -1,7 +1,8 @@
 const { User, Role, Game } = require("../db");
 const { Op } = require("sequelize");
-const actualizarEmailVerified = require("../firebase");
 
+const { actualizarEmailVerified, activeFalseUser } = require("../firebase");
+// nico rompio todo
 const getUsers = async (req, res) => {
   try {
     const users = await User.findAll({
@@ -108,6 +109,7 @@ const deleteUser = async (req, res) => {
       } else {
         user.active = false;
         await user.save();
+        await activeFalseUser(user_id);
         return res
           .status(200)
           .json({ message: `The user ${user.name} has been deleted.` });
@@ -123,12 +125,9 @@ const deleteUser = async (req, res) => {
 
 const destroyUser = async (req, res) => {
   try {
-    const { id } = req.params;
-    if (!id) {
-      return res.status(400).json({ message: "id is missing" });
-    }
+    const { user_id: uid } = req.params;
 
-    let response = await User.findByPk(id);
+    let response = await User.findByPk(uid);
     await response.destroy();
     return res.status(200).json({ message: "User was destroyed successfully" });
   } catch (error) {
