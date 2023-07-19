@@ -16,14 +16,14 @@ const getUsers = async (req, res) => {
   }
 };
 const getUserById = async (req, res) => {
-  const {id} = req.params;
+  const {user_id} = req.params;
   try {
     // const users = await User.findByPk(id)
-    const users = await User.findByPk(id, {
+    const users = await User.findByPk(user_id, {
       include: Role
     })
     if (!users) {
-      return res.status(404).json({ message: `There is no user with id: ${id}` });
+      return res.status(404).json({ message: `There is no user with id: ${user_id}` });
     }
     return res.status(200).json(users);
   } catch ({ message }) {
@@ -67,9 +67,9 @@ const createUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-  const { user_id:uid } = req.params;
+  const { user_id} = req.params;
   try {
-    const user = await User.findByPk(uid);
+    const user = await User.findByPk(user_id);
     if (user) {
       if (user.active === false) {
         return res.status(400).json({ message: `The user ${user.name} has been previously removed.` });
@@ -79,7 +79,7 @@ const deleteUser = async (req, res) => {
         return res.status(200).json({ message: `The user ${user.name} has been deleted.` });
       }
     }
-    return res.status(400).json({ message: `There is no user with uid: ${uid}.` });
+    return res.status(400).json({ message: `There is no user with uid: ${user_id}.` });
   } catch ({ message }) {
     res.status(500).json({ error: message });
   }
