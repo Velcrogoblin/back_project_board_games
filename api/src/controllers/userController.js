@@ -87,12 +87,9 @@ const deleteUser = async (req, res) => {
 
 const destroyUser = async (req, res) => {
   try {
-    const { id } = req.params;
-    if (!id) {
-      return res.status(400).json({ message: "id is missing" });
-    }
+    const { user_id:uid } = req.params;
 
-    let response = await User.findByPk(id);
+    let response = await User.findByPk(uid);
     await response.destroy();
     return res.status(200).json({ message: "User was destroyed successfully" });
   } catch (error) {
