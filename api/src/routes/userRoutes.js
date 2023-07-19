@@ -10,7 +10,7 @@ router.get("/", getUsers)
   .post("/shippingaddress", addShippingAddress)
   .delete("/:user_id", deleteUser)
   .delete("/:uid", deleteUser)
-  .delete("/destroy/:id", destroyUser)
+  .delete("/destroy/:uid", destroyUser)
   .put("/", putUser)
   .put("/verifyemail/:id", verifyEmail)
   .put("/wishList", editWish_list);
