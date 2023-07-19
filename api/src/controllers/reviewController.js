@@ -75,9 +75,7 @@ const postReviews = async (req, res) => {
     reviewCreated.addUsers(existingUser);
     reviewCreated.addGames(existingGame);
 
-    return res
-      .status(201)
-      .json({ message: "Your review was successfuly created." });
+    return res.status(201).json({ message: "Review was successfuly created." });
   } catch ({ message }) {
     return res.status(500).json({ message });
   }
