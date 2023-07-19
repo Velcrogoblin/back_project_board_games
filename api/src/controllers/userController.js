@@ -1,7 +1,7 @@
 const { User, Role, Game } = require("../db");
 const { Op } = require("sequelize");
 const {actualizarEmailVerified, activeFalseUser}  = require("../firebase");
-
+// nico rompio todo
 const getUsers = async (req, res) => {
   try {
     const users = await User.findAll({
@@ -16,14 +16,14 @@ const getUsers = async (req, res) => {
   }
 };
 const getUserById = async (req, res) => {
-  const {id} = req.params;
+  const {user_id} = req.params;
   try {
     // const users = await User.findByPk(id)
-    const users = await User.findByPk(id, {
+    const users = await User.findByPk(user_id, {
       include: Role
     })
     if (!users) {
-      return res.status(404).json({ message: `There is no user with id: ${id}` });
+      return res.status(404).json({ message: `There is no user with id: ${user_id}` });
     }
     return res.status(200).json(users);
   } catch ({ message }) {
@@ -67,7 +67,7 @@ const createUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-  const { user_id } = req.params;
+  const { user_id} = req.params;
   try {
     const user = await User.findByPk(user_id);
     if (user) {
@@ -80,16 +80,17 @@ const deleteUser = async (req, res) => {
         return res.status(200).json({ message: `The user ${user.name} has been deleted.` });
       }
     }
-    return res.status(400).json({ message: `There is no user with uid: ${uid}.` });
+    return res.status(400).json({ message: `There is no user with uid: ${user_id}.` });
   } catch ({ message }) {
     res.status(500).json({ error: message });
   }
 };
 
 const destroyUser = async (req, res) => {
-  const { user_id } = req.params;
   try {
-    const response = await User.findByPk(user_id);
+    const { user_id:uid } = req.params;
+
+    let response = await User.findByPk(uid);
     await response.destroy();
     return res.status(200).json({ message: "User was destroyed successfully" });
   } catch (error) {
