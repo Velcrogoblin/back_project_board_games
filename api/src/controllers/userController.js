@@ -1,6 +1,6 @@
 const { User, Role, Game } = require("../db");
 const { Op } = require("sequelize");
-const actualizarEmailVerified  = require("../firebase");
+const {actualizarEmailVerified, activeFalseUser}  = require("../firebase");
 
 const getUsers = async (req, res) => {
   try {
@@ -76,6 +76,7 @@ const deleteUser = async (req, res) => {
       } else {
         user.active = false;
         await user.save();
+        await activeFalseUser(user_id);
         return res.status(200).json({ message: `The user ${user.name} has been deleted.` });
       }
     }
