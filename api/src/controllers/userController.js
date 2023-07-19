@@ -32,7 +32,7 @@ const getUserById = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const { user_id:uid, email, name, role_name = 'client', active = true, province, city, postal_code, street, street_number, apartment_number, phone_number } = req.body;
+  const { user_id:uid, email, name, role_name = 'client', email_verified = false, active = true, province, city, postal_code, street, street_number, apartment_number, phone_number } = req.body;
 
   try {
     if (!uid || !email || !name || !role_name) return res.status(400).json({ message: "Incomplete information to create the user" });
@@ -56,7 +56,7 @@ const createUser = async (req, res) => {
 
     if (user) return res.status(400).json({ message: "User already exists." });
 
-    const newUser = await User.create({ user_id:uid, email, name, role_name, active, province, city, postal_code, street, street_number, apartment_number,phone_number });
+    const newUser = await User.create({ user_id:uid, email, name, role_name, active, email_verified, province, city, postal_code, street, street_number, apartment_number,phone_number });
 
     await newUser.setRole(role.role_id)
     return res.status(201).json({ message: "User has been create." });
