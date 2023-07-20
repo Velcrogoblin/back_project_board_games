@@ -74,20 +74,21 @@ const getPurchaseById = async (req, res) => {
 
 const postPurchase = async (req, res) => {
   try {
-    const { total_amount, username, games } = req.body;
+    const { total_amount, user_id, games } = req.body;
+
     if (!total_amount || isNaN(Number(total_amount))) {
       return res.status(400).json({ message: "Amount is not a valid number." });
     }
 
-    if (!username || username === "") {
-      return res.status(400).json({ message: "Username is not valid." });
+    if (!user_id || user_id === "") {
+      return res.status(400).json({ message: "User id is not valid." });
     }
 
-    const existingUser = await User.findOne({ where: { name: username } });
+    const existingUser = await User.findByPk(user_id);
     if (!existingUser) {
       return res
         .status(400)
-        .json({ message: `No user named ${username} was found` });
+        .json({ message: `No user with id ${user_id} was found.` });
     }
 
     const gamePromises = games.map(async (game) => {
@@ -113,9 +114,8 @@ const postPurchase = async (req, res) => {
 
     await Purchase.create({
       description: games,
-      total_amount,
-      UserUserId: existingUser.user_id,
-      user_id: existingUser.user_id,
+      total_amount: Number(total_amount),
+      user_id: user_id,
     });
 
     return res
