@@ -19,6 +19,7 @@ const getAllReviews = async (req, res) => {
 const postReviews = async (req, res) => {
   try {
     const { rating, comment, user_id, game_id } = req.body;
+    rating = parseInt(rating);
     if (!rating || isNaN(rating)) {
       return res.status(400).json({ message: "Rating is not valid" });
     }
