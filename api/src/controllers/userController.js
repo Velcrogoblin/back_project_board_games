@@ -1,7 +1,7 @@
 const { User, Role, Game } = require("../db");
 const { Op } = require("sequelize");
-const {actualizarEmailVerified, activeFalseUser}  = require("../firebase");
-// nico rompio todo
+const {actualizarEmailVerified, activeFalseUser, activeTrueUser}  = require("../firebase");
+
 const getUsers = async (req, res) => {
   try {
     const users = await User.findAll({
@@ -18,7 +18,6 @@ const getUsers = async (req, res) => {
 const getUserById = async (req, res) => {
   const {user_id} = req.params;
   try {
-    // const users = await User.findByPk(id)
     const users = await User.findByPk(user_id, {
       include: Role
     })
@@ -72,12 +71,15 @@ const deleteUser = async (req, res) => {
     const user = await User.findByPk(user_id);
     if (user) {
       if (user.active === false) {
-        return res.status(400).json({ message: `The user ${user.name} has been previously removed.` });
+        user.active = true;
+        await user.save();
+        await activeTrueUser(user_id);
+        return res.status(200).json({ message: `The user ${user.name} has been unblocked.` });
       } else {
         user.active = false;
         await user.save();
         await activeFalseUser(user_id);
-        return res.status(200).json({ message: `The user ${user.name} has been deleted.` });
+        return res.status(200).json({ message: `The user ${user.name} has been blocked.` });
       }
     }
     return res.status(400).json({ message: `There is no user with uid: ${user_id}.` });
@@ -100,7 +102,9 @@ const destroyUser = async (req, res) => {
 
 
 const putUser = async (req, res) => {
+  console.log('estoy en putUser');
   const { user_id, email, name, role_name, active, province, city, postal_code, street, street_number, apartment_number, phone_number } = req.body;
+
   try {
     if (!user_id) return res.status(400).json({ message: "Incomplete information for the user." });
 

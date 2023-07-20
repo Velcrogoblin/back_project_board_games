@@ -42,7 +42,15 @@ const activeFalseUser = async (uid) => {
     await auth.updateUser(uid, {
       disabled: true
     });
-
+  } catch (error) {
+    console.error(error);
+  }
+}
+const activeTrueUser = async (uid) => {
+  try {
+    await auth.updateUser(uid, {
+      disabled: false
+    });
   } catch (error) {
     console.error(error);
   }
@@ -50,5 +58,6 @@ const activeFalseUser = async (uid) => {
 
 module.exports = {
   actualizarEmailVerified, 
-  activeFalseUser
+  activeFalseUser,
+  activeTrueUser
 };
