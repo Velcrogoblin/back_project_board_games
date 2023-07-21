@@ -4,7 +4,6 @@ const getAllPurchase = async (req, res) => {
   try {
     const purchases = await Purchase.findAll({
       where: { active: true },
-      include: [{ model: User }],
     });
     if (purchases.length === 0) {
       return res.status(418).json({ message: "There are no purchase yet." });
@@ -116,7 +115,7 @@ const postPurchase = async (req, res) => {
     await Purchase.create({
       description: games,
       total_amount: Number(total_amount),
-      user_id: existingUser.dataValues.user_id,
+      user_id: user_id,
       UserUserId: user_id,
       email: existingUser.dataValues.email,
       name: existingUser.dataValues.name,
@@ -145,7 +144,7 @@ const deletePurchase = async (req, res) => {
     existingPurchase.update({ active: false });
 
     return res
-      .status(200)
+      .status(204)
       .json({ message: "Purchase was successfuly deleted." });
   } catch ({ message }) {
     return res.status(500).json({ message });
@@ -155,9 +154,19 @@ const deletePurchase = async (req, res) => {
 const destroyPurchase = async (req, res) => {
   try {
     const { id } = req.params;
+    if (!id || isNaN(id)) {
+      return res.status(400).json({ message: "Invalid id" });
+    }
+
     const existingPurchase = await Purchase.findByPk(id);
+    if (!existingPurchase) {
+      return res
+        .status(404)
+        .json({ message: `No purchase with id ${id} was found` });
+    }
+
     await existingPurchase.destroy();
-    return res.status(206).json({ message: "Compra destruida" });
+    return res.status(204).json({ message: "Purchase was destroyed" });
   } catch ({ message }) {
     return res.status(500).json({ message });
   }
