@@ -33,6 +33,19 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      email: {
+        type: DataTypes.STRING,
+        // allowNull: false,
+      },
+      name: {
+        type: DataTypes.STRING,
+        // allowNull: false,
+      },
+      state: {
+        type: DataTypes.STRING,
+        // allowNull: false,
+        defaultValue: 'Preparing',
+      },
     },
     {
       timestamps: false,
