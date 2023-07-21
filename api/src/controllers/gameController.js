@@ -293,7 +293,7 @@ const putGameOnSale = async (req, res) => {
     if (!response) {
       return res.status(404).json({ message: "Game was not found" });
     }
-    await response.update({ on_sale: true });
+    await response.update({ on_sale: !response.on_sale });
     return res.status(200).json({ message: "Sale was updated successfully" });
   } catch (error) {
     return res.status(500).json({ message: error.message });
