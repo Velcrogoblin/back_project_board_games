@@ -2,6 +2,7 @@ const { Router } = require("express");
 
 const {
   getAllGames,
+  getAllGamesForAdmin,
   getGamesById,
   getGamesByName,
   createGame,
@@ -15,6 +16,7 @@ const router = Router();
 
 router
   .get("/", getAllGames)
+  .get("/admin", getAllGamesForAdmin)
   .get("/id/:id", getGamesById)
   .get("/name", getGamesByName)
   .post("/", createGame)
