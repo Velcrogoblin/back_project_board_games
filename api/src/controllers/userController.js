@@ -37,7 +37,7 @@ const createUser = async (req, res) => {
     user_id: uid,
     email,
     name,
-    role_name = "admin",
+    role_name = "client",
     active = true,
     province,
     city,
