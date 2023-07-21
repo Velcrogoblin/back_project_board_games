@@ -37,7 +37,7 @@ const createUser = async (req, res) => {
     user_id: uid,
     email,
     name,
-    role_name = "client",
+    role_name = "admin",
     active = true,
     province,
     city,
@@ -99,25 +99,32 @@ const deleteUser = async (req, res) => {
   const { user_id } = req.params;
   try {
     const user = await User.findByPk(user_id);
-    if (user) {
-      if (user.active === false) {
-        user.active = true;
-        await user.save();
-        await activeTrueUser(user_id);
-        return res.status(200).json({ message: `The user ${user.name} has been unblocked.` });
-
-      } else {
-        user.active = false;
-        await user.save();
-        await activeFalseUser(user_id);
-        return res.status(200).json({ message: `The user ${user.name} has been blocked.` });
-      }
+    if(user.active === true) {
+    user.update({ active: false });
     }
+
+    if(user.active === false) {
+      user.update({ active: true});
+    }
+    // if (user) {
+    //   if (user.active === false) {
+    //     user.active = true;
+    //     await user.save();
+    //     await activeTrueUser(user_id);
+    //     return res.status(200).json({ message: `The user ${user.name} has been unblocked.` });
+
+    //   } else {
+    //     user.active = false;
+    //     await user.save();
+    //     await activeFalseUser(user_id);
+    //     return res.status(200).json({ message: `The user ${user.name} has been blocked.` });
+    //   }
+    // }
     return res
       .status(400)
       .json({ message: `There is no user with uid: ${user_id}.` });
-  } catch ({ message }) {
-    res.status(500).json({ error: message });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 };
 
