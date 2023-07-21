@@ -117,6 +117,7 @@ const postPurchase = async (req, res) => {
       description: games,
       total_amount: Number(total_amount),
       user_id: existingUser.dataValues.user_id,
+      UserUserId: user_id,
       email: existingUser.dataValues.email,
       name: existingUser.dataValues.name
     });
