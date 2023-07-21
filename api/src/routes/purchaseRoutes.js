@@ -6,7 +6,8 @@ const {
   getPurchaseById,
   postPurchase,
   deletePurchase,
-  changeStateById
+  destroyPurchase,
+  changeStateById,
 } = require("../controllers/purchaseController");
 
 const router = Router();
@@ -17,5 +18,6 @@ router.get("/id/:id", getPurchaseById);
 router.post("/", postPurchase);
 router.put("/state", changeStateById);
 router.delete("/id/:id", deletePurchase);
+router.delete("/destroy/:id", destroyPurchase);
 
 module.exports = router;

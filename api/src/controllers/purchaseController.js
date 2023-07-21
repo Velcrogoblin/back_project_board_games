@@ -119,7 +119,7 @@ const postPurchase = async (req, res) => {
       user_id: existingUser.dataValues.user_id,
       UserUserId: user_id,
       email: existingUser.dataValues.email,
-      name: existingUser.dataValues.name
+      name: existingUser.dataValues.name,
     });
 
     return res
@@ -152,18 +152,29 @@ const deletePurchase = async (req, res) => {
   }
 };
 
-const changeStateById = async(req,res) => {
-  const {purchase_id, state} = req.body;
+const destroyPurchase = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const existingPurchase = await Purchase.findByPk(id);
+    await existingPurchase.destroy();
+    return res.status(206).json({ message: "Compra destruida" });
+  } catch ({ message }) {
+    return res.status(500).json({ message });
+  }
+};
+
+const changeStateById = async (req, res) => {
+  const { purchase_id, state } = req.body;
 
   try {
     if (isNaN(purchase_id)) {
       return res.status(400).json({ message: "id is invalid." });
     }
 
-    if(state !== "Preparing" && state !== "Shipped" && state !== "Delivered"){
+    if (state !== "Preparing" && state !== "Shipped" && state !== "Delivered") {
       return res.status(400).json({ message: "Invalid state" });
     }
-    
+
     const existingPurchase = await Purchase.findByPk(purchase_id);
     if (!existingPurchase) {
       return res.status(400).json({ message: "Purchase does not exist." });
@@ -176,7 +187,7 @@ const changeStateById = async(req,res) => {
   } catch ({ message }) {
     return res.status(500).json({ message });
   }
-}
+};
 
 module.exports = {
   getAllPurchase,
@@ -184,5 +195,6 @@ module.exports = {
   getPurchaseById,
   postPurchase,
   deletePurchase,
-  changeStateById
+  destroyPurchase,
+  changeStateById,
 };
