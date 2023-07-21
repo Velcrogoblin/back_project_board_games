@@ -282,8 +282,17 @@ const deleteGame = async (req, res) => {
     }
 
     let response = await Game.findByPk(id);
+    if(response.active === true) {
     await response.update({ active: false });
-    return res.status(200).json({ message: "Game was deleted successfully" });
+    return res.status(200).json({ message: "Game was deactivated successfully" });
+    }
+
+    if(response.active === false) {
+      await response.update({ active: true });
+    return res.status(200).json({ message: "Game was activated successfully" });
+      }
+
+    
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
