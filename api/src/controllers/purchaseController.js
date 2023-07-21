@@ -150,10 +150,22 @@ const deletePurchase = async (req, res) => {
   }
 };
 
+const destroyPurchase = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const existingPurchase = await Purchase.findByPk(id);
+    await existingPurchase.destroy();
+    return res.status(206).json({ message: "Compra destruida" });
+  } catch ({ message }) {
+    return res.status(500).json({ message });
+  }
+};
+
 module.exports = {
   getAllPurchase,
   getPurchaseByIdUser,
   getPurchaseById,
   postPurchase,
   deletePurchase,
+  destroyPurchase,
 };
