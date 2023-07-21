@@ -115,7 +115,9 @@ const postPurchase = async (req, res) => {
     await Purchase.create({
       description: games,
       total_amount: Number(total_amount),
-      user_id: user_id,
+      user_id: existingUser.dataValues.user_id,
+      email: existingUser.dataValues.email,
+      name: existingUser.dataValues.name
     });
 
     return res
@@ -148,10 +150,42 @@ const deletePurchase = async (req, res) => {
   }
 };
 
+const changeStateById = async(req,res) => {
+  const {purchase_id, state} = req.body;
+
+  console.log('purchase_id')
+  console.log(purchase_id)
+  console.log('state')
+  console.log(state)
+
+  try {
+    if (isNaN(purchase_id)) {
+      return res.status(400).json({ message: "id is invalid." });
+    }
+
+    if(state !== "Preparing" && state !== "Shipped" && state !== "Delivered"){
+      return res.status(400).json({ message: "Invalid state" });
+    }
+    
+    const existingPurchase = await Purchase.findByPk(purchase_id);
+    if (!existingPurchase) {
+      return res.status(400).json({ message: "Purchase does not exist." });
+    }
+
+    existingPurchase.state = state;
+    await existingPurchase.save();
+
+    return res.status(200).json({ message: "Purchase state was updated." });
+  } catch ({ message }) {
+    return res.status(500).json({ message });
+  }
+}
+
 module.exports = {
   getAllPurchase,
   getPurchaseByIdUser,
   getPurchaseById,
   postPurchase,
   deletePurchase,
+  changeStateById
 };

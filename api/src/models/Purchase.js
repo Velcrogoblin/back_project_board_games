@@ -32,6 +32,19 @@ module.exports = (sequelize) => {
       user_id: {
         type: DataTypes.STRING,
       },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      state: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: 'Preparing',
+      },
     },
     {
       timestamps: false,
