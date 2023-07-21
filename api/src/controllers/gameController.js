@@ -38,6 +38,30 @@ const getAllGames = async (req, res) => {
   }
 };
 
+const getAllGamesForAdmin = async (req, res) => {
+  try {
+    let games = await Game.findAll({
+      include: [
+        { model: Editorial },
+        { model: Author },
+        { model: Category },
+        { model: Designer },
+        { model: Language },
+        { model: Mechanic },
+        { model: Thematic },
+      ],
+    });
+
+    if (games.length === 0) {
+      return res.status(404).json({ message: "No games were found" });
+    }
+
+    return res.status(200).json(games);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
 const getGamesByName = async (req, res) => {
   try {
     const { name } = req.query;
@@ -246,8 +270,6 @@ const createGame = async (req, res) => {
 
     return res.status(201).json({ message: `${name} was successfuly created` });
   } catch (error) {
-    // const status = error.statusCode || 500;
-    // const message = error.message || "Internal Server Error";
     return res.status(500).json({ message: error.message });
   }
 };
@@ -350,70 +372,7 @@ const putGame = async (req, res) => {
       return res.status(400).json({ message: "id is invalid" });
     }
 
-    // El servidor más seguro xD
-    // if (!name) {
-    //   return res.status(406).json({ message: "name is required" });
-    // }
-
-    // if (!released) {
-    //   return res.status(406).json({ message: "released is required" });
-    // }
-
-    // if (!price) {
-    //   return res.status(406).json({ message: "price is required" });
-    // }
-
-    // if (!age) {
-    //   return res.status(406).json({ message: "age is required" });
-    // }
-
-    // if (!players_min) {
-    //   return res.status(406).json({ message: "players_min is required" });
-    // }
-
-    // if (!players_max) {
-    //   return res.status(406).json({ message: "players_max is required" });
-    // }
-
-    // if (!stock) {
-    //   return res.status(406).json({ message: "stock is required" });
-    // }
-
-    // if (!image) {
-    //   return res.status(406).json({ message: "image is required" });
-    // }
-
-    // if (!playing_time) {
-    //   return res.status(406).json({ message: "playing_time is required" });
-    // }
-
-    // if (!author_name) {
-    //   return res.status(406).json({ message: "author_name is required" });
-    // }
-
-    // if (!editorial_name) {
-    //   return res.status(406).json({ message: "editorial_name is required" });
-    // }
-
-    // if (!categories_name) {
-    //   return res.status(406).json({ message: "categories_name is required" });
-    // }
-
-    // if (!designers_name) {
-    //   return res.status(406).json({ message: "designers_name is required" });
-    // }
-
-    // if (!languages_name) {
-    //   return res.status(406).json({ message: "languages_name is required" });
-    // }
-
-    // if (!mechanics_name) {
-    //   return res.status(406).json({ message: "mechanics_name is required" });
-    // }
-
-    // if (!thematics_name) {
-    //   return res.status(406).json({ message: "thematics_name is required" });
-    // }
+    
 
     const existingGame = await Game.findByPk(game_id);
     if (!existingGame) {
@@ -443,92 +402,7 @@ const putGame = async (req, res) => {
       where: { thematic_name: thematics_name },
     });
 
-    // Si este gigantesco código comentado no se va a usar
-    // habrá que eliminarlo
-    // const categories = await Promise.all(
-    //   categories_name.map(async (category) => {
-    //     const data = await Category.findOne({
-    //       where: { category_name: category },
-    //     });
-
-    //     if (!data) {
-    //       throw {
-    //         message: `Category ${category} does not exist`,
-    //         statusCode: 404,
-    //       };
-    //     }
-
-    //     return data.dataValues.category_id;
-    //   })
-    // );
-
-    // const designers = await Promise.all(
-    //   designers_name.map(async (designer) => {
-    //     const data = await Designer.findOne({
-    //       where: { designer_name: designer },
-    //     });
-
-    //     if (!data) {
-    //       throw {
-    //         message: `Designer ${designer} does not exist`,
-    //         statusCode: 404,
-    //       };
-    //     }
-
-    //     return data.dataValues.designer_id;
-    //   })
-    // );
-
-    // const languages = await Promise.all(
-    //   languages_name.map(async (language) => {
-    //     const data = await Language.findOne({
-    //       where: { language_name: language },
-    //     });
-
-    //     if (!data) {
-    //       throw {
-    //         message: `Language ${language} does not exist`,
-    //         statusCode: 404,
-    //       };
-    //     }
-
-    //     return data.dataValues.id_language;
-    //   })
-    // );
-
-    // const mechanics = await Promise.all(
-    //   mechanics_name.map(async (mechanic) => {
-    //     const data = await Mechanic.findOne({
-    //       where: { mechanic_name: mechanic },
-    //     });
-
-    //     if (!data) {
-    //       throw {
-    //         message: `Mechanic ${mechanic} does not exist`,
-    //         statusCode: 404,
-    //       };
-    //     }
-
-    //     return data.dataValues.mechanic_id;
-    //   })
-    // );
-
-    // const thematics = await Promise.all(
-    //   thematics_name.map(async (thematic) => {
-    //     const data = await Thematic.findOne({
-    //       where: { thematic_name: thematic },
-    //     });
-
-    //     if (!data) {
-    //       throw {
-    //         message: `Thematic ${thematic} does not exist`,
-    //         statusCode: 404,
-    //       };
-    //     }
-
-    //     return data.dataValues.thematic_id;
-    //   })
-    // );
+    
 
     const editorial = await Editorial.findOne({ where: { editorial_name } });
     if (!editorial) {
@@ -582,6 +456,7 @@ module.exports = {
   putGame,
   deleteGame,
   getAllGames,
+  getAllGamesForAdmin,
   getGamesById,
   getGamesByName,
   createGame,
