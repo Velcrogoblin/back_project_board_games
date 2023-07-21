@@ -39,11 +39,11 @@ module.exports = (sequelize) => {
       },
       name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
       state: {
         type: DataTypes.STRING,
-        allowNull: false,
+        // allowNull: false,
         defaultValue: 'Preparing',
       },
     },
