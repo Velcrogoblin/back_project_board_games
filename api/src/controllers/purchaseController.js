@@ -76,6 +76,7 @@ const postPurchase = async (req, res) => {
   try {
     const { total_amount, user_id, games } = req.body;
 
+    console.log(user_id);
     if (!total_amount || isNaN(Number(total_amount))) {
       return res.status(400).json({ message: "Amount is not a valid number." });
     }
@@ -152,11 +153,6 @@ const deletePurchase = async (req, res) => {
 
 const changeStateById = async(req,res) => {
   const {purchase_id, state} = req.body;
-
-  console.log('purchase_id')
-  console.log(purchase_id)
-  console.log('state')
-  console.log(state)
 
   try {
     if (isNaN(purchase_id)) {

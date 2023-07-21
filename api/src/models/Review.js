@@ -13,9 +13,6 @@ module.exports = (sequelize) => {
       rating: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        validate: {
-          isIn: [[1, 10]],
-        },
       },
 
       comment: {
