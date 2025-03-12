@@ -23,15 +23,12 @@ const postReviews = async (req, res) => {
     if (!rating || isNaN(rating)) {
       return res.status(400).json({ message: "Rating is not valid" });
     }
-
     if (!comment || comment === "") {
       return res.status(400).json({ message: "Comment is invalid" });
     }
-
     if (!user_id || user_id === "") {
       return res.status(400).json({ message: "User id is not valid" });
     }
-
     if (!game_id || isNaN(game_id)) {
       return res.status(400).json({ message: "Game id is not valid" });
     }
@@ -41,7 +38,6 @@ const postReviews = async (req, res) => {
         rating: {
           [Op.eq]: rating,
         },
-
         comment: {
           [Op.iLike]: `%${comment}%`,
         },
